@@ -1,0 +1,87 @@
+.page-template-default {
+  .site-main {
+    padding: 95px 0;
+  }
+}
+.error-page-template {
+  text-align: center;
+  .page-title {
+    font-size: 42px;
+    margin-bottom: 16px;
+  }
+  .page-desc {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+  .search-form {
+    position: relative;
+    max-width: 420px;
+    margin: 0 auto;
+    padding-right: 120px;
+    label {
+      width: 100%;
+      margin: 0;
+    }
+    .search-field {
+      width: 100%;
+      margin-bottom: 0;
+      border-radius: 2px 0 0 2px;
+    }
+    .search-submit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 58px;
+      text-align: center;
+      border-radius: 0 2px 2px 0;
+      -webkit-transition: background-color .3s, width .3s;
+      transition: background-color .3s, width .3s;
+    }
+    @media(max-width: $break-sm - 0.02) {
+      .search-submit {
+        height: 47px;
+      }
+    }
+    @media(max-width: $break-xs - 0.02) {
+      padding-right: 50px;
+      .search-submit {
+        width: 50px;
+        height: 47px;
+        padding: 0;
+        font-size: 0;
+        background-image: url(../images/search-light.svg);
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+    }
+  }
+  @media(max-width: $break-md - 0.02) {
+    .page-title {
+      font-size: 42px;
+    }
+  }
+  @media(max-width: $break-sm - 0.02) {
+    .page-title {
+      font-size: 36px;
+    }
+    .page-desc {
+      font-size: 16px;
+    }
+    .search-form {
+      max-width: 310px;
+    }
+  }
+  @media(max-width: $break-xs - 0.02) {
+    .page-title {
+      font-size: 32px;
+    }
+    .page-desc {
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+
+}

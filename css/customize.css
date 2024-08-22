@@ -1,0 +1,7 @@
+#customize-control-tribe_customizer-global_elements-accent_color,
+#customize-control-tribe_customizer-global_elements-link_color,
+#sub-accordion-section-single_event .customize-section-description,
+#customize-control-tribe_customizer-single_event-post_title_color,
+#customize-control-tribe_customizer-single_event-details_bg_color {
+  display: none !important;
+}

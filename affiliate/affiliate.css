@@ -1,0 +1,132 @@
+div.bears-elementor-notice {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid #c3c4c7;
+}
+div.bears-elementor-notice .media {
+  position: relative;
+  width: 50%;
+  line-height: 0;
+}
+div.bears-elementor-notice .media:hover .overlay {
+  opacity: 1;
+}
+div.bears-elementor-notice .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+div.bears-elementor-notice .overlay svg {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  margin: -14px 0 0 -82px;
+}
+div.bears-elementor-notice .content {
+  width: 50%;
+  max-width: 560px;
+  padding-left: 60px;
+}
+div.bears-elementor-notice a {
+  text-decoration: none;
+  outline: none;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+div.bears-elementor-notice .title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 8px;
+}
+div.bears-elementor-notice .title a {
+  text-decoration: none;
+  color: #000000;
+}
+div.bears-elementor-notice .title a:hover {
+  color:#b74573;
+}
+div.bears-elementor-notice .desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  margin-bottom: 30px;
+}
+div.bears-elementor-notice .get-ele-pro {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #92003b;
+  padding: 20px 30px;
+  border-radius: 30px;
+}
+div.bears-elementor-notice .get-ele-pro:hover {
+  background:#b74573;
+}
+
+@media( max-width: 1400px ) {
+  div.bears-elementor-notice .content {
+    padding-left: 40px;
+  }
+  div.bears-elementor-notice .title {
+    font-size: 30px;
+  }
+}
+
+@media( max-width: 1200px ) {
+  div.bears-elementor-notice {
+    flex-direction: column;
+  }
+  div.bears-elementor-notice .media {
+    width: 100%;
+  }
+  div.bears-elementor-notice .content {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px 0 0;
+  }
+}
+
+@media( max-width: 560px ) {
+  div.bears-elementor-notice {
+    padding: 15px;
+  }
+  div.bears-elementor-notice .title {
+    font-size: 24px;
+  }
+}
+
+span.bears-get-addons {
+  display: block;
+  white-space: nowrap;
+  color: #ffffff;
+  background: #69b86b;
+  margin: -4px;
+  padding: 8px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+span.bears-get-addons:hover {
+  margin-left: -8px;
+  margin-right: -8px;
+  padding-right: 16px;
+}
+span.bears-get-addons.gateways-payment {
+  background: #60b9de;
+}
+span.bears-get-addons.recurring-payment {
+  background: #707cc4;
+}

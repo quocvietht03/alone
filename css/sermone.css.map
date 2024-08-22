@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,iEAA8B;EAC5B,MAAM,EAAE,CAAC;AAEX,iEAA8B;EAC5B,KAAK,EAAE,iBAAiB;EACxB,OAAO,EAAE,eAAe",
+"sources": ["../sass/sermone.scss"],
+"names": [],
+"file": "sermone.css"
+}
