@@ -2481,4 +2481,103 @@ body .__btn-back-list {
           font-size: 12px;
           padding: 6px 12px; } }
 
+.tlc-header-top .wpml-ls-legacy-dropdown {
+  width: 160px; }
+
+.tlc-header-main ul.elementor-nav-menu--dropdown {
+  min-width: 220px !important; }
+  .tlc-header-main ul.elementor-nav-menu--dropdown a {
+    border-left: none !important; }
+@media (max-width: 1199.98px) {
+  .tlc-header-main .elementor-nav-menu--main .elementor-item {
+    padding-left: 10px !important;
+    padding-right: 10px !important; } }
+
+.tlc-mobie-menu-popup ul.elementor-nav-menu--dropdown a {
+  border: none !important; }
+.tlc-mobie-menu-popup ul.elementor-nav-menu > li.menu-item-has-children a.has-submenu {
+  justify-content: space-between; }
+.tlc-mobie-menu-popup ul.elementor-nav-menu > li.menu-item-has-children ul.sub-menu {
+  padding-left: 20px; }
+
+.tlc-heading-section--white .elementor-heading-title span {
+  font-family: "Edu NSW ACT Foundation", Sans-serif;
+  font-weight: 400;
+  color: #fff; }
+.tlc-heading-section .elementor-heading-title span {
+  font-family: "Edu NSW ACT Foundation", Sans-serif;
+  font-weight: 400;
+  color: var(--e-global-color-accent); }
+
+.tlc-avatar-gallery .gallery {
+  display: flex; }
+  .tlc-avatar-gallery .gallery .gallery-item:not(:first-child) {
+    margin-left: -20px !important; }
+
+.elementor-element.tlc-bottom-text-section--white a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: inherit; }
+.elementor-element.tlc-bottom-text-section a {
+  display: inline-block;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--e-global-color-accent); }
+
+.tlc-video-popup-btn .elementor-button-link {
+  text-decoration: underline;
+  text-underline-offset: 2px; }
+.tlc-video-popup-btn .elementor-button-content-wrapper {
+  align-items: center; }
+.tlc-video-popup-btn .elementor-button-icon {
+  position: relative;
+  font-size: 52px;
+  z-index: 1; }
+  .tlc-video-popup-btn .elementor-button-icon::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border-radius: 50px;
+    z-index: -1; }
+  .tlc-video-popup-btn .elementor-button-icon svg {
+    fill: var(--e-global-color-accent); }
+
+.tlc-donation-accordion .e-n-accordion-item {
+  background: #D2F4F4;
+  border-radius: 20px; }
+  .tlc-donation-accordion .e-n-accordion-item:nth-child(1) {
+    background: #FDF0DD; }
+  .tlc-donation-accordion .e-n-accordion-item:nth-child(2) {
+    background: #D2F4F4; }
+  .tlc-donation-accordion .e-n-accordion-item:nth-child(3) {
+    background: #CAE4F7; }
+  .tlc-donation-accordion .e-n-accordion-item .e-n-accordion-item-title {
+    padding: 20px;
+    border: none; }
+
+.tlc-newsletter-box .elementor-heading-title span:first-child {
+  font-size: 20px;
+  font-weight: 400; }
+.tlc-newsletter-box .elementor-heading-title span:last-child {
+  font-family: "Edu NSW ACT Foundation", Sans-serif;
+  font-weight: 400; }
+.tlc-newsletter-box .elementor-field-type-email {
+  width: calc(100% - 230px) !important;
+  margin: 0 !important; }
+  .tlc-newsletter-box .elementor-field-type-email input {
+    padding: 10px 30px; }
+.tlc-newsletter-box .elementor-field-type-submit {
+  width: 230px !important;
+  margin: 0 !important; }
+  .tlc-newsletter-box .elementor-field-type-submit button {
+    width: 100%; }
+@media (max-width: 767.98px) {
+  .tlc-newsletter-box .elementor-field-type-email {
+    width: 100% !important;
+    margin-bottom: 20px !important; } }
+
 /*# sourceMappingURL=alone-main.css.map */

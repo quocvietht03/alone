@@ -53,3 +53,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+@import "fonts/font.css";
+@import "css/normalize.css";
+@import "css/alone-main.css";

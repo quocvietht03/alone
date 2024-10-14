@@ -14,7 +14,7 @@
 <article id="post-<?php the_ID();  ?>" <?php post_class( 'post-wrap' ); ?> >
 
   <div class="entry-image">
-    <?php the_post_thumbnail('medium'); ?>
+    <?php the_post_thumbnail('medium_large'); ?>
 
     <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) { ?>
       <a class="entry-comment-count" href="<?php comments_link(); ?>">
