@@ -10,9 +10,11 @@ function alone_events_cron_exec() {
     while ( $wp_query->have_posts() ) {
       $wp_query->the_post();
 
+
+
       $start_date = get_post_meta( get_the_ID(), '_EventStartDate', true);
       $end_date = get_post_meta( get_the_ID(), '_EventEndDate', true);
-
+      
       $today = date('Y-m-d H:i:s');
 
       if ($start_date < $today) {
@@ -33,3 +35,5 @@ function alone_events_cron_exec() {
 
 }
 add_action('alone_events_cron_hook', 'alone_events_cron_exec');
+
+alone_events_cron_exec();
