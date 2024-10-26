@@ -2514,6 +2514,10 @@ body .__btn-back-list {
   .tlc-avatar-gallery .gallery .gallery-item:not(:first-child) {
     margin-left: -20px !important; }
 
+.rtl .tlc-avatar-gallery .gallery .gallery-item:not(:first-child) {
+  margin-left: 0 !important;
+  margin-right: -20px !important; }
+
 .elementor-element.tlc-bottom-text-section--white a {
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -2579,5 +2583,52 @@ body .__btn-back-list {
   .tlc-newsletter-box .elementor-field-type-email {
     width: 100% !important;
     margin-bottom: 20px !important; } }
+
+.rtl .elementor-give-forms--skin-grid-toluca .elementor-give-form .give-btn-modal {
+  left: auto;
+  right: 30px; }
+.rtl .elementor-members--skin-toluca .elementor-member__thumbnail {
+  margin-left: 30px;
+  margin-right: 0; }
+.rtl .elementor-members--skin-toluca .elementor-member__content {
+  margin: -70px 30px 0 0; }
+.rtl .elementor-members--skin-toluca .elementor-member__infor {
+  left: 40px;
+  right: auto; }
+.rtl .elementor-events--skin-cobble-toluca .elementor-event {
+  margin-left: 0;
+  margin-right: 45px;
+  padding: 25px 0 25px 25px; }
+  .rtl .elementor-events--skin-cobble-toluca .elementor-event:first-child .elementor-event__date {
+    left: 15px;
+    right: auto; }
+  .rtl .elementor-events--skin-cobble-toluca .elementor-event:first-child .elementor-event__read-more svg {
+    transform: rotate(180deg); }
+  .rtl .elementor-events--skin-cobble-toluca .elementor-event__inner {
+    padding-left: 120px;
+    padding-right: 0; }
+  .rtl .elementor-events--skin-cobble-toluca .elementor-event__thumbnail {
+    margin-left: 0;
+    margin-right: -45px; }
+  .rtl .elementor-events--skin-cobble-toluca .elementor-event__date {
+    left: -10px;
+    right: auto; }
+  @media (max-width: 575.98px) {
+    .rtl .elementor-events--skin-cobble-toluca .elementor-event {
+      margin-right: 0;
+      padding: 20px; }
+      .rtl .elementor-events--skin-cobble-toluca .elementor-event__inner {
+        padding-left: 0; }
+      .rtl .elementor-events--skin-cobble-toluca .elementor-event__thumbnail {
+        margin-right: 0; } }
+.rtl .elementor-posts--skin-grid-toluca .elementor-post__date {
+  left: auto;
+  right: 40px; }
+.rtl .elementor-posts--skin-grid-toluca .elementor-post__meta li:not(:last-child):after {
+  left: -20px;
+  right: auto; }
+.rtl .elementor-posts--skin-grid-toluca .elementor-post__meta li svg {
+  margin-left: 8px;
+  margin-right: 0; }
 
 /*# sourceMappingURL=alone-main.css.map */

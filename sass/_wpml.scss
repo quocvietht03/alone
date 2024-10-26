@@ -56,6 +56,14 @@
         margin-left: -20px !important;
     }
 }
+
+.rtl .tlc-avatar-gallery .gallery {
+    .gallery-item:not(:first-child) {
+        margin-left: 0 !important;
+        margin-right: -20px !important;
+    }
+}
+
 .elementor-element.tlc-bottom-text-section {
     &--white {
         a {
@@ -150,6 +158,79 @@
         .elementor-field-type-email {
             width: 100% !important; 
             margin-bottom: 20px !important;
+        }
+    }
+}
+
+.rtl {
+    .elementor-give-forms--skin-grid-toluca .elementor-give-form .give-btn-modal {
+        left: auto;
+        right: 30px;
+    } 
+    .elementor-members--skin-toluca .elementor-member {
+        &__thumbnail {
+            margin-left: 30px;
+            margin-right: 0;
+        }
+        &__content {
+            margin: -70px 30px 0 0;
+        }
+        &__infor {
+            left: 40px;
+            right: auto;
+        }
+        
+    }
+    .elementor-events--skin-cobble-toluca .elementor-event {
+        margin-left: 0;
+        margin-right: 45px;
+        padding: 25px 0 25px 25px;
+        &:first-child .elementor-event {
+            &__date {
+                left: 15px;
+                right: auto;
+            }
+            &__read-more svg {
+                transform: rotate(180deg);
+            }
+        }
+        &__inner {
+            padding-left: 120px;
+            padding-right: 0;
+        }
+        &__thumbnail {
+            margin-left: 0;
+            margin-right: -45px;
+        }
+        &__date {
+            left: -10px;
+            right: auto;
+        }
+        @media( max-width: $break-xs - 0.02 ) {
+            margin-right: 0;
+            padding: 20px;
+            &__inner {
+              padding-left: 0;
+            }
+            &__thumbnail {
+              margin-right: 0;
+            }
+        }
+    }
+    .elementor-posts--skin-grid-toluca .elementor-post{
+        &__date {
+            left: auto;
+            right: 40px;
+        }
+        &__meta li {
+            &:not(:last-child):after {
+                left: -20px;
+                right: auto;
+            }
+            svg {
+                margin-left: 8px;
+                margin-right: 0;
+            }
         }
     }
 }
