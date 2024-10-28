@@ -430,3 +430,14 @@ require get_template_directory() . '/affiliate/affiliate.php';
  * Cron job
  */
 require get_template_directory() . '/cron/cron-helper.php';
+
+
+function alone_load_textdomain() {
+	if ( function_exists( 'icl_object_id' ) ) {
+		if (ICL_LANGUAGE_CODE == "ar") {
+			load_textdomain('give', get_stylesheet_directory() . '/languages/give-ar.mo');
+		}
+	}
+	
+}
+add_action('init', 'alone_load_textdomain');
