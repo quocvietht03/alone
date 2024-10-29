@@ -752,6 +752,9 @@ button {
     padding: 12px 20px;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
+    .page-titlebar .breadcrumbs a,
+    .page-titlebar .page-desc a {
+      color: inherit; }
 
 /* Glogbal css */
 .container {

@@ -461,360 +461,360 @@
       ),
     ),
 
- 		// Colors
-		'custom_colors' => array(
- 			'type'     => 'radio',
- 			'label'    => esc_html__( 'Custom Colors', 'alone' ),
-			'default'     => 'default',
- 			'section'     => 'colors',
-			'priority'    => 10,
-			'choices'     => array(
-				'default' => esc_html__( 'Default', 'alone' ),
-				'custom'  => esc_html__( 'Custom', 'alone' ),
+	// Colors
+	'custom_colors' => array(
+		'type'     => 'radio',
+		'label'    => esc_html__( 'Custom Colors', 'alone' ),
+		'default'     => 'default',
+		'section'     => 'colors',
+		'priority'    => 10,
+		'choices'     => array(
+			'default' => esc_html__( 'Default', 'alone' ),
+			'custom'  => esc_html__( 'Custom', 'alone' ),
+		),
+	),
+	'main_color' => array(
+		'type'            => 'color',
+		'description' 		=> __( 'Apply a custom color for buttons, links, etc.', 'alone' ),
+		'default'         => 199,
+		'mode'        		=> 'hue',
+		'section'         => 'colors',
+		'priority'        => 10,
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_colors',
+				'operator' => '==',
+				'value'    => 'default',
 			),
- 		),
-		'main_color' => array(
- 			'type'            => 'color',
-			'description' 		=> __( 'Apply a custom color for buttons, links, etc.', 'alone' ),
- 			'default'         => 199,
-			'mode'        		=> 'hue',
- 			'section'         => 'colors',
- 			'priority'        => 10,
- 			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_colors',
- 					'operator' => '==',
- 					'value'    => 'default',
- 				),
- 			),
- 		),
- 		'custom_color' => array(
- 			'type'            => 'color',
-			'description' 		=> __( 'Apply a custom color for buttons, links, featured images, etc.', 'alone' ),
- 			'default'         => '#0073a8',
- 			'section'         => 'colors',
- 			'priority'        => 10,
-      'choices'     => [
-    		'alpha' => true,
-    	],
- 			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_colors',
- 					'operator' => '==',
- 					'value'    => 'custom',
- 				),
- 			),
- 		),
-
- 		// Typography
-		'custom_typos' => array(
- 			'type'     => 'toggle',
- 			'label'    => esc_html__( 'Custom Typography', 'alone' ),
- 			'default'  => 0,
- 			'section'  => 'typography',
- 			'priority' => 10,
- 		),
-
- 		'body_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Body', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => 'regular',
- 				'font-size'      => '16px',
- 				'line-height'    => '1.75',
-        'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#333',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
-
-		'pre_heading_typo' => array(
-			'type'        => 'custom',
-			'section'     => 'typography',
-			'default'         => '<hr style="margin:15px 0;"></hr>',
-			'priority'    => 10,
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
 		),
-
- 		'heading1_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Heading 1', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => 'bold',
- 				'font-size'      => '42px',
- 				'line-height'    => '1.25',
- 				'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#111',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
-
- 		'heading2_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Heading 2', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => 'bold',
- 				'font-size'      => '32px',
- 				'line-height'    => '1.25',
- 				'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#111',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
-
- 		'heading3_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Heading 3', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => 'bold',
- 				'font-size'      => '24px',
- 				'line-height'    => '1.25',
- 				'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#111',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
-
- 		'heading4_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Heading 4', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => 'bold',
- 				'font-size'      => '18px',
- 				'line-height'    => '1.25',
- 				'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#111',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
-
- 		'heading5_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Heading 5', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => 'bld',
- 				'font-size'      => '14px',
- 				'line-height'    => '1.25',
- 				'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#111',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
-
- 		'heading6_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Heading 6', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => 'bold',
- 				'font-size'      => '12px',
- 				'line-height'    => '1.25',
- 				'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#111',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
-
-		'pre_menu_typo'  => array(
-			'type'        => 'custom',
-			'section'     => 'typography',
-			'default'         => '<hr style="margin:15px 0;"></hr>',
-			'priority'    => 10,
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
+	),
+	'custom_color' => array(
+		'type'            => 'color',
+		'description' 		=> __( 'Apply a custom color for buttons, links, featured images, etc.', 'alone' ),
+		'default'         => '#0073a8',
+		'section'         => 'colors',
+		'priority'        => 10,
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_colors',
+				'operator' => '==',
+				'value'    => 'custom',
+			),
 		),
+	),
 
- 		'menu_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Menu', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
-				'font-family'    => 'Poppins',
- 				'variant'        => '600',
- 				'font-size'      => '15px',
- 				'line-height'    => '1.5',
- 				'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#111',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
+	// Typography
+	'custom_typos' => array(
+		'type'     => 'toggle',
+		'label'    => esc_html__( 'Custom Typography', 'alone' ),
+		'default'  => 0,
+		'section'  => 'typography',
+		'priority' => 10,
+	),
 
- 		'sub_menu_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Sub Menu', 'alone' ),
- 			'section'  => 'typography',
- 			'priority' => 10,
- 			'default'  => array(
-				'font-family'    => 'Poppins',
- 				'variant'        => 'regular',
- 				'font-size'      => '15px',
- 				'line-height'    => '1.5',
- 				'letter-spacing' => '0',
- 				'subsets'        => array( 'latin-ext' ),
- 				'color'          => '#111',
- 				'text-transform' => 'none',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_typos',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
+	'body_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Body', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => 'regular',
+			'font-size'      => '16px',
+			'line-height'    => '1.75',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#333',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'pre_heading_typo' => array(
+		'type'        => 'custom',
+		'section'     => 'typography',
+		'default'         => '<hr style="margin:15px 0;"></hr>',
+		'priority'    => 10,
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'heading1_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Heading 1', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => 'bold',
+			'font-size'      => '42px',
+			'line-height'    => '1.25',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#111',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'heading2_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Heading 2', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => 'bold',
+			'font-size'      => '32px',
+			'line-height'    => '1.25',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#111',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'heading3_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Heading 3', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => 'bold',
+			'font-size'      => '24px',
+			'line-height'    => '1.25',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#111',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'heading4_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Heading 4', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => 'bold',
+			'font-size'      => '18px',
+			'line-height'    => '1.25',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#111',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'heading5_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Heading 5', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => 'bld',
+			'font-size'      => '14px',
+			'line-height'    => '1.25',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#111',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'heading6_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Heading 6', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => 'bold',
+			'font-size'      => '12px',
+			'line-height'    => '1.25',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#111',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'pre_menu_typo'  => array(
+		'type'        => 'custom',
+		'section'     => 'typography',
+		'default'         => '<hr style="margin:15px 0;"></hr>',
+		'priority'    => 10,
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'menu_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Menu', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => '600',
+			'font-size'      => '15px',
+			'line-height'    => '1.5',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#111',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
+
+	'sub_menu_typo' => array(
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Sub Menu', 'alone' ),
+		'section'  => 'typography',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => 'regular',
+			'font-size'      => '15px',
+			'line-height'    => '1.5',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'color'          => '#111',
+			'text-transform' => 'none',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_typos',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
 
     // Page Titlebar
-		'custom_page_titlebar' => array(
- 			'type'     => 'toggle',
- 			'label'    => esc_html__( 'Custom Style', 'alone' ),
- 			'default'  => 0,
- 			'section'  => 'page_titlebar',
- 			'priority' => 10,
- 		),
+	'custom_page_titlebar' => array(
+		'type'     => 'toggle',
+		'label'    => esc_html__( 'Custom Style', 'alone' ),
+		'default'  => 0,
+		'section'  => 'page_titlebar',
+		'priority' => 10,
+	),
 
     'page_title_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Page Title', 'alone' ),
- 			'section'  => 'page_titlebar',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => '700',
- 				'font-size'      => '30px',
- 				'line-height'    => '1.25',
-        'letter-spacing' => '0',
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Page Title', 'alone' ),
+		'section'  => 'page_titlebar',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => '700',
+			'font-size'      => '30px',
+			'line-height'    => '1.25',
+        	'letter-spacing' => '0',
  				'subsets'        => array( 'latin-ext' ),
  				'color'          => '#002866',
  				'text-transform' => 'uppercase',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_page_titlebar',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_page_titlebar',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
 
     'page_breadcrumb_typo' => array(
- 			'type'     => 'typography',
- 			'label'    => esc_html__( 'Breadcrumb', 'alone' ),
- 			'section'  => 'page_titlebar',
- 			'priority' => 10,
- 			'default'  => array(
- 				'font-family'    => 'Poppins',
- 				'variant'        => '600',
- 				'font-size'      => '14px',
- 				'line-height'    => '1.5',
-        'letter-spacing' => '0',
+		'type'     => 'typography',
+		'label'    => esc_html__( 'Breadcrumb', 'alone' ),
+		'section'  => 'page_titlebar',
+		'priority' => 10,
+		'default'  => array(
+			'font-family'    => 'Poppins',
+			'variant'        => '600',
+			'font-size'      => '14px',
+			'line-height'    => '1.5',
+        	'letter-spacing' => '0',
  				'subsets'        => array( 'latin-ext' ),
  				'color'          => '#002866',
  				'text-transform' => 'uppercase',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_page_titlebar',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_page_titlebar',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
 
     'page_breadcrumb_bg_color' => array(
  			'type'     => 'color',
@@ -862,35 +862,35 @@
  		),
 
     'page_titlebar_spacing' => array(
- 			'type'     => 'dimensions',
- 			'label'    => esc_html__( 'Titlebar Spacing', 'alone' ),
- 			'section'  => 'page_titlebar',
- 			'priority' => 10,
- 			'default'  => array(
-        'top'  => '75px',
-        'bottom' => '75px',
- 			),
-			'active_callback' => array(
- 				array(
- 					'setting'  => 'custom_page_titlebar',
- 					'operator' => '==',
- 					'value'    => 1,
- 				),
- 			),
- 		),
+		'type'     => 'dimensions',
+		'label'    => esc_html__( 'Titlebar Spacing', 'alone' ),
+		'section'  => 'page_titlebar',
+		'priority' => 10,
+		'default'  => array(
+			'top'  => '75px',
+			'bottom' => '75px',
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'custom_page_titlebar',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	),
 
     // Blog pages
     'blog_pages_layout' => array(
-      'type'        => 'radio',
-      'label'       => esc_html__( 'Layout', 'alone' ),
-      'section'     => 'blog_pages',
-      'default'     => 'content-sidebar',
-      'priority'    => 20,
-      'choices'     => array(
-        'full-content'    => esc_html__( 'Full Content', 'alone' ),
-    		'content-sidebar' => esc_html__( 'Content - Sidebar', 'alone' ),
-    		'sidebar-content' => esc_html__( 'Sidebar - Content', 'alone' ),
-      ),
+		'type'        => 'radio',
+		'label'       => esc_html__( 'Layout', 'alone' ),
+		'section'     => 'blog_pages',
+		'default'     => 'content-sidebar',
+		'priority'    => 20,
+		'choices'     => array(
+			'full-content'    => esc_html__( 'Full Content', 'alone' ),
+			'content-sidebar' => esc_html__( 'Content - Sidebar', 'alone' ),
+			'sidebar-content' => esc_html__( 'Sidebar - Content', 'alone' ),
+		),
     ),
 
 	'blog_pagination_type' => array(
@@ -917,34 +917,34 @@
     ),
 
     'pre_related_posts'  => array(
-			'type'        => 'custom',
-			'section'     => 'single_post',
+		'type'        => 'custom',
+		'section'     => 'single_post',
 	    'default'     => '<hr style="margin:15px 0;"></hr>',
-			'priority'    => 20,
-		),
+		'priority'    => 20,
+	),
 
     'show_related_posts' => array(
-      'type'        => 'toggle',
-      'label'       => esc_html__( 'Show related posts', 'alone' ),
-      'section'     => 'single_post',
-      'default'     => 1,
-      'priority'    => 20,
-      'description' => esc_html__( 'Check this to show related post in single post.', 'alone' ),
+		'type'        => 'toggle',
+		'label'       => esc_html__( 'Show related posts', 'alone' ),
+		'section'     => 'single_post',
+		'default'     => 1,
+		'priority'    => 20,
+		'description' => esc_html__( 'Check this to show related post in single post.', 'alone' ),
     ),
 
     'related_posts_heading' => array(
-      'type'        => 'text',
-      'label'       => esc_html__( 'Related posts heading', 'alone' ),
-      'section'     => 'single_post',
-      'default'     => esc_html__( 'Related Posts', 'alone' ),
-      'priority'    => 20,
-      'active_callback' => array(
-        array(
-          'setting'  => 'show_related_posts',
-          'operator' => '==',
-          'value'    => 1,
-        ),
-      ),
+		'type'        => 'text',
+		'label'       => esc_html__( 'Related posts heading', 'alone' ),
+		'section'     => 'single_post',
+		'default'     => esc_html__( 'Related Posts', 'alone' ),
+		'priority'    => 20,
+		'active_callback' => array(
+			array(
+				'setting'  => 'show_related_posts',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
     ),
 
     'related_posts_number' => array(

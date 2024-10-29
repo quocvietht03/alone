@@ -25,6 +25,9 @@
     padding: 12px 20px;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+    a {
+      color: inherit;
+    }
   }
 
 }
