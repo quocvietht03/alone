@@ -233,4 +233,62 @@
             }
         }
     }
+    .elementor-members--skin-pumori.elementor-filter-wrap .elementor-filter li {
+        &:after {
+            left: 0;
+            right: auto;
+        }
+        &:first-child a {
+            border-radius: 0 50px 50px 0;
+        }
+        &:last-child a {
+            border-radius: 50px 0 0 50px;
+        }
+    }
+
+    &.woocommerce {
+        .woocommerce-toolbar .woocommerce-ordering {
+            svg {
+                margin-left: 4px;
+                margin-right: 0;
+            }
+            .select .select-styled {
+                background-position: center left 12px;
+            }
+        }
+        ul.products li.product .button{
+            &.add_to_cart_button {
+                padding: 0 0 0 10px;
+                &:after {
+                    left: 6px;
+                    right: auto;
+                }
+                &.loading {
+                    padding-left: 24px;
+                    padding-right: 0;
+                }
+            }
+            .text {
+                padding-left: 0;
+                padding-right: 12px;
+            }
+        }
+        .woocommerce-pagination-wrapper .woocommerce-pagination .page-numbers {
+            &:not(:last-child) {
+                border-left: 1px solid #E7E5E4;
+                border-right: none;
+            }
+            &.prev svg {
+                margin-left: 4px;
+                margin-right: 0;
+                transform: rotate(180deg);
+            }
+            &.next svg {
+                margin-left: 0;
+                margin-right: 4px;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
 }
