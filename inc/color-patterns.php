@@ -167,8 +167,9 @@ function alone_custom_colors_css() {
 			box-shadow: 0 0 0 2px ' . $base_color . '; /* base: #0073a8; */
 		}
 
-		.single-post-wrap .entry-content .entry-content-inner blockquote {
-			box-shadow: inset 2px 0px 0px ' . $base_color . '; /* base: #0073a8; */
+		.single-post-wrap .entry-content .entry-content-inner blockquote,
+		.rtl .single-post-wrap .entry-content .entry-content-inner blockquote {
+			border-color:' . $base_color . '; /* base: #0073a8; */
 		}
 
 		/* Hover colors */

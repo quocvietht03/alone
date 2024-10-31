@@ -185,8 +185,6 @@
       }
     }
     .entry-content-inner {
-      font-size: 16px;
-      line-height: 175%;
       &:after {
         content: '';
         display: block;
@@ -224,8 +222,6 @@
         font-weight: 600;
       }
       p {
-        font-size: 16px;
-        line-height: 175%;
         margin: 24px 0;
         &.has-very-light-gray-color {
           color: #FFFFFF;
@@ -292,7 +288,7 @@
         margin: 32px 0;
         padding-left: 56px;
         background: #FFFFFF;
-        box-shadow: inset 2px 0px 0px $main-color;
+        border-left: 2px solid $main-color;
         p {
           font-size: inherit;
           margin: 0;
