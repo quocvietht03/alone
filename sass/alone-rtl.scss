@@ -1,0 +1,322 @@
+@import "variables";
+
+.rtl {
+    .blog-posts-list .post-wrap .entry-image .entry-comment-count, 
+    .related-posts-list .post-wrap .entry-image .entry-comment-count {
+        left: 16px;
+        right: auto;
+    }
+    .entry-social-share {
+        a,
+        span {
+            margin: 0 0 4px 4px;
+        }
+    }
+    .single-post-wrap .entry-content {
+        .entry-content-inner {
+            > ul, 
+            > ol {
+                li {
+                    padding-left: 0;
+                    padding-right: 30px;
+                    &:before {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+            blockquote {
+                position: relative;
+                padding-left: 0;
+                padding-right: 56px;
+                border-left: none;
+                border-right: 2px solid $main-color;
+                @media( max-width: $break-sm - 0.02 ) {
+                    padding-right: 24px;
+                }
+            }
+        }
+        .entry-footer .entry-tag-links {
+            a, 
+            span {
+                margin: 0 0 4px 4px;
+            }
+        }
+    }
+    .post-navigation .nav-next {
+        text-align: left;
+    }
+
+    .single-team-wrap {
+        .entry-content {
+            padding-left: 0;
+            padding-right: 60px;
+        }
+        .entry-title,
+        .entry-socials .title,
+        .entry-contact .title {
+            margin: 0 0 0 30px;
+        }
+        .entry-skills .skill-item .progressbar-text {
+            left: 0 !important;
+            right: auto !important;
+        }
+    }
+    .member-about-wrap, 
+    .member-projects-wrap,
+    .related-members-wrap {
+        .title-wrap {
+            .title {
+                margin: 0 0 0 12px;
+            }
+            .sub-title {
+                margin-left: 30px;
+                margin-right: 0;
+            }
+        }
+        
+    }
+    
+    .elementor-give-forms--skin-grid-toluca .elementor-give-form .give-btn-modal {
+        left: auto;
+        right: 30px;
+    } 
+    .elementor-members--skin-toluca .elementor-member {
+        &__thumbnail {
+            margin-left: 30px;
+            margin-right: 0;
+        }
+        &__content {
+            margin: -70px 30px 0 0;
+        }
+        &__infor {
+            left: 40px;
+            right: auto;
+        }
+        
+    }
+    .elementor-events--skin-cobble-toluca .elementor-event {
+        margin-left: 0;
+        margin-right: 45px;
+        padding: 25px 0 25px 25px;
+        &:first-child .elementor-event {
+            &__date {
+                left: 15px;
+                right: auto;
+            }
+            &__read-more svg {
+                transform: rotate(180deg);
+            }
+        }
+        &__inner {
+            padding-left: 120px;
+            padding-right: 0;
+        }
+        &__thumbnail {
+            margin-left: 0;
+            margin-right: -45px;
+        }
+        &__date {
+            left: -10px;
+            right: auto;
+        }
+        @media( max-width: $break-xs - 0.02 ) {
+            margin-right: 0;
+            padding: 20px;
+            &__inner {
+              padding-left: 0;
+            }
+            &__thumbnail {
+              margin-right: 0;
+            }
+        }
+    }
+    .elementor-posts--skin-grid-toluca .elementor-post{
+        &__date {
+            left: auto;
+            right: 40px;
+        }
+        &__meta li {
+            &:not(:last-child):after {
+                left: -20px;
+                right: auto;
+            }
+            svg {
+                margin-left: 8px;
+                margin-right: 0;
+            }
+        }
+    }
+    .elementor-icon-box--skin-pumori .elementor-icon-box {
+        &__content {
+            padding-left: 0;
+            padding-right: 24px;
+            text-align: right;
+        }
+        &__read-more {
+            left: 0;
+            right: auto;
+            svg {
+                margin: -2px 4px 0 0;
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .elementor-members--skin-pumori.elementor-filter-wrap .elementor-filter li {
+        &:after {
+            left: 0;
+            right: auto;
+        }
+        &:first-child a {
+            border-radius: 0 50px 50px 0;
+        }
+        &:last-child a {
+            border-radius: 50px 0 0 50px;
+        }
+    }
+
+    .give-submit-button-wrap .give-submit, 
+    [id^=give-user-login-submit] .give-submit {
+        float: right;
+    }
+    .give-sidebar .widget .give-wrap .give-donor-container-variation {
+        padding-left: 0;
+        padding-right: 15px;
+    }
+    .give-donor-details__wrapper span:last-child {
+        text-align: right;
+    }
+
+    .tribe-common--breakpoint-medium.tribe-events .tribe-events-c-top-bar__today-button {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+    .tribe-events .tribe-events-c-top-bar__datepicker-button-icon-svg {
+        margin-left: 0;
+        margin-right: var(--tec-spacer-1);
+    }
+    .tribe-common .tribe-common-c-svgicon--caret-left,
+    .tribe-common .tribe-common-c-svgicon--caret-right {
+        transform: rotate(180deg);
+    }
+    .tribe-events .tribe-events-c-top-bar__nav-list-item {
+        padding-left: 15px;
+        padding-right: 0;
+    }
+    .tribe-common--breakpoint-medium.tribe-events {
+        .tribe-events-c-nav__prev-icon-svg {
+            margin-left: 15px;
+            margin-right: 0;
+        }
+        .tribe-events-c-nav__next-icon-svg {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+    }
+    .archive-tribe-events-template .tribe-events .tribe-events-calendar-list{
+        &__event-meta > *:not(:last-child) {
+            margin-left: 24px;
+            margin-right: 0;
+        }
+        &__event-datetime-wrapper svg, 
+        &__event-venue svg {
+            margin: -4px 0 0 4px;
+        }
+    }
+    .tribe-events .tribe-events-calendar-list__month-separator:after {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+    .single-tribe-events-template .tribe-events-single {
+        .tribe-events-back a svg {
+            margin: -2px 0 0 4px;
+            transform: rotate(180deg);
+        }
+        .tribe-events-single-event-schedule svg {
+            margin: -2px 0 0 4px;
+        }
+        .tribe-events-event-meta .tribe-events-meta-list .tribe-events-meta-item span.tribe-meta-label, 
+        .tribe-events-event-meta .tribe-events-meta-list .tribe-events-meta-item div.tribe-meta-label {
+            margin-left: 4px;
+            margin-right: 0;
+        }
+        #tribe-events-footer ul.tribe-events-sub-nav li a svg {
+            transform: rotate(180deg);
+        }
+    }
+    
+    &.single-tribe_events .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon, 
+    .tribe-block__events-link .tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon {
+        margin-left: 0;
+        margin-right: var(--tec-spacer-2);
+    }
+    &.single-tribe_events .tribe-events-c-subscribe-dropdown__export-icon, 
+    .tribe-block__events-link .tribe-events-c-subscribe-dropdown__export-icon {
+        margin-left: var(--tec-spacer-1);
+        margin-right: 0;
+    }
+
+    &.woocommerce {
+        .ribbons {
+            left: auto;
+            right: 10px;
+        }
+        .woocommerce-toolbar .woocommerce-ordering {
+            svg {
+                margin-left: 4px;
+                margin-right: 0;
+            }
+            .select .select-styled {
+                background-position: center left 12px;
+            }
+        }
+        ul.products li.product .button{
+            padding: 0 0 0 15px;
+            &.add_to_cart_button {
+                padding: 0 0 0 10px;
+                &:after {
+                    left: 6px;
+                    right: auto;
+                }
+                &.loading {
+                    padding-left: 24px;
+                    padding-right: 0;
+                }
+            }
+            .text {
+                padding-left: 0;
+                padding-right: 12px;
+            }
+        }
+        .woocommerce-pagination-wrapper .woocommerce-pagination .page-numbers {
+            &:not(:last-child) {
+                border-left: 1px solid #E7E5E4;
+                border-right: none;
+            }
+            &.prev svg {
+                margin-left: 4px;
+                margin-right: 0;
+                transform: rotate(180deg);
+            }
+            &.next svg {
+                margin-left: 0;
+                margin-right: 4px;
+                transform: rotate(180deg);
+            }
+        }
+        div.product {
+            .product_title {
+                padding-left: 160px;
+                padding-right: 0;
+            }
+            .woocommerce-product-rating {
+                left: 0;
+                right: auto;
+            }
+            @media( max-width: $break-md - 0.02 ) {
+                padding-left: 0;
+            }
+        }
+    }
+
+}
