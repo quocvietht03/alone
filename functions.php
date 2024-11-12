@@ -436,6 +436,7 @@ function alone_load_textdomain() {
 	if ( function_exists( 'icl_object_id' ) ) {
 		if (ICL_LANGUAGE_CODE == "ar") {
 			load_textdomain('give', get_stylesheet_directory() . '/languages/give-ar.mo');
+			load_textdomain('alone', get_stylesheet_directory() . '/languages/alone-ar.mo');
 		}
 	}
 	
