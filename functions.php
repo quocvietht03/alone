@@ -442,3 +442,28 @@ function alone_load_textdomain() {
 	
 }
 add_action('init', 'alone_load_textdomain');
+
+function alone_fix_for_yoast_breadcrumb_translation( $links ) {
+	global $post;
+
+	if ( !$post ) {
+		return $links;
+	}
+
+	if ( 'en' == ICL_LANGUAGE_CODE ) {
+			$breadcrumbhome[] = array(
+				'url' => esc_url( get_permalink(3437) ),
+				'text' => 'Home',
+				'allow_html' => true,
+			);
+	} elseif( 'ar' == ICL_LANGUAGE_CODE ) {
+			$breadcrumbhome[] = array(
+				'url' => esc_url( get_permalink(25) ),
+				'text' => 'بيت',
+				'allow_html' => true,
+			);
+	}
+	array_splice( $links, 0, 1, $breadcrumbhome );
+	return $links;
+}
+add_filter( 'wpseo_breadcrumb_links', 'alone_fix_for_yoast_breadcrumb_translation' );
