@@ -437,6 +437,7 @@ function alone_load_textdomain() {
 		if (ICL_LANGUAGE_CODE == "ar") {
 			load_textdomain('give', get_stylesheet_directory() . '/languages/give-ar.mo');
 			load_textdomain('alone', get_stylesheet_directory() . '/languages/alone-ar.mo');
+			load_textdomain('the-events-calendar', get_stylesheet_directory() . '/languages/the-events-calendar-ar.mo');
 		}
 	}
 	
@@ -467,3 +468,26 @@ function alone_fix_for_yoast_breadcrumb_translation( $links ) {
 	return $links;
 }
 add_filter( 'wpseo_breadcrumb_links', 'alone_fix_for_yoast_breadcrumb_translation' );
+
+function enqueue_js_if_wpml_active() {
+    if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
+        wp_enqueue_script(
+            'custom-js-for-wpml',
+            get_theme_file_uri() . '/js/custom-wpml.js', 
+            array( 'jquery' ),
+            '1.0', 
+            true   
+        );
+		
+		$current_language = apply_filters( 'wpml_current_language', null );
+		
+		wp_localize_script(
+			'custom-js-for-wpml',
+			'wpmlData',
+			array(
+				'currentLanguage' => $current_language,
+			)
+    );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_js_if_wpml_active' );
