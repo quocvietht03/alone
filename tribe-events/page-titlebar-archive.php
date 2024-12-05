@@ -16,12 +16,24 @@ if( ! alone_get_option( 'site_titlebar' ) ) {
 <?php if( is_post_type_archive( 'tribe_events' ) ) { ?>
 	<div class="page-titlebar">
 			<div class="container responsive">
-				<div class="page-titlebar-content">
-					<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+				<div class="page-titlebar-content"> 
 					<?php
-						if ( function_exists('yoast_breadcrumb') ) {
-							yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">','</div>' );
+					    if (function_exists('icl_object_id')) {
+							$current_language = apply_filters('wpml_current_language', null);
+
+							if ($current_language === 'ar') {
+								?>
+								<h1 class="page-title">الأحداث</h1>
+								<div id="breadcrumbs" class="breadcrumbs"><span><span>بيت</span> » <span class="breadcrumb_last" aria-current="page">الأحداث</span></span></div>
+								<?php
+							} else {
+								the_archive_title( '<h1 class="page-title">', '</h1>' );
+								if ( function_exists('yoast_breadcrumb') ) {
+									yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">','</div>' );
+								}
+							}
 						}
+						
 					?>
 				</div>
 			</div>
