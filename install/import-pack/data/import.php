@@ -138,7 +138,7 @@ return apply_filters( 'beplus/import_pack/package_demo', [
     ],
     [
       'package_name' => 'alone-multiplelanguages',
-      'preview' => get_template_directory_uri() . '/install/import-pack/images/alone-main-preview.png', // image size 680x475
+      'preview' => get_template_directory_uri() . '/install/import-pack/images/alone-multiplelanguages-preview.png', // image size 680x475
       'url_demo' => 'https://alonethemes.com/',
       'title' => __( 'Alone Multiple Languages', 'alone' ),
       'description' => __( 'Alone multiple languages demo, include home demos & full inner page (Contact, About, Company, blog, etc.).' ),
