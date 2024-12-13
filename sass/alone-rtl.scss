@@ -318,5 +318,13 @@
             }
         }
     }
-
+    .woocommerce-account .woocommerce-MyAccount-navigation {
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: none;
+    }
+    .woocommerce-error::before,
+    .woocommerce-info::before, 
+    .woocommerce-message::before {
+        left: 1.5em;
+    }
 }

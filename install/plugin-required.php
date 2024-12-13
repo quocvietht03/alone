@@ -118,7 +118,36 @@ function alone_register_required_plugins() {
       'slug'          => 'woocommerce',
       'required'      => false,
     ),
-
+    array(
+      'name'     => 'WPML Multilingual CMS',
+      'slug'     => 'sitepress-multilingual-cms',
+      'source'   => $pathfile . 'sitepress-multilingual-cms.zip',
+      'required'      => false,
+    ),
+    array(
+      'name'     => 'WPML String Translation',
+      'slug'     => 'wpml-string-translation',
+      'source'   => $pathfile . 'wpml-string-translation.zip',
+      'required'      => false,
+    ),
+    array(
+      'name'     => 'WPML SEO',
+      'slug'     => 'wp-seo-multilingual',
+      'source'   => $pathfile . 'wp-seo-multilingual.zip',
+      'required'      => false,
+    ),
+    array(
+      'name'     => 'Advanced Custom Fields Multilingual',
+      'slug'     => 'acfml',
+      'source'   => $pathfile . 'acfml.zip',
+      'required'      => false,
+    ),
+    array(
+      'name'     => 'WooCommerce Multilingual & Multicurrency',
+      'slug'     => 'woocommerce-multilingual',
+      'source'   => $pathfile . 'woocommerce-multilingual.zip',
+      'required'      => false,
+    ),
   );
 
 	/*
@@ -140,8 +169,7 @@ function alone_register_required_plugins() {
 		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => true,                   // Automatically activate plugins after installation or not.
-		'message'      => '',                      // Message to output right before the plugins table.
-
+		'message'      => '<h2>WPML Plugins Used for Alone Multiple Languages</h2>',                      // Message to output right before the plugins table.
 	);
 
 	tgmpa( $plugin_includes, $config );

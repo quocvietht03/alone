@@ -203,5 +203,12 @@
 @media (max-width: 991.98px) {
   .rtl.woocommerce div.product {
     padding-left: 0; } }
+.rtl .woocommerce-account .woocommerce-MyAccount-navigation {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: none; }
+.rtl .woocommerce-error::before,
+.rtl .woocommerce-info::before,
+.rtl .woocommerce-message::before {
+  left: 1.5em; }
 
 /*# sourceMappingURL=alone-rtl.css.map */
