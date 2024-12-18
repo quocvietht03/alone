@@ -2220,7 +2220,6 @@
   .woocommerce-additional-fields__field-wrapper {
     background: #FFFFFF;
     margin-bottom: 64px;
-    padding: 32px 40px;
     border-radius: 2px;
   }
 	.woocommerce form .woocommerce-account-fields .form-row label span {
@@ -2449,12 +2448,6 @@
       font-size: 22px;
       margin-bottom: 12px;
     }
-    .woocommerce-billing-fields__field-wrapper,
-    .woocommerce-account-fields__field-wrapper,
-    .woocommerce-shipping-fields__field-wrapper,
-    .woocommerce-additional-fields__field-wrapper {
-      padding: 24px 32px;
-    }
     .woocommerce-checkout-review-order {
       #payment,
       .woocommerce-checkout-payment {
@@ -2492,12 +2485,6 @@
     h3 {
       font-size: 20px;
       margin-bottom: 8px;
-    }
-    .woocommerce-billing-fields__field-wrapper,
-    .woocommerce-account-fields__field-wrapper,
-    .woocommerce-shipping-fields__field-wrapper,
-    .woocommerce-additional-fields__field-wrapper {
-      padding: 24px 16px;
     }
     .woocommerce-checkout-review-order {
       #payment,

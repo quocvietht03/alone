@@ -1954,7 +1954,6 @@
 .woocommerce-checkout .woocommerce-additional-fields__field-wrapper {
   background: #FFFFFF;
   margin-bottom: 64px;
-  padding: 32px 40px;
   border-radius: 2px; }
 .woocommerce-checkout .woocommerce form .woocommerce-account-fields .form-row label span {
   font-weight: 600; }
@@ -2118,11 +2117,6 @@
   .woocommerce-checkout h3 {
     font-size: 22px;
     margin-bottom: 12px; }
-  .woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
-  .woocommerce-checkout .woocommerce-account-fields__field-wrapper,
-  .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper,
-  .woocommerce-checkout .woocommerce-additional-fields__field-wrapper {
-    padding: 24px 32px; }
   .woocommerce-checkout .woocommerce-checkout-review-order #payment,
   .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment {
     padding: 24px 32px; }
@@ -2150,11 +2144,6 @@
   .woocommerce-checkout h3 {
     font-size: 20px;
     margin-bottom: 8px; }
-  .woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
-  .woocommerce-checkout .woocommerce-account-fields__field-wrapper,
-  .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper,
-  .woocommerce-checkout .woocommerce-additional-fields__field-wrapper {
-    padding: 24px 16px; }
   .woocommerce-checkout .woocommerce-checkout-review-order #payment,
   .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment {
     padding: 24px 16px; }
