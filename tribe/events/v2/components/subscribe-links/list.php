@@ -28,9 +28,11 @@ if ( empty( $items ) ) {
 				aria-label="<?php esc_attr__( 'View links to add events to your calendar', 'the-events-calendar' ); ?>"
 			>
 				<?php
-				if (ICL_LANGUAGE_CODE == "ar") {
-					echo esc_html__( 'الاشتراك في التقويم', 'the-events-calendar' ); 
-				}else{
+				if ( function_exists( 'icl_object_id' ) ) {
+					if (ICL_LANGUAGE_CODE == "ar") {
+						echo esc_html__( 'الاشتراك في التقويم', 'the-events-calendar' ); 
+					}
+				} else {
 					echo esc_html__( 'Subscribe to calendar', 'the-events-calendar' ); 
 				}
 				?>
