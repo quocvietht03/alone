@@ -19,6 +19,8 @@
 if ( function_exists( 'icl_object_id' ) ) {
 	if (ICL_LANGUAGE_CODE == "ar") {
 		$placeholder = sprintf( __( 'البحث عن الأحداث', 'the-events-calendar' ), tribe_get_event_label_plural_lowercase() );
+	} else {
+		$placeholder = sprintf( __( 'Search for %s', 'the-events-calendar' ), tribe_get_event_label_plural_lowercase() );
 	}
 } else {
 	$placeholder = sprintf( __( 'Search for %s', 'the-events-calendar' ), tribe_get_event_label_plural_lowercase() );
@@ -29,6 +31,8 @@ if ( function_exists( 'icl_object_id' ) ) {
 if ( function_exists( 'icl_object_id' ) ) {
 	if (ICL_LANGUAGE_CODE == "ar") {
 		$aria_label = sprintf( __( 'أدخل الكلمة الرئيسية. ابحث عن الأحداث باستخدام الكلمة الرئيسية.', 'the-events-calendar' ), tribe_get_event_label_plural_lowercase() );
+	} else {
+		$aria_label = sprintf( __( 'Enter Keyword. Search for %s by Keyword.', 'the-events-calendar' ), tribe_get_event_label_plural_lowercase() );
 	}
 } else {
 	$aria_label = sprintf( __( 'Enter Keyword. Search for %s by Keyword.', 'the-events-calendar' ), tribe_get_event_label_plural_lowercase() );
@@ -43,6 +47,8 @@ if ( function_exists( 'icl_object_id' ) ) {
 		if ( function_exists( 'icl_object_id' ) ) {
 			if (ICL_LANGUAGE_CODE == "ar") {
 				printf( esc_html__( 'أدخل الكلمة الرئيسية. ابحث عن الأحداث باستخدام الكلمة الرئيسية.', 'the-events-calendar' ), tribe_get_event_label_plural() ); 
+			} else {
+				printf( esc_html__( 'Enter Keyword. Search for %s by Keyword.', 'the-events-calendar' ), tribe_get_event_label_plural() );
 			}
 		} else {
 			printf( esc_html__( 'Enter Keyword. Search for %s by Keyword.', 'the-events-calendar' ), tribe_get_event_label_plural() );

@@ -22,6 +22,8 @@
 	if ( function_exists( 'icl_object_id' ) ) {
 		if (ICL_LANGUAGE_CODE == "ar") {
 			printf( esc_html__( 'البحث عن الأحداث', 'the-events-calendar' ), tribe_get_event_label_plural() ); 
+		} else {
+			printf( esc_html__( 'Find %s', 'the-events-calendar' ), tribe_get_event_label_plural() ); 
 		}
 	} else {
 		printf( esc_html__( 'Find %s', 'the-events-calendar' ), tribe_get_event_label_plural() ); 

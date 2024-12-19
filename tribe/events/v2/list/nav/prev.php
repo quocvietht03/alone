@@ -20,6 +20,8 @@ $label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), tribe_get_event_
 if ( function_exists( 'icl_object_id' ) ) {
 	if (ICL_LANGUAGE_CODE == "ar") {
 		$label = sprintf( __( 'الأحداث السابقة', 'the-events-calendar' ), tribe_get_event_label_plural() );
+	} else {
+		$label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), tribe_get_event_label_plural() );
 	}
 } else {
 	$label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), tribe_get_event_label_plural() );
@@ -30,8 +32,10 @@ $events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'the-events-calend
 if ( function_exists( 'icl_object_id' ) ) {
 	if (ICL_LANGUAGE_CODE == "ar") {
 		$events_mobile_friendly_label = sprintf( __( 'الأحداث السابقة', 'the-events-calendar' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
+	} else {
+		$events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
 	}
-}else{
+} else {
 	$events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
 }
 ?>

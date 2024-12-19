@@ -31,6 +31,8 @@ if ( empty( $items ) ) {
 				if ( function_exists( 'icl_object_id' ) ) {
 					if (ICL_LANGUAGE_CODE == "ar") {
 						echo esc_html__( 'الاشتراك في التقويم', 'the-events-calendar' ); 
+					} else {
+						echo esc_html__( 'Subscribe to calendar', 'the-events-calendar' ); 
 					}
 				} else {
 					echo esc_html__( 'Subscribe to calendar', 'the-events-calendar' ); 
