@@ -465,6 +465,12 @@ function alone_fix_for_yoast_breadcrumb_translation( $links ) {
 					'text' => 'بيت',
 					'allow_html' => true,
 				);
+		} else {
+			$breadcrumbhome[] = array(
+				'url' => esc_url( get_permalink(3437) ),
+				'text' => 'Home',
+				'allow_html' => true,
+			);
 		}
 		array_splice( $links, 0, 1, $breadcrumbhome );
 	}
