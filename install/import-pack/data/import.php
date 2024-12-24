@@ -137,11 +137,11 @@ return apply_filters( 'beplus/import_pack/package_demo', [
         'plugins' => $plugin_includes,
     ],
     [
-      'package_name' => 'alone-multiplelanguages',
-      'preview' => get_template_directory_uri() . '/install/import-pack/images/alone-multiplelanguages-preview.png', // image size 680x475
-      'url_demo' => 'https://alonethemes.com/',
-      'title' => __( 'Alone Multiple Languages', 'alone' ),
-      'description' => __( 'Alone multiple languages demo, include home demos & full inner page (Contact, About, Company, blog, etc.).' ),
+      'package_name' => 'alone-rtl',
+      'preview' => get_template_directory_uri() . '/install/import-pack/images/alone-rtl-preview.png', // image size 680x475
+      'url_demo' => 'https://rtl.alonethemes.com/',
+      'title' => __( 'Alone RTL', 'alone' ),
+      'description' => __( 'Alone RTL demo, include home demos & full inner page (Contact, About, Company, blog, etc.).' ),
       'plugins' => $plugin_includes_multiplelanguages,
   ],
 ] );

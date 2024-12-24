@@ -479,7 +479,7 @@ function alone_fix_for_yoast_breadcrumb_translation( $links ) {
 add_filter( 'wpseo_breadcrumb_links', 'alone_fix_for_yoast_breadcrumb_translation' );
 
 function enqueue_js_if_wpml_active() {
-    if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
+    if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
         wp_enqueue_script(
             'custom-js-for-wpml',
             get_theme_file_uri() . '/js/custom-wpml.js', 
