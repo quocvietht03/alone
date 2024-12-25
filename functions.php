@@ -478,6 +478,25 @@ function alone_fix_for_yoast_breadcrumb_translation( $links ) {
 }
 add_filter( 'wpseo_breadcrumb_links', 'alone_fix_for_yoast_breadcrumb_translation' );
 
+add_filter('wpseo_breadcrumb_single_link', 'customize_breadcrumb_archives_text', 10, 2);
+function customize_breadcrumb_archives_text($link_output, $link) {
+	if ( function_exists( 'icl_object_id' ) ) {
+		if (strpos($link_output, 'أرشيف لـ') !== false) {
+			if ( 'en' == ICL_LANGUAGE_CODE ) {
+        $link_output = str_replace('أرشيف لـ', 'Archives for', $link_output);
+    	}
+		} 
+
+		if (strpos($link_output, 'لقد بحثت عن') !== false) {
+			if ( 'en' == ICL_LANGUAGE_CODE ) {
+        $link_output = str_replace('لقد بحثت عن', 'You searched for', $link_output);
+    	}
+		} 
+	}
+    
+    return $link_output;
+}
+
 function enqueue_js_if_wpml_active() {
     if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
         wp_enqueue_script(

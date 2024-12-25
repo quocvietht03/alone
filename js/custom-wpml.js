@@ -7,5 +7,7 @@ jQuery(document).ready(function($) {
         $('.elementor-posts--skin-grid-toluca .elementor-post__content .elementor-post__meta li a span').text('بواسطة');
         $('.elementor-filter-wrap.elementor-members--skin-pumori .elementor-filter__link[data-filter="all"]').text('فريقنا');
         $('.woocommerce .ribbons .ribbon.featured').text('حار');
+        $('.post-type-archive-give_forms .page-titlebar .page-titlebar-content .page-title').text('نماذج التبرع');
+		$('.post-type-archive-give_forms .page-titlebar .page-titlebar-content .breadcrumb_last').text('نماذج التبرع');
     }
 });
