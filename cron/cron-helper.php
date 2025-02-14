@@ -35,5 +35,3 @@ function alone_events_cron_exec() {
 
 }
 add_action('alone_events_cron_hook', 'alone_events_cron_exec');
-
-alone_events_cron_exec();

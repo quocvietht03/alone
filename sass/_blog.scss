@@ -283,12 +283,11 @@
       }
 
       blockquote {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 1.5;
         margin: 32px 0;
-        padding-left: 56px;
-        background: #FFFFFF;
-        border-left: 2px solid $main-color;
+        padding-left: 42px;
+        border-left: 6px solid $main-color;
         p {
           font-size: inherit;
           margin: 0;
@@ -450,10 +449,6 @@
             box-shadow: 0px 2px 0px #FFFFFF;
           }
         }
-      }
-
-      .wp-block-quote {
-        border: none;
       }
 
       .page-links {

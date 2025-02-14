@@ -1246,12 +1246,11 @@ body .__btn-back-list {
         height: 2px;
         background: #0073a8; }
     .single-post-wrap .entry-content .entry-content-inner blockquote {
-      font-size: 24px;
+      font-size: 20px;
       line-height: 1.5;
       margin: 32px 0;
-      padding-left: 56px;
-      background: #FFFFFF;
-      border-left: 2px solid #0073a8; }
+      padding-left: 42px;
+      border-left: 6px solid #0073a8; }
       .single-post-wrap .entry-content .entry-content-inner blockquote p {
         font-size: inherit;
         margin: 0; }
@@ -1402,8 +1401,6 @@ body .__btn-back-list {
           background: rgba(255, 255, 255, 0.1);
           -webkit-box-shadow: 0px 2px 0px #FFFFFF;
           box-shadow: 0px 2px 0px #FFFFFF; }
-    .single-post-wrap .entry-content .entry-content-inner .wp-block-quote {
-      border: none; }
     .single-post-wrap .entry-content .entry-content-inner .page-links {
       margin: 24px 0; }
       .single-post-wrap .entry-content .entry-content-inner .page-links .post-page-numbers {
