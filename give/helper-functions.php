@@ -77,7 +77,7 @@ function alone_give_change_posts_per_page( $query ) {
 		return;
 	}
 
-  if ( is_post_type_archive( 'give_forms' ) ) {
+  if ( is_post_type_archive( 'give_forms' ) || is_post_type_archive( 'give_posts' ) ) {
 
      $query->set( 'posts_per_page', absint( alone_get_option( 'give_posts_per_page' ) ) );
   }

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying archive give pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -18,14 +18,14 @@ get_header();
 */
 do_action( 'alone_page_titlebar_archive' );
 
-$classes = 'archive-page-template';
+$classes = 'archive-donation-page-template';
 
-if( 'full-content' !== alone_get_option( 'blog_pages_layout' ) ) {
+if( 'full-content' !== alone_get_option( 'give_pages_layout' ) ) {
 	$classes .= ( is_active_sidebar( 'blog-sidebar' ) ) ? ' has-sidebar' : '';
-	$classes .= ( 'content-sidebar' === alone_get_option( 'blog_pages_layout' ) ) ? ' right-sidebar' : ' left-sidebar';
+	$classes .= ( 'content-sidebar' === alone_get_option( 'give_pages_layout' ) ) ? ' right-sidebar' : ' left-sidebar';
 }
 
-$pagination_type = alone_get_option( 'blog_pagination_type' );
+$pagination_type = alone_get_option( 'give_pagination_type' );
 
 ?>
 
@@ -34,26 +34,27 @@ $pagination_type = alone_get_option( 'blog_pagination_type' );
 		<div class="container responsive">
 			<main id="main" class="site-main">
 
-					<?php if ( have_posts() ) { ?>
+					<?php if ( $wp_query->have_posts() ) { ?>
 
-						<section class="posts-list blog-posts-list <?php echo esc_attr( $pagination_type ); ?>">
+						<section class="give-forms-list <?php echo esc_attr( $pagination_type ); ?>">
 							<?php
 							// Load posts loop.
 							while ( have_posts() ) {
 								the_post();
-								get_template_part( 'template-parts/content/content' );
+									get_template_part( 'give/content-give-form' );
 							}
 							?>
-						</section>
+						</section> 
 
 						<?php
-						if( 'pagination' !== $pagination_type ) {
+						if( 'pagination' !== $pagination_type ) { 
 							// Load more button
 							
 							if (  $wp_query->max_num_pages > 1 ) {
-								echo '<div class="posts-loadmore">
+								echo '<div class="give-forms-loadmore">
 										<a class="btn-loadmore" href="#">' . esc_html__('More Post', 'alone') . '</a>
 									</div>';
+								
 							}
 						} else {
 							// Previous/next page navigation.
@@ -68,10 +69,9 @@ $pagination_type = alone_get_option( 'blog_pagination_type' );
 					}
 					?>
 
-
 			</main><!-- .site-main -->
 
-			<?php get_sidebar(); ?>
+			<?php get_sidebar( 'give' ); ?>
 
 		</div>
 	</div><!-- #primary -->

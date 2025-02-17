@@ -56,7 +56,7 @@ $pagination_type = alone_get_option( 'blog_pagination_type' );
 						<?php
 						if( 'pagination' !== $pagination_type ) {
 							// Load more button
-							global $wp_query;
+							
 							if (  $wp_query->max_num_pages > 1 ) {
 								echo '<div class="posts-loadmore">
 										<a class="btn-loadmore" href="#">' . esc_html__('More Post', 'alone') . '</a>

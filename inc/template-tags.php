@@ -16,7 +16,7 @@ if ( ! function_exists( 'alone_the_posts_navigation' ) ) :
 			array(
 				'mid_size'  => 2,
 				'prev_text' => alone_get_icon_svg('arrow-left', 12) . __( 'Prev', 'alone' ),
-	      'next_text' => __( 'Next', 'alone' ) . alone_get_icon_svg('arrow-right', 12),
+	      		'next_text' => __( 'Next', 'alone' ) . alone_get_icon_svg('arrow-right', 12),
 			)
 		);
 	}

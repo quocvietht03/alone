@@ -675,6 +675,9 @@ div[id*=give-form] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+	&.pagination {
+		margin-top: 0;
+	}
     @media( max-width: $break-md - 0.02 ) {
       grid-template-columns: 1fr 1fr;
     }

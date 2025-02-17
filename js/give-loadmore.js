@@ -66,18 +66,34 @@ jQuery(function($){
         });
     }
 
-
     if( $('.give-forms-list').hasClass('loadmore-button') ) {
+        var current_page = 1;
         $('.give-forms-loadmore .btn-loadmore').click(function(event){
             event.preventDefault();
-    
+
+            if($(this).parent().hasClass('give-posts-loadmore')) {
+                var posts_per_page = $(this).parent().data('posts_per_page'),
+                    max_page = $(this).parent().data('max_page');
+
+                var posts_arr = {};
+                posts_arr["post_type"] = "give_posts";
+                posts_arr["posts_per_page"] = posts_per_page;
+
+                give_loadmore_params.posts = JSON.stringify(posts_arr);
+                give_loadmore_params.current_page = current_page;
+                give_loadmore_params.max_page = max_page;
+
+                current_page++;
+                $(this).parent().attr('data-current_page', current_page);
+            }
+            
             var button = $(this),
                 data = {
-                'action': 'give_loadmore',
-                'query': give_loadmore_params.posts, // that's how we get params from wp_localize_script() function
-                'page' : give_loadmore_params.current_page
-            };
-     
+                    'action': 'give_loadmore',
+                    'query': give_loadmore_params.posts, // that's how we get params from wp_localize_script() function
+                    'page' : give_loadmore_params.current_page
+                };
+                    
             $.ajax({ // you can also use $.post here
                 url : give_loadmore_params.ajaxurl, // AJAX handler
                 data : data,
@@ -92,14 +108,14 @@ jQuery(function($){
                         give_loadmore_params.current_page++;
      
                         if ( give_loadmore_params.current_page == give_loadmore_params.max_page ) 
-                            button.remove(); // if last page, remove the button
+                            button.parent().remove(); // if last page, remove the button
      
                         // you can also fire the "post-load" event here if you use a plugin that requires it
                         // $( document.body ).trigger( 'post-load' );
                         give_loadmore_callback();
     
                     } else {
-                        button.remove(); // if no data, remove the button as well
+                        button.parent().remove(); // if no data, remove the button as well
                     }
                 }
             });
@@ -111,6 +127,23 @@ jQuery(function($){
         var canBeLoaded = true, // this param allows to initiate the AJAX call only if necessary
 	        bottomOffset = $('.give-forms-list').offset().top + $('.give-forms-list').height(); // the distance (in px) from the page bottom when you want to load more posts
 
+        var current_page = 1;
+
+        if($('.give-forms-loadmore').hasClass('give-posts-loadmore')) {
+            var posts_per_page = $('.give-forms-loadmore').data('posts_per_page'),
+                max_page = $('.give-forms-loadmore').data('max_page');
+
+            var posts_arr = {};
+            posts_arr["post_type"] = "give_posts";
+            posts_arr["posts_per_page"] = posts_per_page;
+
+            give_loadmore_params.posts = JSON.stringify(posts_arr);
+            give_loadmore_params.current_page = current_page;
+            give_loadmore_params.max_page = max_page;
+        } else {
+            return;
+        }
+        
         $(window).scroll(function(){
             var data = {
                 'action': 'give_loadmore',
@@ -119,6 +152,9 @@ jQuery(function($){
             };
 
             if( $(document).scrollTop() > ( $(document).height() - bottomOffset ) && canBeLoaded == true ){
+                current_page++;
+                $('.give-posts-loadmore').attr('data-current_page', current_page);
+                
                 $.ajax({
                     url : give_loadmore_params.ajaxurl,
                     data:data,

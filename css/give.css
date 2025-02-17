@@ -691,6 +691,8 @@ div[id*=give-form].give-display-reveal .give-btn {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px; }
+  .archive-donation-page-template .give-forms-list.pagination {
+    margin-top: 0; }
   @media (max-width: 991.98px) {
     .archive-donation-page-template .give-forms-list {
       grid-template-columns: 1fr 1fr; } }

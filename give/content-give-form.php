@@ -1,9 +1,12 @@
 <?php
-$form_id          = get_the_ID(); // Form ID.
+use Give\Helpers\Form\Template;
+
+$post_id          = get_the_ID();
+$form_id          = get_field('give_form', $post_id);
 $raw_content      = ''; // Raw form content.
 $stripped_content = ''; // Form content stripped of HTML tags and shortcodes.
 $excerpt          = ''; // Trimmed form excerpt ready for display.
-$excerpt_length   = -1;
+$excerpt_length   = 25;
 
 ?>
 
@@ -13,7 +16,7 @@ $excerpt_length   = -1;
 	// Maybe display the featured image.
 	printf(
 		'<div class="give-card__media">%s</div>',
-		get_the_post_thumbnail( $form_id, 'medium' )
+		get_the_post_thumbnail( $post_id, 'medium' )
 	);
 
 	?>
@@ -37,7 +40,7 @@ $excerpt_length   = -1;
 		);
 
 		// Maybe display the form excerpt.
-		if ( has_excerpt( $form_id ) ) {
+		if ( has_excerpt( $post_id ) ) {
 			// Get excerpt from the form post's excerpt field.
 			$raw_content      = get_the_excerpt( $form_id );
 			$stripped_content = wp_strip_all_tags(
@@ -45,7 +48,7 @@ $excerpt_length   = -1;
 			);
 		} else {
 			// Get content from the form post's content field.
-			$raw_content = give_get_meta( $form_id, '_give_form_content', true );
+			$raw_content = get_the_content($post_id);
 
 			if ( ! empty( $raw_content ) ) {
 				$stripped_content = wp_strip_all_tags(
@@ -63,18 +66,22 @@ $excerpt_length   = -1;
 
 		printf( '<p class="give-card__text">%s</p>', $excerpt );
 
-		// Maybe display the form donate button.
-		$atts = array(
-			'id' => $form_id,  // integer.
-			'show_title' => false, // boolean.
-			'show_goal' => false, // boolean.
-			'show_content' => 'none', //above, below, or none
-			'display_style' => 'button', //modal, button, and reveal
-			'continue_button_title' => esc_html__( 'Donate Now', 'alone' ) //string
+		if( !Template::getActiveID($form_id) ) {
+			echo do_shortcode('[give_form id="' . $form_id . '" display_style="modal" continue_button_title="' . esc_html__( 'Donate Now', 'alone' ) . '"]');
+		} else {
+			// Maybe display the form donate button.
+			$atts = array(
+				'id' => $form_id,  // integer.
+				'show_title' => false, // boolean.
+				'show_goal' => false, // boolean.
+				'show_content' => 'none', //above, below, or none
+				'display_style' => 'button', //modal, button, and reveal
+				'continue_button_title' => esc_html__( 'Donate Now', 'alone' ) //string
 
-		);
+			);
 
-		echo give_get_donation_form( $atts );
+			echo give_get_donation_form( $atts );
+		}
 
 		?>
 	</div>
