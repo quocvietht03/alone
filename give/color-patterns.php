@@ -84,6 +84,8 @@ function alone_give_custom_colors_css() {
 		.give-form-wrap .give-form-box-wrap form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
 		.give-form-wrap .give-form-box-wrap form[id*=give-form] > .give-btn,
 		.give-form-wrap .give-form-box-wrap form[id*=give-form] .give-submit,
+		.single-give_posts .give-content-wrap .give-content-col .give-meta li a,
+		.single-give_posts .give-content-wrap .give-content-col .give-content-inner > ol li:before,
 		.give-main-color {
 			color: ' . $base_color . '; /* base: #0073a8; */
 		}
@@ -94,6 +96,7 @@ function alone_give_custom_colors_css() {
 		}
 
 		.give-form-wrap .give-meta li svg,
+		.single-give_posts .give-content-wrap .give-content-col .give-meta li svg,
 		.give-svg-main-color {
 			fill: ' . $base_color . '; /* base: #0073a8; */
 		}
@@ -121,6 +124,8 @@ function alone_give_custom_colors_css() {
 		.give-form-wrap .give-form-content-footer .give-social-share a,
 		.single-give-forms-template.style-5 .give-content-wrap .give-form-col .give-goal-wrap .give-card__button,
 		.single-give-forms-template.style-5 .give-content-wrap .give-form-col .give-donor-wall-recent .give-donor__load_more,
+		.single-give_posts .give-content-wrap .give-content-col .give-content-inner > ul li:before,
+		.single-give_posts .give-content-wrap .give-content-col .give-form-content-footer .give-tag-links a,
 		.give-main-background-color {
 			background-color: ' . $base_color . '; /* base: #0073a8; */
 		}
@@ -131,17 +136,18 @@ function alone_give_custom_colors_css() {
 		form[id*=give-form] #give-donation-level-button-wrap .give-btn:hover,
 		form[id*=give-form] #give-donation-level-button-wrap .give-btn.give-default-level,
 		form[id*=give-form] #give_terms_agreement input[type=checkbox]:checked + label:before,
+		.single-give_posts .give-content-wrap .give-content-col .give-content-inner blockquote,
 		.give-main-border-color {
 			border-color: ' . $base_color . '; /* base: #0073a8; */
 		}
 
 		/* Hover colors */
-		.give-main-color-hover {
-			color: ' . $hover_color . '; /* base: #005177; */
+		.give-main-color-hover{
+			color: ' . $hover_color . '; /* hover: #005177; */
 		}
 
 		.give-svg-main-color-hover {
-			fill: ' . $hover_color . '; /* base: #005177; */
+			fill: ' . $hover_color . '; /* hover: #005177; */
 		}
 
 		.give-btn:hover,
@@ -155,13 +161,25 @@ function alone_give_custom_colors_css() {
 		.give-form-wrap .give-form-content-footer .give-social-share a:hover,
 		.single-give-forms-template.style-5 .give-content-wrap .give-form-col .give-goal-wrap .give-card__button:hover,
 		.single-give-forms-template.style-5 .give-content-wrap .give-form-col .give-donor-wall-recent .give-donor__load_more:hover,
+		.single-give_posts .give-content-wrap .give-content-col .give-form-content-footer .give-tag-links a:hover,
 		.give-main-background-color-hover {
-			background-color: ' . $hover_color . '; /* base: #005177; */
+			background-color: ' . $hover_color . '; /* hover: #005177; */
 		}
 
-
 		.give-main-border-color-hover {
-			border-color: ' . $hover_color . '; /* base: #005177; */
+			border-color: ' . $hover_color . '; /* hover: #005177; */
+		}
+		
+		.single-give_posts .give-content-wrap .give-content-col .give-content-inner p a {
+			color: ' . $base_color . '; /* base: #0073a8; */
+			box-shadow: 0px 1px 0px ' . $base_color . ';
+		}
+		.single-give_posts .give-content-wrap .give-content-col .give-content-inner p a:hover{
+			box-shadow: 0px 2px 0px ' . $base_color . ';
+		}
+		.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-top .give-grid__item .give-donor-details__total, 
+		.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-recent .give-grid__item .give-donor-details__total {
+			color: ' . $base_color . ' !important; /* base: #0073a8; */
 		}';
 
 	/**
