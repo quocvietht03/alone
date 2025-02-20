@@ -348,4 +348,46 @@
     .woocommerce-message {
         padding: 14px 42px 14px 16px;
     }
-}
+    
+    &.single-give_posts .give-content-wrap {
+        .give-form-col {
+            .give-donor-wall-top, 
+            .give-donor-wall-recent {
+                .give-grid__item .give-donor-container-variation {
+                    padding-left: 0;
+                    padding-right: 15px;
+                }
+            }
+            .give-donor-wall-top .give-grid__item:after {
+                left: 0;
+                right: auto;
+            }
+        }
+        .give-content-col {
+            .give-content-inner {
+                > ol li,
+                > ul li {
+                    padding-left: 0;
+                    padding-right: 30px;
+                    &:before {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+                blockquote {
+                    padding-left: 0;
+                    padding-right: 42px;
+                    border-left: none;
+                    border-right-width: 6px;
+                    border-right-style: solid;
+                }
+            }
+            .give-form-content-footer .give-tag-links {
+                span,
+                a {
+                    margin: 0 0 4px 4px;
+                }
+            }
+        }
+    }
+} 
