@@ -117,6 +117,19 @@
   padding-right: 15px; }
 .rtl .give-donor-details__wrapper span:last-child {
   text-align: right; }
+.rtl.single-give_posts .give-content-wrap .give-content-col .give-content-inner > ol li {
+  padding-left: 0;
+  padding-right: 30px; }
+  .rtl.single-give_posts .give-content-wrap .give-content-col .give-content-inner > ol li:before {
+    left: auto;
+    right: 0; }
+.rtl.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-top .give-grid__item:after {
+  left: 0;
+  right: auto; }
+.rtl.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-top .give-grid__item .give-donor-container-variation,
+.rtl.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-recent .give-grid__item .give-donor-container-variation {
+  padding-left: 0;
+  padding-right: 15px; }
 .rtl .tribe-common--breakpoint-medium.tribe-events .tribe-events-c-top-bar__today-button {
   margin-left: 15px;
   margin-right: 0; }

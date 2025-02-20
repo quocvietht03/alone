@@ -186,7 +186,28 @@
     .give-donor-details__wrapper span:last-child {
         text-align: right;
     }
-
+    &.single-give_posts {
+        .give-content-wrap .give-content-col .give-content-inner > ol li {
+            padding-left: 0;
+            padding-right: 30px;
+            &:before {
+                left: auto;
+                right: 0;
+            }
+        }
+        .give-content-wrap .give-form-col {
+            .give-donor-wall-top .give-grid__item:after {
+                left: 0;
+                right: auto;
+                
+            }
+            .give-donor-wall-top .give-grid__item .give-donor-container-variation, 
+            .give-donor-wall-recent .give-grid__item .give-donor-container-variation {
+                padding-left: 0;
+                padding-right: 15px;
+            }
+        }
+    }
     .tribe-common--breakpoint-medium.tribe-events .tribe-events-c-top-bar__today-button {
         margin-left: 15px;
         margin-right: 0;
