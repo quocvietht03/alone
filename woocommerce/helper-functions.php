@@ -74,7 +74,7 @@ function alone_woocommerce_theme_custom_style() {
 
   $theme_styles = '';
 
-	if ( 199 !== absint( alone_get_option('main_color') ) ) {
+  if ( 'default' !== alone_get_option('custom_colors') || 199 !== absint( alone_get_option('main_color') ) ) {
 		// Colors
 		require_once get_parent_theme_file_path( '/woocommerce/color-patterns.php' );
 		$theme_styles .= alone_woocommerce_custom_colors_css();

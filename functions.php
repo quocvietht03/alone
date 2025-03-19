@@ -276,7 +276,7 @@ function alone_theme_custom_style() {
 	}
 
 
-	if ( 199 !== absint( alone_get_option('main_color') ) ) {
+	if ( 'default' !== alone_get_option('custom_colors') || 199 !== absint( alone_get_option('main_color') ) ) {
 		// Colors
 		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 		$theme_styles .= alone_custom_colors_css();
