@@ -19,7 +19,7 @@ $website = tribe_get_venue_website_link();
 ?>
 
 <div class="tribe-events-meta-group tribe-events-meta-group-venue">
-	<h2 class="tribe-events-single-section-title"> <?php esc_html_e( tribe_get_venue_label_singular(), 'the-events-calendar' ) ?> </h2>
+	<h2 class="tribe-events-single-section-title"> <?php echo tribe_get_venue_label_singular(); ?> </h2>
 	<div class="tribe-events-meta-list">
 		<?php do_action( 'tribe_events_single_meta_venue_section_start' ) ?>
 
@@ -43,15 +43,15 @@ $website = tribe_get_venue_website_link();
 
 		<?php if ( ! empty( $phone ) ): ?>
 			<div class="tribe-events-meta-item">
-				<span class="tribe-venue-tel-label tribe-meta-label"> <?php esc_html_e( 'Phone:', 'the-events-calendar' ) ?> </span>
-				<span class="tribe-venue-tel"> <?php echo $phone ?> </span>
+				<span class="tribe-venue-tel-label tribe-meta-label"> <?php esc_html_e( 'Phone:', 'alone' ) ?> </span>
+				<?php echo '<span class="tribe-venue-tel"> ' . $phone . '</span>'; ?> 
 			</div>
 		<?php endif ?>
 
 		<?php if ( ! empty( $website ) ): ?>
 			<div class="tribe-events-meta-item">
-				<span class="tribe-venue-url-label tribe-meta-label"> <?php esc_html_e( 'Website:', 'the-events-calendar' ) ?> </span>
-				<span class="tribe-venue-url"> <?php echo $website ?> </span>
+				<span class="tribe-venue-url-label tribe-meta-label"> <?php esc_html_e( 'Website:', 'alone' ) ?> </span>
+				<?php echo '<span class="tribe-venue-url">' . $website . '</span>'; ?> 
 			</div>
 		<?php endif ?>
 

@@ -211,7 +211,7 @@ function alone_give_get_donation_form( $args = array() ) {
 	//do_action( 'give_pre_form_output', $form->ID, $args, $form );
 
 	?>
-	<div id="give-form-<?php echo $form->ID; ?>-wrap" class="<?php echo $form_wrap_classes; ?>">
+	<div id="give-form-<?php echo esc_attr($form->ID); ?>-wrap" class="<?php echo esc_attr($form_wrap_classes); ?>">
 		<?php
 		if ( $form->is_close_donation_form() ) {
 
@@ -232,7 +232,7 @@ function alone_give_get_donation_form( $args = array() ) {
 			//$form_title = apply_filters( 'give_form_title', '<h2 class="give-form-title">' . get_the_title( $form->ID ) . '</h2>' );
 
 			//if ( ! doing_action( 'give_single_form_summary' ) && true === $args['show_title'] ) {
-			//	echo $form_title;
+			//	echo esc_html($form_title);
 			//}
 
 			/**
@@ -267,8 +267,8 @@ function alone_give_get_donation_form( $args = array() ) {
 			<form <?php echo give_get_attribute_str( $form_html_tags ); ?> method="post">
 				<!-- The following field is for robots only, invisible to humans: -->
 				<span class="give-hidden" style="display: none !important;">
-					<label for="give-form-honeypot-<?php echo $form->ID; ?>"></label>
-					<input id="give-form-honeypot-<?php echo $form->ID; ?>" type="text" name="give-honeypot"
+					<label for="give-form-honeypot-<?php echo esc_attr($form->ID); ?>"></label>
+					<input id="give-form-honeypot-<?php echo esc_attr($form->ID); ?>" type="text" name="give-honeypot"
 						   class="give-honeypot give-hidden"/>
 				</span>
 
@@ -357,7 +357,7 @@ function alone_give_forms_load_more_scripts() {
 	  wp_register_script( 'give-loadmore', get_stylesheet_directory_uri() . '/js/give-loadmore.js', array('jquery') );
 
 	  wp_localize_script( 'give-loadmore', 'give_loadmore_params', array(
-		  'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+		  'ajaxurl' => home_url() . '/wp-admin/admin-ajax.php',
 		  'posts' => json_encode( $wp_query->query_vars ),
 		  'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		  'max_page' => $wp_query->max_num_pages

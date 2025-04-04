@@ -25,11 +25,11 @@ if ( empty( $event->featured ) ) {
 <div class="tribe-events-calendar-month__calendar-event-tooltip-datetime-wrap">
 	<em
 		class="tribe-events-calendar-month__calendar-event-tooltip-datetime-featured-icon tribe-common-svgicon tribe-common-svgicon--featured"
-		aria-label="<?php esc_attr_e( 'Featured', 'the-events-calendar' ); ?>"
-		title="<?php esc_attr_e( 'Featured', 'the-events-calendar' ); ?>"
+		aria-label="<?php esc_attr_e( 'Featured', 'alone' ); ?>"
+		title="<?php esc_attr_e( 'Featured', 'alone' ); ?>"
 	>
 	</em>
 	<span class="tribe-events-calendar-month__calendar-event-tooltip-datetime-featured-text">
-		<?php esc_html_e( 'Featured', 'the-events-calendar' ); ?>
+		<?php esc_html_e( 'Featured', 'alone' ); ?>
 	</span>
 </div>

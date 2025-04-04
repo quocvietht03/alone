@@ -61,7 +61,7 @@ echo '<div ' . $data_attr . '>';
 			<?php
 			echo sprintf(
 				/* translators: %s: percentage of the amount raised compared to the goal target */
-				__( '<span class="give-percentage">%s%%</span> funded', 'give' ),
+				__( '<span class="give-percentage">%s%%</span> funded', 'alone' ),
 				round( $progress )
 			);
 			?>

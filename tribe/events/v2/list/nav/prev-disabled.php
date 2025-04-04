@@ -13,27 +13,27 @@
  */
 
 /* translators: %s: Event (plural or singular). */
-$label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), tribe_get_event_label_plural() );
+$label = sprintf( __( 'Previous %1$s', 'alone' ), tribe_get_event_label_plural() );
 if ( function_exists( 'icl_object_id' ) ) {
 	if (ICL_LANGUAGE_CODE == "ar") {
-		$label = sprintf( __( 'الأحداث السابقة', 'the-events-calendar' ), tribe_get_event_label_plural() );
+		$label = sprintf( __( 'الأحداث السابقة', 'alone' ), tribe_get_event_label_plural() );
 	} else {
-		$label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), tribe_get_event_label_plural() );
+		$label = sprintf( __( 'Previous %1$s', 'alone' ), tribe_get_event_label_plural() );
 	}
 } else {
-	$label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), tribe_get_event_label_plural() );
+	$label = sprintf( __( 'Previous %1$s', 'alone' ), tribe_get_event_label_plural() );
 }
 
 /* translators: %s: Event (plural or singular). */
-$events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
+$events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'alone' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
 if ( function_exists( 'icl_object_id' ) ) {
 	if (ICL_LANGUAGE_CODE == "ar") {
-		$events_mobile_friendly_label = sprintf( __( 'الأحداث السابقة', 'the-events-calendar' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
+		$events_mobile_friendly_label = sprintf( __( 'الأحداث السابقة', 'alone' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
 	} else {
-		$events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
+		$events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'alone' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
 	}
 } else {
-	$events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'the-events-calendar' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
+	$events_mobile_friendly_label = sprintf( __( 'Previous %1$s', 'alone' ), '<span class="tribe-events-c-nav__prev-label-plural tribe-common-a11y-visual-hide">' . tribe_get_event_label_plural() . '</span>' );
 }
 ?>
 <li class="tribe-events-c-nav__list-item tribe-events-c-nav__list-item--prev">

@@ -183,7 +183,7 @@ echo '<div ' . $data_attr . '>';
 
 					echo sprintf(
 						/* translators: 1: amount of income raised 2: goal target amount. */
-						__( '<span class="income" data-amounts="%1$s">%2$s</span> of <span class="goal-text" data-amounts="%3$s">%4$s</span> raised', 'give' ),
+						__( '<span class="income" data-amounts="%1$s">%2$s</span> of <span class="goal-text" data-amounts="%3$s">%4$s</span> raised', 'alone' ),
 						esc_attr( wp_json_encode( $income_amounts, JSON_PRETTY_PRINT ) ),
 						esc_attr( $formatted_income ),
 						esc_attr( wp_json_encode( $goal_amounts, JSON_PRETTY_PRINT ) ),
@@ -193,7 +193,7 @@ echo '<div ' . $data_attr . '>';
 				elseif ( 'percentage' === $goal_format ) :
 
 					echo sprintf( /* translators: %s: percentage of the amount raised compared to the goal target */
-						__( '<span class="give-percentage">%s%%</span> funded', 'give' ),
+						__( '<span class="give-percentage">%s%%</span> funded', 'alone' ),
 						round( $progress )
 					);
 
@@ -204,7 +204,7 @@ echo '<div ' . $data_attr . '>';
 							'<span class="income">%1$s</span> of <span class="goal-text">%2$s</span> donation',
 							'<span class="income">%1$s</span> of <span class="goal-text">%2$s</span> donations',
 							$goal,
-							'give'
+							'alone'
 						),
 						give_format_amount( $income, array( 'decimal' => false ) ),
 						give_format_amount( $goal, array( 'decimal' => false ) )
@@ -217,7 +217,7 @@ echo '<div ' . $data_attr . '>';
 							'<span class="income">%1$s</span> of <span class="goal-text">%2$s</span> donor',
 							'<span class="income">%1$s</span> of <span class="goal-text">%2$s</span> donors',
 							$goal,
-							'give'
+							'alone'
 						),
 						give_format_amount( $income, array( 'decimal' => false ) ),
 						give_format_amount( $goal, array( 'decimal' => false ) )
@@ -238,7 +238,7 @@ echo '<div ' . $data_attr . '>';
         ?>
         <div class="progress-bar">
             <div class="give-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="<?php echo esc_attr( $progress_bar_value ); ?>">
-                <span style="<?php echo $style; ?>"></span>
+                <span style="<?php echo esc_attr($style); ?>"></span>
             </div>
         </div>
     <?php endif; ?>

@@ -43,7 +43,7 @@ $website = tribe_get_organizer_website_link();
 				?>
 				<div class="tribe-events-meta-item">
 					<span class="tribe-organizer-tel-label tribe-meta-label">
-						<?php esc_html_e( 'Phone:', 'the-events-calendar' ) ?>
+						<?php esc_html_e( 'Phone:', 'alone' ) ?>
 					</span>
 					<span class="tribe-organizer-tel">
 						<?php echo esc_html( $phone ); ?>
@@ -56,7 +56,7 @@ $website = tribe_get_organizer_website_link();
 				?>
 				<div class="tribe-events-meta-item">
 					<span class="tribe-organizer-email-label tribe-meta-label">
-						<?php esc_html_e( 'Email:', 'the-events-calendar' ) ?>
+						<?php esc_html_e( 'Email:', 'alone' ) ?>
 					</span>
 					<span class="tribe-organizer-email">
 						<?php echo esc_html( $email ); ?>
@@ -69,11 +69,10 @@ $website = tribe_get_organizer_website_link();
 				?>
 				<div class="tribe-events-meta-item">
 					<span class="tribe-organizer-url-label tribe-meta-label">
-						<?php esc_html_e( 'Website:', 'the-events-calendar' ) ?>
+						<?php esc_html_e( 'Website:', 'alone' ) ?>
 					</span>
-					<span class="tribe-organizer-url">
-						<?php echo $website; ?>
-					</span>
+					
+					<?php echo '<span class="tribe-organizer-url">' . $website . '</span>'; ?>
 				</div>
 				<?php
 			}//end if

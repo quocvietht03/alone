@@ -12,7 +12,7 @@
  *
  * @see         https://docs.woocommerce.com/document/template-structure/
  * @package     WooCommerce\Templates
- * @version     3.6.0
+ * @version     9.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ if ( 1 !== absint( alone_get_option( 'product_catalog_toolbar' ) ) ) {
 ?>
 <form class="woocommerce-ordering" method="get">
 	<?php echo alone_get_icon_svg('woo-filter', 16); ?>
-	<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
+	<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'alone' ); ?>">
 		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
 			<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
 		<?php endforeach; ?>

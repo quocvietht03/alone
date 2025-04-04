@@ -26,12 +26,10 @@ $event_date_attr = $event->dates->start->format( Dates::DBDATEFORMAT );
 <div class="tribe-events-calendar-month-mobile-events__mobile-event-datetime tribe-common-b2">
 	<?php if ( $event->all_day ) : ?>
 		<time datetime="<?php echo esc_attr( $event->dates->start->format( Dates::DBDATEFORMAT ) ) ?>">
-			<?php esc_html_e( 'All day', 'the-events-calendar' ); ?>
+			<?php esc_html_e( 'All day', 'alone' ); ?>
 		</time>
 	<?php else : ?>
-		<time datetime="<?php echo esc_attr( $event_date_attr ); ?>">
-			<?php echo $event->schedule_details->value(); ?>
-		</time>
+		<?php echo '<time datetime="' . esc_attr( $event_date_attr ) . '">' . $event->schedule_details->value() .  '</time>'; ?>
 	<?php endif; ?>
 	<?php $this->template( 'month/mobile-events/mobile-day/mobile-event/date/meta', [ 'event' => $event ] ); ?>
 </div>

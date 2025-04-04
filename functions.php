@@ -168,6 +168,9 @@ if ( ! function_exists( 'alone_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+		add_theme_support( "custom-header" );
+		add_theme_support( "custom-background" );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'alone_setup' );
@@ -251,11 +254,13 @@ function alone_scripts() {
 		wp_enqueue_script( 'alone-priority-menu', get_theme_file_uri( '/js/priority-menu.js' ), array(), wp_get_theme()->get( 'Version' ), true );
 	}
 
-	wp_enqueue_script( 'alone-main', get_theme_file_uri( '/js/main.js' ), array('jquery'), wp_get_theme()->get( 'Version' ), true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_script( 'alone-jquery.validate.min', get_theme_file_uri( '/js/jquery.validate.min.js' ), array('jquery'), wp_get_theme()->get( 'Version' ), true );
 	}
+
+	wp_enqueue_script( 'alone-main', get_theme_file_uri( '/js/main.js' ), array('jquery'), wp_get_theme()->get( 'Version' ), true );
+
 }
 add_action( 'wp_enqueue_scripts', 'alone_scripts' );
 
@@ -329,16 +334,6 @@ function alone_editor_customizer_styles() {
 	wp_enqueue_style( 'alone-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.1', 'all' );
 }
 add_action( 'enqueue_block_editor_assets', 'alone_editor_customizer_styles' );
-
-/**
- * Support upload mimes
- */
-function alone_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-
-  return $mimes;
-}
-add_filter('upload_mimes', 'alone_mime_types');
 
 /**
  * SVG Icons class.

@@ -14,8 +14,8 @@
     </div>
     <div class="sermone-info">
       <div class="more-info">
-        <?php echo __( 'on', 'sermone' ) ?> <u><?php echo sermone_get_field( 'sermon_date_preached', $post_id ) ?></u>
-        <?php echo get_the_term_list( $post_id, 'sermone_preacher', __( '— by ', 'sermone' ), ', ', '.' ) ?>
+        <?php echo __( 'on', 'alone' ) ?> <u><?php echo sermone_get_field( 'sermon_date_preached', $post_id ) ?></u>
+        <?php echo get_the_term_list( $post_id, 'sermone_preacher', __( '— by ', 'alone' ), ', ', '.' ) ?>
       </div>
       <div class="in-tax">
         <?php sermone_post_in_tax_html( $post_id ) ?>

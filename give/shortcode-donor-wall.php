@@ -40,15 +40,15 @@ $tribute_background_color = !empty($atts['color']) ? $atts['color'] . '20' : '#2
                 ?>
                 <div class="give-donor-container-variation"
                      style="
-                            flex-direction: <?php echo $atts['show_avatar'] ? 'column' : 'row'; ?>;
-                            align-items:  <?php echo $atts['show_avatar'] ? 'center' : 'flex-end'; ?>;
+                            flex-direction: <?php echo esc_attr($atts['show_avatar']) ? 'column' : 'row'; ?>;
+                            align-items:  <?php echo esc_attr($atts['show_avatar']) ? 'center' : 'flex-end'; ?>;
                          ">
                     <?php if ( $atts['show_name'] ) : ?>
                         <h3 class="give-donor-container-variation__name">
                             <?php
                             // Get donor name based on donation parameter.
                             $donor_name = ! empty( $donation['_give_anonymous_donation'] )
-                                ? esc_html__( 'Anonymous', 'give' )
+                                ? esc_html__( 'Anonymous', 'alone' )
                                 : trim( $donation['_give_donor_billing_first_name'] . ' ' . $donation['_give_donor_billing_last_name'] );
                             ?>
                             <?php echo esc_html( $donor_name ); ?>
@@ -143,7 +143,7 @@ $tribute_background_color = !empty($atts['color']) ? $atts['color'] . '20' : '#2
                     if ($atts['show_total']) {
                         echo sprintf(
                             '<span class=\'give - donor - details__amount_donated\'>%1$s</span>',
-                                    esc_html__('Amount Donated', 'give')
+                                    esc_html__('Amount Donated', 'alone')
                                 );
                             }
                     ?>

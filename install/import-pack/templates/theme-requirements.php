@@ -3,7 +3,7 @@
  * Import pack theme requirements
  *
  * @package Import Pack
- * @author BePlus
+ * @author Bearsthemes
  */
 
 function let_to_num( $size ) {
@@ -30,7 +30,7 @@ function let_to_num( $size ) {
 }
 
 $environment = array(
-  'site_url'                  => get_option( 'siteurl' ),
+  'home_url'                  => get_option( 'siteurl' ),
   'wp_memory_limit'           => let_to_num( @ini_get( 'memory_limit' ) ),
   'php_version'               => phpversion(),
   'php_post_max_size'         => let_to_num( ini_get( 'post_max_size' ) ),
@@ -51,7 +51,7 @@ $environment = array(
       <div class="help"><?php echo esc_html__( 'The root URL of your site.', 'alone' ); ?></div>
     </div>
     <div class="value">
-      <?php echo esc_html( $environment['site_url'] ); ?>
+      <?php echo esc_html( $environment['home_url'] ); ?>
     </div>
   </div>
 
@@ -163,7 +163,7 @@ $environment = array(
 	      if ( $environment['gzip_enabled'] ) {
 	        echo '<mark class="yes"><span class="dashicons dashicons-yes"></span></mark>';
 	      } else {
-	        echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . sprintf( esc_html__( 'Your server does not support the %s function - this is required to use the GeoIP database from MaxMind.', 'alone' ), '<a href="https://php.net/manual/en/zlib.installation.php">gzopen</a>' ) . '</mark>';
+	        echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . esc_html__( 'Your server does not support the gzopen function - this is required to use the GeoIP database from MaxMind.', 'alone' ) . '</mark>';
 	      }
       ?>
     </div>

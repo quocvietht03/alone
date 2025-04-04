@@ -72,11 +72,8 @@ function alone_site_branding_logo_text() {
      <?php
      $description = get_bloginfo( 'description', 'display' );
      if ( $description || is_customize_preview() ) :
-       ?>
-         <div class="site-description">
-           <?php echo $description; ?>
-         </div>
-     <?php endif; ?>
+      echo '<div class="site-description">' . $description . '</div>'; 
+    endif; ?>
    </div>
  <?php
 }
@@ -440,7 +437,7 @@ function alone_posts_load_more_scripts() {
 	wp_register_script( 'posts-loadmore', get_stylesheet_directory_uri() . '/js/posts-loadmore.js', array('jquery') );
  
 	wp_localize_script( 'posts-loadmore', 'posts_loadmore_params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+		'ajaxurl' => home_url() . '/wp-admin/admin-ajax.php',
 		'posts' => json_encode( $wp_query->query_vars ),
 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'max_page' => $wp_query->max_num_pages
@@ -479,38 +476,3 @@ function alone_posts_loadmore_ajax_handler(){
 
 add_action('wp_ajax_posts_loadmore', 'alone_posts_loadmore_ajax_handler');
 add_action('wp_ajax_nopriv_posts_loadmore', 'alone_posts_loadmore_ajax_handler');
-
-/**
- * Validation form comment
- */
-add_action('wp_footer', 'alone_comment_validation_init');
-function alone_comment_validation_init(){
-  if(comments_open() ) { ?>
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-    <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      jQuery('#commentform').validate({
-          rules: {
-            author: {
-              required: true,
-              minlength: 2
-            },
-            email: {
-              required: true,
-              email: true
-            },
-            comment: {
-              required: true,
-              minlength: 20
-            }
-          },
-          errorElement: "div",
-          errorPlacement: function(error, element) {
-            element.after(error);
-          }
-      });
-    });
-    </script>
-    <?php
-    }
-}

@@ -127,7 +127,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 			? array(
 				'success' => true,
 				'data'    => array(
-					'message' => esc_html__( 'Plugin is already installed.', 'import_pack' )
+					'message' => esc_html__( 'Plugin is already installed.', 'alone' )
 				)
 			)
 			: self::process_package( $plugin, 'install' );
@@ -158,7 +158,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 			return array(
 				'success' => false,
 				'data'    => array(
-					'message' => sprintf( esc_html__( 'It was not possible to activate %s. Because it isn\'t installed.', 'import_pack' ), $plugin['name'] )
+					'message' => sprintf( esc_html__( 'It was not possible to activate %s. Because it isn\'t installed.', 'alone' ), $plugin['name'] )
 				)
 			);
     }
@@ -189,7 +189,7 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 
 		if ( ! current_user_can( 'activate_plugins' ) ) {
 			return array(
-				'message' => sprintf( esc_html__( 'Current user can\'t activate plugins.', 'import_pack' ), WP_PLUGIN_DIR ),
+				'message' => sprintf( esc_html__( 'Current user can\'t activate plugins.', 'alone' ), WP_PLUGIN_DIR ),
 			);
 		}
 		$status = array();
@@ -225,11 +225,11 @@ class Import_Pack_Plugin_Installer_Helper extends Import_Pack_Installer_Helper {
 				)
 			) );
 			if ( is_wp_error( $request ) ) {
-				$res = new WP_Error( 'plugins_api_failed', esc_html__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="http://wordpress.org/support/">support forums</a>.', 'import_pack' ), $request->get_error_message() );
+				$res = new WP_Error( 'plugins_api_failed', esc_html__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="http://wordpress.org/support/">support forums</a>.', 'alone' ), $request->get_error_message() );
 			} else {
 				$res = maybe_unserialize( wp_remote_retrieve_body( $request ) );
 				if ( ! is_object( $res ) && ! is_array( $res ) ) {
-					$res = new WP_Error( 'plugins_api_failed', esc_html__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="http://wordpress.org/support/">support forums</a>.', 'import_pack' ), wp_remote_retrieve_body( $request ) );
+					$res = new WP_Error( 'plugins_api_failed', esc_html__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="http://wordpress.org/support/">support forums</a>.', 'alone' ), wp_remote_retrieve_body( $request ) );
 				}
 			}
 		} elseif ( ! is_wp_error( $res ) ) {

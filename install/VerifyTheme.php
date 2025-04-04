@@ -132,7 +132,11 @@ function isInstallationLegit( $data = false ) {
   if(!$data) return false;
   $__verify = get_option('__verify');
   if( $__verify && $__verify == ITEM_ID ) return true;
-  $server_name = empty($_SERVER['SERVER_NAME']) ? $_SERVER['HTTP_HOST']: $_SERVER['SERVER_NAME'];
+
+  $home_url = home_url();
+  $parse_url = parse_url($home_url);
+  $server_name =  $parse_url['host'];
+
   if ( isLocalhost($server_name) ) { return true; }
 
   if (!empty($data['purchase_code'])) {
@@ -219,7 +223,7 @@ class VerifyTheme {
   	function verifytheme_admin_notice__warning() {
   		$class = 'notice notice-error is-dismissible';
   		$setting_page = admin_url('options-general.php?page=verifytheme_settings');
-  		$message = __( '<b>Important notice:</b> In order to receive all benefits of our theme, you need to activate your copy of the theme. <br />By activating the theme license you will unlock premium options - import demo data, install & update plugins and official support. Please visit <a href="'.$setting_page.'">Envato Settings</a> page to activate your copy of the theme', 'verifytheme' );
+      $message = sprintf( __( '<b>Important notice:</b> In order to receive all benefits of our theme, you need to activate your copy of the theme. <br />By activating the theme license you will unlock premium options - import demo data, install & update plugins and official support. Please visit  %1$s page to activate your copy of the theme', 'alone' ), '<a href="'.$setting_page.'">' . __('Envato Settings', 'alone') . '</a>' );
   		printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), wp_kses( $message, array('b' => array(), 'br' => array(), 'a' => array('href' => array())) ) );
   	}
 
@@ -229,7 +233,7 @@ class VerifyTheme {
       wp_enqueue_style( 'verifytheme' );
 	  if(!$this->isInstallationLegit){
         $setting_page = admin_url('options-general.php?page=verifytheme_settings');
-        $message = esc_html__( "Important notice: In order to receive all benefits of our theme, you need to activate your copy of the theme. \nBy activating the theme license you will unlock premium options - import demo data, install, update plugins and official support. Please visit Envato Settings page to activate your copy of the theme", 'verifytheme' );
+        $message = esc_html__( "Important notice: In order to receive all benefits of our theme, you need to activate your copy of the theme. \nBy activating the theme license you will unlock premium options - import demo data, install, update plugins and official support. Please visit Envato Settings page to activate your copy of the theme", 'alone' );
         wp_register_script( 'verifytheme', get_template_directory_uri() . '/install/verifytheme.js', false );
         wp_localize_script(
   				'verifytheme',
@@ -281,16 +285,16 @@ class VerifyTheme {
 					$license_already_in_use = true;
 				}
         $other_attributes = '';
-        $register_button_text = __( 'Register your theme', 'verifytheme' );
+        $register_button_text = __( 'Register your theme', 'alone' );
         if ( $toolkitData && $installationLegit ){
           $other_attributes = 'disabled';
-          $register_button_text = __( 'Activated on this domain', 'verifytheme' );
+          $register_button_text = __( 'Activated on this domain', 'alone' );
           $this->isInstallationLegit = true;
         }
         $type = 'primary';
         $name = 'submit';
         $wrap = true;
-        $this->options = get_option( '_verifytheme_settings' );
+        $verify_options = get_option( '_verifytheme_settings' );
         ?>
         <div class="wrap verifytheme_wrap">
             <form class="verifytheme_settings_form" method="post" action="options.php">
@@ -301,17 +305,17 @@ class VerifyTheme {
                   submit_button($register_button_text, $type, $name, $wrap, $other_attributes);
               ?>
               <?php if ( $toolkitData && ! $is_deregistering_license && ! $license_already_in_use ) : ?>
-              <p class="change_license_wrap">
-                <input name="change_license_tmp" onclick="document.getElementById('change_license_btn').click();" id="change_license_tmp" class="button" value="<?php esc_attr_e('Deregister your product','verifytheme'); ?>" type="button">
-              </p>
+                <p class="change_license_wrap">
+                  <input name="change_license_tmp" onclick="document.getElementById('change_license_btn').click();" id="change_license_tmp" class="button" value="<?php esc_attr_e('Deregister your product','alone'); ?>" type="button">
+                </p>
 
-              <p class="import_demo_wrap">
-                <a href="themes.php?page=import-demo-page"><?php esc_attr_e('Back Import Demo','verifytheme'); ?></a>
-              </p>
-            <?php endif; ?>
+                <p class="import_demo_wrap">
+                  <a href="<?php echo esc_url('themes.php?page=import-demo-page'); ?>"><?php echo esc_html__('Back Import Demo','alone'); ?></a>
+                </p>
+              <?php endif; ?>
             </form>
             <form style="display: none" id="change_license_form" method="POST">
-              <button id="change_license_btn" type="submit" class="button button-primary" name="change_license"><?php echo esc_html__( 'Deregister your product', 'verifytheme' ); ?></button>
+              <button id="change_license_btn" type="submit" class="button button-primary" name="change_license"><?php echo esc_html__( 'Deregister your product', 'alone' ); ?></button>
             </form>
         </div>
         <?php
@@ -383,7 +387,9 @@ class VerifyTheme {
           endif;
         else:
           if ( ! $already_in_use ):
-            $server_name = empty($_SERVER['SERVER_NAME']) ? $_SERVER['HTTP_HOST']: $_SERVER['SERVER_NAME'];
+            $home_url = home_url();
+            $parse_url = parse_url($home_url);
+            $server_name =  $parse_url['host'];
             // Deregister any connected domain first
             if( !isLocalhost($server_name) ):
               $communicator->unRegisterDomains( $new_input[ 'purchase_code' ] );
@@ -391,8 +397,8 @@ class VerifyTheme {
               update_option( '__verify', ITEM_ID);
             endif;
           else:
-            $message .= sprintf(wp_kses( __( 'This product is in use on another domain: <span>%s</span><br />', 'verifytheme' ), array( 'span' => array(), 'br' => array() ) ), $connected_domain );
-            $message .= sprintf(esc_html__('Are you using this theme for a new site? Please purchase a %s ', 'verifytheme' ), '<a tabindex="-1" href="' . esc_url( 'http://themeforest.net/cart/add_items?ref=bearsthemes&item_ids=' ) .ITEM_ID.'" target="_blank">'.esc_html__('new license','verifytheme').'</a>');
+            $message .= sprintf(wp_kses( __( 'This product is in use on another domain: <span>%s</span><br />', 'alone' ), array( 'span' => array(), 'br' => array() ) ), $connected_domain );
+            $message .= sprintf(esc_html__('Are you using this theme for a new site? Please purchase a %s ', 'alone' ), '<a tabindex="-1" href="' . esc_url( 'http://themeforest.net/cart/add_items?ref=bearsthemes&item_ids=' ) .ITEM_ID.'" target="_blank">'.esc_html__('new license','alone').'</a>');
             if(!$register_error):
               add_settings_error(
                   '_verifytheme_settings',
@@ -414,7 +420,7 @@ class VerifyTheme {
     {
         printf(
             '%s<br />%s<a target="_blank" href="%s">%s</a>.</small>',
-            esc_html__('Themeforest provides purchase code for each theme you buy, and you’ll need it to verify and register your product (and to receive theme support).','verifytheme'),esc_html__('To download your purchase code, simply follow these steps at ','verifytheme'), esc_url('//bearsthemes.com/product-registration/'), esc_html__('here','verifytheme')
+            esc_html__('Themeforest provides purchase code for each theme you buy, and you’ll need it to verify and register your product (and to receive theme support).','alone'),esc_html__('To download your purchase code, simply follow these steps at ','alone'), esc_url('//bearsthemes.com/product-registration/'), esc_html__('here','alone')
         );
     }
     /**
@@ -424,7 +430,7 @@ class VerifyTheme {
     {
         printf(
             '<input type="text" id="purchase_code" required name="_verifytheme_settings[purchase_code]" value="%s" /><br /><small>%s<a target="_blank" href="%s">%s</a>.</small>',
-            isset( $this->options['purchase_code'] ) ? esc_attr( $this->options['purchase_code']) : '', esc_html__('Please insert your Envato purchase code. ','verifytheme'), esc_url('//bearsthemes.com/product-registration/'), esc_html__('More info','verifytheme')
+            isset( $verify_options['purchase_code'] ) ? esc_attr( $verify_options['purchase_code']) : '', esc_html__('Please insert your Envato purchase code. ','alone'), esc_url('//bearsthemes.com/product-registration/'), esc_html__('More info','alone')
         );
     }
 }

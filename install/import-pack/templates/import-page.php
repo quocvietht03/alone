@@ -3,14 +3,14 @@
  * Import pack page panel template
  *
  * @package Import Pack
- * @author BePlus
+ * @author Bearsthemes
  */
 
 if( count( $tabs ) <= 0 ) return;
 ?>
 <div id="Import_Pack_Container">
 
-    <h1 class="heading-page"><?php echo apply_filters( 'beplus/import_pack/heading_text', __( 'Alone Import Package Demo.', 'beplus' ) ); ?></h1>
+    <h1 class="heading-page"><?php echo __( 'Alone Import Package Demo.', 'alone' ); ?></h1>
 
     <?php do_action( 'beplus/import_pack/before' ); ?>
 
@@ -26,7 +26,7 @@ if( count( $tabs ) <= 0 ) return;
                 <li class="__open-ticket">
                     <a href="<?php echo esc_url( IMPORT_URL_OPEN_TICKET ); ?>" target="_blank">
                         <span class="dashicons dashicons-editor-help"></span>
-                        <?php _e( 'Open Ticket', 'beplus' ); ?>
+                        <?php _e( 'Open Ticket', 'alone' ); ?>
                     </a>
                 </li>
             </ul> <!-- .ip-tab-heading -->
@@ -45,7 +45,7 @@ if( count( $tabs ) <= 0 ) return;
     </div>
 
     <div class="ip-footer">
-        <?php echo apply_filters( 'beplus/import_pack/footer_text', __( 'Power by Beplus, Thank you creating with Alone.', 'beplus' ) ); ?>
+        <?php echo __( 'Power by Bearthemes, Thank you creating with Alone.', 'alone' ); ?>
     </div>
 
     <?php do_action( 'beplus/import_pack/after' ); ?>
@@ -55,7 +55,7 @@ if( count( $tabs ) <= 0 ) return;
 <div id="Import_Pack_Modal" class="ip-modal-container">
     <div class="ip-modal">
         <div class="ip-modal-header">
-            <a href="javascript:" class="__close" title="<?php echo esc_attr( 'close', 'beplus' ); ?>">
+            <a href="javascript:" class="__close" title="<?php echo esc_attr( 'close', 'alone' ); ?>">
                 <svg x="0px" y="0px" viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;" xml:space="preserve"> <g> <g id="close"> <polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3 214.2,178.5 "/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
             </a>
         </div>

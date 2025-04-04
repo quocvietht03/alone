@@ -29,15 +29,15 @@ if ( 1 !== absint( alone_get_option( 'product_catalog_toolbar' ) ) ) {
 	<?php
 	// phpcs:disable WordPress.Security
 	if ( 1 === intval( $total ) ) {
-		_e( 'Showing the single result', 'woocommerce' );
+		_e( 'Showing the single result', 'alone' );
 	} elseif ( $total <= $per_page || -1 === $per_page ) {
 		/* translators: %d: total results */
-		printf( _n( 'Showing all <strong>%d</strong> result', 'Showing all <strong>%d</strong> results', $total, 'woocommerce' ), $total );
+		printf( _n( 'Showing all <strong>%d</strong> result', 'Showing all <strong>%d</strong> results', $total, 'alone' ), $total );
 	} else {
 		$first = ( $per_page * $current ) - $per_page + 1;
 		$last  = min( $total, $per_page * $current );
 		/* translators: 1: first result 2: last result 3: total results */
-		printf( _nx( 'Showing <strong>%1$d</strong>&ndash;<strong>%2$d</strong> of <strong>%3$d</strong> result', 'Showing <strong>%1$d</strong>&ndash;<strong>%2$d</strong> of <strong>%3$d</strong> results', $total, 'with first and last result', 'woocommerce' ), $first, $last, $total );
+		printf( _nx( 'Showing <strong>%1$d</strong>&ndash;<strong>%2$d</strong> of <strong>%3$d</strong> result', 'Showing <strong>%1$d</strong>&ndash;<strong>%2$d</strong> of <strong>%3$d</strong> results', $total, 'with first and last result', 'alone' ), $first, $last, $total );
 	}
 	// phpcs:enable WordPress.Security
 	?>

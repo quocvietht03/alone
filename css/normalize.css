@@ -352,3 +352,52 @@ template {
 [hidden] {
   display: none;
 }
+
+/**
+ * Update theme check required
+ */
+.wp-caption img {
+  margin: 0;
+}
+.wp-caption{
+	margin: 32px auto;
+}
+.wp-caption.alignleft {
+    margin: 12px 20px 32px 0;
+}
+.wp-caption.alignright {
+    margin: 12px 0 32px 20px;
+}
+.wp-caption .wp-caption-text,
+.entry-caption,
+.gallery-caption {
+    font-style: italic;
+    margin: 8px 0 0;
+}
+
+.bypostauthor{
+	line-height: 24px;
+}
+
+.alignfull {
+  margin: 32px 0;
+}
+.alignleft {
+float: left;
+margin: 6px 20px 32px 0;
+}
+.alignright {
+float: right;
+margin: 6px 0 32px 20px;
+}
+.aligncenter {
+  text-align: center;
+  margin: 32px auto;
+}
+.alignleft, .full-width .site-content .alignleft {
+  clear: left;
+}
+.alignright, .full-width .site-content .alignright {
+  clear: right;
+}
+

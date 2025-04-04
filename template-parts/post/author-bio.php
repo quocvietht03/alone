@@ -16,7 +16,7 @@ if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 <div class="author-bio">
 	<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
 
-	<h3 class="author-title"><?php echo esc_html__('By ', 'fuel-com') . get_the_author(); ?></h3>
+	<h3 class="author-title"><?php echo esc_html__('By ', 'alone') . get_the_author(); ?></h3>
 
 	<div class="author-desc"><?php echo get_the_author_meta('description') ?></div>
 

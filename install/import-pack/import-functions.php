@@ -3,7 +3,7 @@
  * Import main functions
  *
  * @package Import Pack WP theme
- * @author BePlus
+ * @author Bearsthemes
  * @version 1.0.10
  */
 
@@ -13,7 +13,7 @@
      *
      */
 
-    function beplus_import_pack_defineds() {
+    function alone_import_pack_defineds() {
         /**
          * Defines
          *
@@ -36,14 +36,14 @@
     require( get_template_directory() . '/install/import-pack/ajax.php' );
 }
 
-if( ! function_exists( 'beplus_register_import_menu' ) ) {
+if( ! function_exists( 'alone_register_import_menu' ) ) {
     /**
      * Register menu import page
      *
      */
-    function beplus_register_import_menu() {
+    function alone_register_import_menu() {
 
-        $page_title = apply_filters( 'beplus/import_pack/submenu_page_title', __( 'Import Demos', 'beplus' ) );
+        $page_title = __( 'Import Demos', 'alone' );
 
         add_submenu_page(
             'themes.php',
@@ -51,87 +51,87 @@ if( ! function_exists( 'beplus_register_import_menu' ) ) {
             $page_title,
             'manage_options',
             'import-demo-page',
-            'beplus_register_import_page_callback'
+            'alone_register_import_page_callback'
         );
     }
 }
 
-if( ! function_exists( 'beplus_register_import_page_callback' ) ) {
+if( ! function_exists( 'alone_register_import_page_callback' ) ) {
     /**
      * Import page template func
      *
      */
-    function beplus_register_import_page_callback() {
+    function alone_register_import_page_callback() {
 
-        set_query_var( 'tabs', amentex_import_page_tabs() );
+        set_query_var( 'tabs', alone_import_page_tabs() );
         load_template( get_template_directory() . '/install/import-pack/templates/import-page.php' );
     }
 }
 
-if( ! function_exists( 'amentex_import_page_tabs' ) ) {
+if( ! function_exists( 'alone_import_page_tabs' ) ) {
     /**
      * Import page tabs data
      *
      */
-    function amentex_import_page_tabs() {
+    function alone_import_page_tabs() {
 
         return apply_filters( 'beplus/import_page/tabs', [
             [
                 'id' => 'demo_install_package',
-                'title' => __( 'Demo & Install Package', 'beplus' ),
-                'template_callback' => 'beplus_import_pack_demo_install_package_tab_content',
+                'title' => __( 'Demo & Install Package', 'alone' ),
+                'template_callback' => 'alone_import_pack_demo_install_package_tab_content',
             ],
             [
                 'id' => 'theme_requirements',
-                'title' => __( 'Theme Requirements', 'beplus' ),
-                'template_callback' => 'beplus_import_pack_theme_requirements_tab_content',
+                'title' => __( 'Theme Requirements', 'alone' ),
+                'template_callback' => 'alone_import_pack_theme_requirements_tab_content',
             ],
         ] );
     }
 }
 
-if( ! function_exists( 'beplus_package_demo' ) ) {
+if( ! function_exists( 'alone_package_demo' ) ) {
     /**
      * Import package demo data
      *
      */
-    function beplus_package_demo() {
+    function alone_package_demo() {
 
         return require( get_template_directory() . '/install/import-pack/data/import.php' );
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_theme_requirements_tab_content' ) ) {
+if( ! function_exists( 'alone_import_pack_theme_requirements_tab_content' ) ) {
     /**
      * Import pack theme requirements template
      *
      */
-    function beplus_import_pack_theme_requirements_tab_content() {
+    function alone_import_pack_theme_requirements_tab_content() {
 
         load_template( get_template_directory() . '/install/import-pack/templates/theme-requirements.php' );
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_demo_install_package_tab_content' ) ) {
+if( ! function_exists( 'alone_import_pack_demo_install_package_tab_content' ) ) {
     /**
      * Import pack demo install package template
      *
      */
-    function beplus_import_pack_demo_install_package_tab_content() {
+    function alone_import_pack_demo_install_package_tab_content() {
 
-        set_query_var( 'package_demos', beplus_package_demo() );
+        set_query_var( 'package_demos', alone_package_demo() );
         load_template( get_template_directory() . '/install/import-pack/templates/demo-install-package.php' );
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_get_package_data_by_id' ) ) {
+if( ! function_exists( 'alone_import_pack_get_package_data_by_id' ) ) {
     /**
      * Get package data by package name
      *
      */
-    function beplus_import_pack_get_package_data_by_id( $package_id ) {
+    function alone_import_pack_get_package_data_by_id( $package_id ) {
 
-        $packages = beplus_package_demo();
+        $packages = alone_package_demo();
         $key = array_search( $package_id, array_column( $packages, 'package_name' ) );
 
         if( $key === false ) {
@@ -142,56 +142,56 @@ if( ! function_exists( 'beplus_import_pack_get_package_data_by_id' ) ) {
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_import_steps' ) ) {
+if( ! function_exists( 'alone_import_pack_import_steps' ) ) {
     /**
      * Import steps define
      *
      */
-    function beplus_import_pack_import_steps() {
+    function alone_import_pack_import_steps() {
 
         return apply_filters( 'beplus/import_pack/import_steps', [
             [
                 'name' => 'backup_site',
-                'title' => __( 'Backup site', 'beplus' ),
-                'description' => __( 'Avoid risks during the import process, you should create a backup before performing install package demo. click \'yes\' to backup now or skip.', 'pp' ),
-                'template_callback' => 'beplus_import_pack_step_backup_site',
+                'title' => __( 'Backup site', 'alone' ),
+                'description' => __( 'Avoid risks during the import process, you should create a backup before performing install package demo. click \'yes\' to backup now or skip.', 'alone' ),
+                'template_callback' => 'alone_import_pack_step_backup_site',
                 'actions' => ['__skip__', '__yes__'],
                 'actions_callback' => [
                     [
                         'action' => '__skip__',
-                        'ajax_func' => 'beplus_import_pack_backup_site_skip_func',
+                        'ajax_func' => 'alone_import_pack_backup_site_skip_func',
                     ],
                 ]
             ],
             // [
             //     'name' => 'install_plugin',
-            //     'title' => __( 'Install Plugins', 'beplus' ),
-            //     'description' => __( 'This package include __count_plugin__ plugin(s) please install and activate they before import content. click \'Explained\' to view all plugins.', 'beplus' ),
-            //     'template_callback' => 'beplus_import_pack_step_install_plugins',
+            //     'title' => __( 'Install Plugins', 'alone' ),
+            //     'description' => __( 'This package include __count_plugin__ plugin(s) please install and activate they before import content. click \'Explained\' to view all plugins.', 'alone' ),
+            //     'template_callback' => 'alone_import_pack_step_install_plugins',
             //     'actions' => ['__yes__'],
             // ],
             [
                 'name' => 'download_import_package',
-                'title' => __( 'Download & Import Package', 'beplus' ),
-                'description' => __( 'This process may take several minutes or longer depending on the network speed. Thanks you!', 'beplus' ),
-                'template_callback' => 'beplus_import_pack_step_download_import_package',
+                'title' => __( 'Download & Import Package', 'alone' ),
+                'description' => __( 'This process may take several minutes or longer depending on the network speed. Thanks you!', 'alone' ),
+                'template_callback' => 'alone_import_pack_step_download_import_package',
                 'actions' => ['__yes__'],
             ],
             [
                 'name' => 'import_package_successful',
-                'title' => __( 'Import Package Successful!', 'beplus' ),
-                'description' => __( 'Thank you creating with Alone. Do not hesitate to contact us if you need help!', 'beplus' ),
-                'template_callback' => 'beplus_import_pack_step_import_package_successful',
+                'title' => __( 'Import Package Successful!', 'alone' ),
+                'description' => __( 'Thank you creating with Alone. Do not hesitate to contact us if you need help!', 'alone' ),
+                'template_callback' => 'alone_import_pack_step_import_package_successful',
             ]
         ] );
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_step_import_package_successful' ) ) {
+if( ! function_exists( 'alone_import_pack_step_import_package_successful' ) ) {
     /**
      * Step import package successful
      */
-    function beplus_import_pack_step_import_package_successful( $package, $step, $index ) {
+    function alone_import_pack_step_import_package_successful( $package, $step, $index ) {
         ?>
         <div class="item inner-step">
             <div class="heading-image">
@@ -201,8 +201,8 @@ if( ! function_exists( 'beplus_import_pack_step_import_package_successful' ) ) {
                 <h4 class="title"><?php echo "{$step['title']}"; ?></h4>
                 <div class="desc"><?php echo "{$step['description']}" ?></div>
                 <div class="buttons-action">
-                    <a href="javascript:" class="button button-close"><?php _e( 'Close', 'beplus' ); ?></a>
-                    <a href="<?php echo site_url(); ?>" class="button button-primary"><?php _e( 'Go Home', 'beplus' ); ?></a>
+                    <a href="javascript:" class="button button-close"><?php _e( 'Close', 'alone' ); ?></a>
+                    <a href="<?php echo esc_url(home_url()); ?>" class="button button-primary"><?php _e( 'Go Home', 'alone' ); ?></a>
                 </div>
             </div>
         </div>
@@ -210,21 +210,21 @@ if( ! function_exists( 'beplus_import_pack_step_import_package_successful' ) ) {
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_render_actions_button' ) ) {
+if( ! function_exists( 'alone_import_pack_render_actions_button' ) ) {
     /**
      * Render action button
      *
      */
-    function beplus_import_pack_render_actions_button( $actions = [] ) {
+    function alone_import_pack_render_actions_button( $actions = [] ) {
 
-        $button_map = apply_filters( 'beplus/import_pack/action_buttons', [
+        $button_map = [
             '__skip__' => function() {
-                return '<button class="ip-btn btn-action-skip" data-type="__skip__">'. __( 'Skip', 'beplus' ) .'</button>';
+                return '<button class="ip-btn btn-action-skip" data-type="__skip__">'. __( 'Skip', 'alone' ) .'</button>';
             },
             '__yes__' => function() {
-                return '<button class="ip-btn btn-action-yes" data-type="__yes__">'. __( 'Yes', 'beplus' ) .'</button>';
+                return '<button class="ip-btn btn-action-yes" data-type="__yes__">'. __( 'Yes', 'alone' ) .'</button>';
             }
-        ] );
+        ];
 
         $output = '';
         foreach( $actions as $index => $action ) {
@@ -235,12 +235,12 @@ if( ! function_exists( 'beplus_import_pack_render_actions_button' ) ) {
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_render_actions_callback_form' ) ) {
+if( ! function_exists( 'alone_import_pack_render_actions_callback_form' ) ) {
     /**
      * Render action handle form
      *
      */
-    function beplus_import_pack_render_actions_callback_form( $actions_callback = [] ) {
+    function alone_import_pack_render_actions_callback_form( $actions_callback = [] ) {
 
         ?>
         <form class="ip-actions-callback-form">
@@ -252,12 +252,12 @@ if( ! function_exists( 'beplus_import_pack_render_actions_callback_form' ) ) {
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_step_backup_site' ) ) {
+if( ! function_exists( 'alone_import_pack_step_backup_site' ) ) {
     /**
      * Step backup site
      *
      */
-    function beplus_import_pack_step_backup_site( $package, $step, $index ) {
+    function alone_import_pack_step_backup_site( $package, $step, $index ) {
         $int_step = $index + 1;
         ?>
         <div class="item inner-step">
@@ -269,23 +269,23 @@ if( ! function_exists( 'beplus_import_pack_step_backup_site' ) ) {
                 <div class="desc"><?php echo "{$step['description']}" ?></div>
 
                 <div class="ip-explained-container">
-                    <a href="javascript:" class="__toggle-explained"><?php _e( 'Explained', 'beplus' ); ?></a>
+                    <a href="javascript:" class="__toggle-explained"><?php _e( 'Explained', 'alone' ); ?></a>
                     <div class="ip-explained-content">
                         <ul class="__sub-step">
                             <li class="__step" data-step-name="install_bears_backup_plg">
-                                <span class="__step-label"><?php _e( 'Install Bears Backup Plugin', 'beplus' ); ?></span>
+                                <span class="__step-label"><?php _e( 'Install Bears Backup Plugin', 'alone' ); ?></span>
                                 <span class="status-ui"></span>
                             </li>
                             <li class="__step" data-step-name="backup_database">
-                                <span class="__step-label"><?php _e( 'Backup Database', 'beplus' ); ?></span>
+                                <span class="__step-label"><?php _e( 'Backup Database', 'alone' ); ?></span>
                                 <span class="status-ui"></span>
                             </li>
                             <li class="__step" data-step-name="create_file_config">
-                                <span class="__step-label"><?php _e( 'Create File Config', 'beplus' ); ?></span>
+                                <span class="__step-label"><?php _e( 'Create File Config', 'alone' ); ?></span>
                                 <span class="status-ui"></span>
                             </li>
                             <li class="__step" data-step-name="backup_folder_upload">
-                                <span class="__step-label"><?php _e( 'Backup Folder Upload', 'beplus' ); ?></span>
+                                <span class="__step-label"><?php _e( 'Backup Folder Upload', 'alone' ); ?></span>
                                 <span class="status-ui"></span>
                             </li>
                         </ul>
@@ -293,20 +293,20 @@ if( ! function_exists( 'beplus_import_pack_step_backup_site' ) ) {
                 </div>
             </div>
             <div class="actions">
-                <?php echo isset( $step['actions'] ) ? beplus_import_pack_render_actions_button( $step['actions'] ) : ''; ?>
-                <?php echo isset( $step['actions_callback'] ) ? beplus_import_pack_render_actions_callback_form( $step['actions_callback'] ) : ''; ?>
+                <?php echo isset( $step['actions'] ) ? alone_import_pack_render_actions_button( $step['actions'] ) : ''; ?>
+                <?php echo isset( $step['actions_callback'] ) ? alone_import_pack_render_actions_callback_form( $step['actions_callback'] ) : ''; ?>
             </div>
         </div>
         <?php
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_step_install_plugins' ) ) {
+if( ! function_exists( 'alone_import_pack_step_install_plugins' ) ) {
     /**
      * Step install plugins
      *
      */
-    function beplus_import_pack_step_install_plugins( $package, $step, $index ) {
+    function alone_import_pack_step_install_plugins( $package, $step, $index ) {
         $int_step = $index + 1;
         ?>
         <div class="item inner-step">
@@ -319,12 +319,12 @@ if( ! function_exists( 'beplus_import_pack_step_install_plugins' ) ) {
 
                 <?php if( isset( $package['plugins'] ) && count( $package['plugins'] ) > 0 ) : ?>
                 <div class="ip-explained-container">
-                    <a href="javascript:" class="__toggle-explained"><?php _e( 'Explained', 'beplus' ); ?></a>
+                    <a href="javascript:" class="__toggle-explained"><?php _e( 'Explained', 'alone' ); ?></a>
                     <div class="ip-explained-content">
                         <ul class="ip-plugin-include-checklist">
                             <?php foreach( $package['plugins'] as $index => $plugin ) : ?>
                             <li data-plugin-slug="<?php echo esc_attr( $plugin['slug'] ); ?>" data-plugin-source="<?php echo isset( $plugin['source'] ) ? esc_attr( $plugin['source'] ) : ''; ?>">
-                                <span class="plg-name"><?php echo $plugin['name'] ?></span>
+                                <?php echo '<span class="plg-name">' . $plugin['name'] . '</span>'; ?>
                                 <span class="status-ui"></span>
                             </li>
                             <?php endforeach; ?>
@@ -334,20 +334,20 @@ if( ! function_exists( 'beplus_import_pack_step_install_plugins' ) ) {
                 <?php endif; ?>
             </div>
             <div class="actions">
-                <?php echo isset( $step['actions'] ) ? beplus_import_pack_render_actions_button( $step['actions'] ) : ''; ?>
-                <?php echo isset( $step['actions_callback'] ) ? beplus_import_pack_render_actions_callback_form( $step['actions_callback'] ) : ''; ?>
+                <?php echo isset( $step['actions'] ) ? alone_import_pack_render_actions_button( $step['actions'] ) : ''; ?>
+                <?php echo isset( $step['actions_callback'] ) ? alone_import_pack_render_actions_callback_form( $step['actions_callback'] ) : ''; ?>
             </div>
         </div>
         <?php
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_step_download_import_package' ) ) {
+if( ! function_exists( 'alone_import_pack_step_download_import_package' ) ) {
     /**
      * Step download & import demo
      *
      */
-    function beplus_import_pack_step_download_import_package( $package, $step, $index ) {
+    function alone_import_pack_step_download_import_package( $package, $step, $index ) {
         $int_step = $index + 1;
         ?>
         <div class="item inner-step">
@@ -359,20 +359,20 @@ if( ! function_exists( 'beplus_import_pack_step_download_import_package' ) ) {
                 <div class="desc"><?php echo "{$step['description']}" ?></div>
             </div>
             <div class="actions">
-                <?php echo isset( $step['actions'] ) ? beplus_import_pack_render_actions_button( $step['actions'] ) : ''; ?>
-                <?php echo isset( $step['actions_callback'] ) ? beplus_import_pack_render_actions_callback_form( $step['actions_callback'] ) : ''; ?>
+                <?php echo isset( $step['actions'] ) ? alone_import_pack_render_actions_button( $step['actions'] ) : ''; ?>
+                <?php echo isset( $step['actions_callback'] ) ? alone_import_pack_render_actions_callback_form( $step['actions_callback'] ) : ''; ?>
             </div>
         </div>
         <?php
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_backup_site_skip_func' ) ) {
+if( ! function_exists( 'alone_import_pack_backup_site_skip_func' ) ) {
     /**
      * Backup site skip action
      *
      */
-    function beplus_import_pack_backup_site_skip_func() {
+    function alone_import_pack_backup_site_skip_func() {
 
         // Install plugin Bears Backup
         $installer = false;
@@ -397,7 +397,7 @@ if( ! function_exists( 'beplus_import_pack_backup_site_skip_func' ) ) {
                 'success' => true,
                 'result' => [
                     'status' => false,
-                    'message' => __( 'Install plugin Bears Backup fail!', 'beplus' ),
+                    'message' => __( 'Install plugin Bears Backup fail!', 'alone' ),
                 ]
             ] );
 
@@ -412,7 +412,7 @@ if( ! function_exists( 'beplus_import_pack_backup_site_skip_func' ) ) {
                 'success' => true,
                 'result' => [
                     'status' => false,
-                    'message' => __( 'Active plugin Bears Backup fail!', 'beplus' ),
+                    'message' => __( 'Active plugin Bears Backup fail!', 'alone' ),
                 ]
             ] );
 
@@ -425,11 +425,11 @@ if( ! function_exists( 'beplus_import_pack_backup_site_skip_func' ) ) {
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_backup_site_yes_func' ) ) {
+if( ! function_exists( 'alone_import_pack_backup_site_yes_func' ) ) {
     /**
      * Backup site yes action
      */
-    function beplus_import_pack_backup_site_yes_func() {
+    function alone_import_pack_backup_site_yes_func() {
 
         // Install plugin Bears Backup
         $installer = false;
@@ -471,42 +471,42 @@ if( ! function_exists( 'beplus_import_pack_backup_site_yes_func' ) ) {
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_download_package_step' ) ) {
+if( ! function_exists( 'alone_import_pack_download_package_step' ) ) {
     /**
      *
      */
-    function beplus_import_pack_download_package_step( $package_name, $position = 0, $package = null ) {
+    function alone_import_pack_download_package_step( $package_name, $position = 0, $package = null ) {
 
-        $remote_url = beplus_import_pack_make_remote_url( $package_name, $position );
+        $remote_url = alone_import_pack_make_remote_url( $package_name, $position );
 
         if( ! $position ) {
             // step 0 create zip file
-            $result = beplus_import_pack_download_package_step_init( $remote_url, 'package-demo.zip' );
+            $result = alone_import_pack_download_package_step_init( $remote_url, 'package-demo.zip' );
         } else {
 
-            $result = beplus_import_pack_download_package_step_push( $remote_url, $position, $package );
+            $result = alone_import_pack_download_package_step_push( $remote_url, $position, $package );
         }
 
         return $result;
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_make_remote_url' ) ) {
+if( ! function_exists( 'alone_import_pack_make_remote_url' ) ) {
     /**
      *
      */
-    function beplus_import_pack_make_remote_url( $package_name = null, $position = 0, $size = 0 ) {
+    function alone_import_pack_make_remote_url( $package_name = null, $position = 0, $size = 0 ) {
 
         $size = ( $size ) ? '&size=' . $size : '';
         return sprintf( '%s?id=%s&position=%d' . $size, IMPORT_REMOTE_SERVER, $package_name, $position );
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_read_remote_head' ) ) {
+if( ! function_exists( 'alone_import_pack_read_remote_head' ) ) {
     /**
      *
      */
-    function beplus_import_pack_read_remote_head( $remote_url ) {
+    function alone_import_pack_read_remote_head( $remote_url ) {
 
         $head = array_change_key_case(get_headers($remote_url, TRUE));
         return $head;
@@ -514,12 +514,12 @@ if( ! function_exists( 'beplus_import_pack_read_remote_head' ) ) {
 }
 
 
-if( ! function_exists( 'beplus_import_pack_download_package_step_init' ) ) {
+if( ! function_exists( 'alone_import_pack_download_package_step_init' ) ) {
     /**
      * Create package file (.zip)
      *
      */
-    function beplus_import_pack_download_package_step_init( $remote_url, $file_name ) {
+    function alone_import_pack_download_package_step_init( $remote_url, $file_name ) {
         global $wp_filesystem;
 
         if (empty($wp_filesystem)) {
@@ -531,7 +531,7 @@ if( ! function_exists( 'beplus_import_pack_download_package_step_init' ) ) {
         $path = $upload_dir['basedir'];
         $path_file_package = $path . '/' . $file_name;
 
-        $head = beplus_import_pack_read_remote_head( $remote_url );
+        $head = alone_import_pack_read_remote_head( $remote_url );
         $content = $wp_filesystem->get_contents( $remote_url );
 
         $mb = 1000 * 1000;
@@ -555,12 +555,12 @@ if( ! function_exists( 'beplus_import_pack_download_package_step_init' ) ) {
     }
 }
 
-if( ! function_exists( 'beplus_import_pack_download_package_step_push' ) ) {
+if( ! function_exists( 'alone_import_pack_download_package_step_push' ) ) {
     /**
      * Download package push data
      *
      */
-    function beplus_import_pack_download_package_step_push( $remote_url, $position, $package ) {
+    function alone_import_pack_download_package_step_push( $remote_url, $position, $package ) {
 
         global $wp_filesystem;
         if ( empty( $wp_filesystem ) ) {
@@ -568,7 +568,7 @@ if( ! function_exists( 'beplus_import_pack_download_package_step_push' ) ) {
             WP_Filesystem();
         }
 
-        $head = beplus_import_pack_read_remote_head( $remote_url );
+        $head = alone_import_pack_read_remote_head( $remote_url );
         $content = $wp_filesystem->get_contents( $remote_url );
 
         $upload_dir = wp_upload_dir();

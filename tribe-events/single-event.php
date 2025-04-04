@@ -26,7 +26,7 @@ $event_id = get_the_ID();
 
 				<div class="tribe-events-single-event-content-wrap">
 					<p class="tribe-events-back">
-						<a href="<?php echo esc_url( tribe_get_events_link() ); ?>"> <?php printf( alone_get_icon_svg( 'tribe-arrow-left', 12 ) . esc_html_x( 'All %s', '%s Events plural label', 'the-events-calendar' ), $events_label_plural ); ?></a>
+						<a href="<?php echo esc_url( tribe_get_events_link() ); ?>"> <?php printf( alone_get_icon_svg( 'tribe-arrow-left', 12 ) . esc_html_x( 'All %s', '%s Events plural label', 'alone' ), $events_label_plural ); ?></a>
 					</p>
 
 					<!-- Notices -->
@@ -67,7 +67,7 @@ $event_id = get_the_ID();
 	<!-- Event footer -->
 	<div id="tribe-events-footer">
 		<!-- Navigation -->
-		<nav class="tribe-events-nav-pagination" aria-label="<?php printf( esc_html__( '%s Navigation', 'the-events-calendar' ), $events_label_singular ); ?>">
+		<nav class="tribe-events-nav-pagination" aria-label="<?php printf( esc_html__( '%s Navigation', 'alone' ), $events_label_singular ); ?>">
 			<ul class="tribe-events-sub-nav">
 				<li class="tribe-events-nav-previous"><?php tribe_the_prev_event_link( alone_get_icon_svg( 'tribe-arrow-left', 16 ) . ' %title%' ) ?></li>
 				<li class="tribe-events-nav-next"><?php tribe_the_next_event_link( '%title% ' . alone_get_icon_svg( 'tribe-arrow-right', 16 ) ) ?></li>

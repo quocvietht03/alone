@@ -26,7 +26,7 @@ $event_date_attr = $event->dates->start->format( Dates::DBDATEFORMAT );
 <div class="tribe-events-calendar-list__event-datetime-wrapper tribe-common-b2">
 	<time class="tribe-events-calendar-list__event-datetime" datetime="<?php echo esc_attr( $event_date_attr ); ?>">
 		<?php echo alone_get_icon_svg( 'tribe-clock', 16 ); ?>
-		<?php echo $event->schedule_details->value(); ?>
+		<?php echo '<span>' . $event->schedule_details->value() . '</span>'; ?>
 	</time>
 	<?php $this->template( 'list/event/date/meta', [ 'event' => $event ] ); ?>
 </div>

@@ -5,5 +5,5 @@
  * @package Import Pack
  */
 
-add_action( 'admin_init', 'beplus_import_pack_defineds' );
-add_action( 'admin_menu', 'beplus_register_import_menu' );
+add_action( 'admin_init', 'alone_import_pack_defineds' );
+add_action( 'admin_menu', 'alone_register_import_menu' );
