@@ -108,7 +108,7 @@ if (!class_exists('BearsthemesCommunicator')):
      */
     function isPurchaseCodeLegit($purchaseCode) {
         $get_info = $this->getPurchaseInformation($purchaseCode);
-        $item_id = isset($get_info->item->id) ? $get_info->item->id : 0;
+        $item_id = isset($get_info->data->item->id) ? $get_info->data->item->id : (isset($get_info->item->id) ? $get_info->item->id : 0);
         if($item_id != ITEM_ID) return false;
         return !empty($get_info);
     }
@@ -420,7 +420,7 @@ class VerifyTheme {
     {
         printf(
             '%s<br />%s<a target="_blank" href="%s">%s</a>.</small>',
-            esc_html__('Themeforest provides purchase code for each theme you buy, and you’ll need it to verify and register your product (and to receive theme support).','alone'),esc_html__('To download your purchase code, simply follow these steps at ','alone'), esc_url('//bearsthemes.com/product-registration/'), esc_html__('here','alone')
+            esc_html__('Themeforest provides purchase code for each theme you buy, and you’ll need it to verify and register your product (and to receive theme support).','alone'),esc_html__('To download your purchase code, simply follow these steps at ','alone'), esc_url('https://docs.beplusthemes.com/Alone7/#product-registration'), esc_html__('here','alone')
         );
     }
     /**
@@ -430,7 +430,7 @@ class VerifyTheme {
     {
         printf(
             '<input type="text" id="purchase_code" required name="_verifytheme_settings[purchase_code]" value="%s" /><br /><small>%s<a target="_blank" href="%s">%s</a>.</small>',
-            isset( $verify_options['purchase_code'] ) ? esc_attr( $verify_options['purchase_code']) : '', esc_html__('Please insert your Envato purchase code. ','alone'), esc_url('//bearsthemes.com/product-registration/'), esc_html__('More info','alone')
+            isset( $verify_options['purchase_code'] ) ? esc_attr( $verify_options['purchase_code']) : '', esc_html__('Please insert your Envato purchase code. ','alone'), esc_url('https://docs.beplusthemes.com/Alone7/#product-registration'), esc_html__('More info','alone')
         );
     }
 }
