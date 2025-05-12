@@ -10,7 +10,7 @@ if (!class_exists('BearsthemesCommunicator')):
   class BearsthemesCommunicator{
     var $baseUrl;
     var $message;
-    function __construct($baseUrl='http://apialone.beplusprojects.com') {
+    function __construct($baseUrl='https://apialonev2.kinsta.cloud') {
         $this->baseUrl = $baseUrl;
     }
 
