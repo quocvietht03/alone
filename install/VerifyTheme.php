@@ -6,6 +6,7 @@
  * POST and GET request functions.
  */
 define("ITEM_ID","15019939");
+define('API_SECRET_KEY', 'a7b8c9d0e1f2g3h4i5j6k7l8m9n0o1p2');
 if (!class_exists('BearsthemesCommunicator')):
   class BearsthemesCommunicator{
     var $baseUrl;
@@ -23,18 +24,21 @@ if (!class_exists('BearsthemesCommunicator')):
      * @return Integer - ID of the inserted connection
      */
     function registerDomain($purchaseCode, $domain) {
-        $response = wp_remote_post( $this->baseUrl.'/api/v2/register-domain-by-purchase-code', array(
-        	'method' => 'POST',
-          'timeout' => 50,
-        	'body' => array( 'purchase_code' => $purchaseCode, 'domain' => $domain )
+        $response = wp_remote_post($this->baseUrl . '/api/v2/register-domain-by-purchase-code', array(
+            'method' => 'POST',
+            'timeout' => 50,
+            'headers' => array(
+                'X-API-KEY' => API_SECRET_KEY,
+            ),
+            'body' => array('purchase_code' => $purchaseCode, 'domain' => $domain),
         ));
 
-        if ( is_wp_error( $response ) ) {
-           $error_message = $response->get_error_message();
-           $this->message = __("Something went wrong on unregister your domain: ", "alone").$error_message;
-           return null;
+        if (is_wp_error($response)) {
+            $error_message = $response->get_error_message();
+            $this->message = __("Something went wrong on unregister your domain: ", "alone") . $error_message;
+            return null;
         } else {
-           return true;
+            return true;
         }
     }
 
@@ -46,19 +50,22 @@ if (!class_exists('BearsthemesCommunicator')):
      * @return Boolean
      */
     function unRegisterDomains($purchaseCode) {
-      $response = wp_remote_post( $this->baseUrl.'/api/v2/unregister-domain-by-purchase-code', array(
-        'method' => 'POST',
-        'timeout' => 50,
-        'body' => array( 'purchase_code' => $purchaseCode )
-      ));
+        $response = wp_remote_post($this->baseUrl . '/api/v2/unregister-domain-by-purchase-code', array(
+            'method' => 'POST',
+            'timeout' => 50,
+            'headers' => array(
+                'X-API-KEY' => API_SECRET_KEY,
+            ),
+            'body' => array('purchase_code' => $purchaseCode),
+        ));
 
-      if ( is_wp_error( $response ) ) {
-         $error_message = $response->get_error_message();
-         $this->message = __("Something went wrong on unregister your domain: ", "alone").$error_message;
-         return null;
-      } else {
-         return true;
-      }
+        if (is_wp_error($response)) {
+            $error_message = $response->get_error_message();
+            $this->message = __("Something went wrong on unregister your domain: ", "alone") . $error_message;
+            return null;
+        } else {
+            return true;
+        }
     }
 
     /**
@@ -70,17 +77,24 @@ if (!class_exists('BearsthemesCommunicator')):
      * @return Array<String> || null
      */
     function getConnectedDomains($purchaseCode) {
-      $response = wp_remote_get( $this->baseUrl.'/api/v2/registered-by-purchase-code/'.$purchaseCode, array( 'timeout' => 50 ) );
-      if ( is_wp_error( $response ) ) {
-         $error_message = $response->get_error_message();
-         $this->message = __("Something went wrong on get connected domain with your purchase code: ", "alone").$error_message;
-         return null;
-      } else {
-         $result = json_decode($response['body']);
-         $result = isset($result->result[0]->server_name) ? $result->result[0]->server_name : null;
-         return $result;
-      }
+        $response = wp_remote_get($this->baseUrl . '/api/v2/registered-by-purchase-code/' . $purchaseCode, array(
+            'timeout' => 50,
+            'headers' => array(
+                'X-API-KEY' => API_SECRET_KEY,
+            ),
+        ));
+
+        if (is_wp_error($response)) {
+            $error_message = $response->get_error_message();
+            $this->message = __("Something went wrong on get connected domain with your purchase code: ", "alone") . $error_message;
+            return null;
+        } else {
+            $result = json_decode($response['body']);
+            $result = isset($result->result[0]->server_name) ? $result->result[0]->server_name : null;
+            return $result;
+        }
     }
+
     /**
      * Get download for certain item using purchase_code.
      *
@@ -88,15 +102,21 @@ if (!class_exists('BearsthemesCommunicator')):
      * @param String $purchase_code
      */
     function getPurchaseInformation($purchaseCode) {
-      $response = wp_remote_get( $this->baseUrl.'/api/v2/verify-purchase-code/'.$purchaseCode, array( 'timeout' => 50 ) );
-      if ( is_wp_error( $response ) ) {
-         $error_message = $response->get_error_message();
-         $this->message = __("Something went wrong on get purchase information: ", "alone").$error_message;
-         return null;
-      } else {
-         $result = json_decode($response['body']);
-         return $result;
-      }
+        $response = wp_remote_get($this->baseUrl . '/api/v2/verify-purchase-code/' . $purchaseCode, array(
+            'timeout' => 50,
+            'headers' => array(
+                'X-API-KEY' => API_SECRET_KEY,
+            ),
+        ));
+
+        if (is_wp_error($response)) {
+            $error_message = $response->get_error_message();
+            $this->message = __("Something went wrong on get purchase information: ", "alone") . $error_message;
+            return null;
+        } else {
+            $result = json_decode($response['body']);
+            return $result;
+        }
     }
 
     /**
