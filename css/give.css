@@ -662,6 +662,21 @@ div[id*=give-form].give-display-reveal .give-btn {
       border-radius: 2px; }
       .donations-give-form-wrap .give-card__body .give-card__button:hover {
         background: #005075; }
+    .donations-give-form-wrap .give-card__body .root-data-givewp-embed .givewp-donation-form-modal__open {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 50px;
+      text-transform: uppercase;
+      color: #ffffff !important;
+      background-color: #0073a8 !important;
+      padding: 0 30px;
+      outline: none;
+      border: none;
+      border-radius: 2px; }
+      .donations-give-form-wrap .give-card__body .root-data-givewp-embed .givewp-donation-form-modal__open.give-btn-modal {
+        margin-bottom: 0; }
+      .donations-give-form-wrap .give-card__body .root-data-givewp-embed .givewp-donation-form-modal__open:hover {
+        background-color: #005075 !important; }
   @media (max-width: 575.98px) {
     .donations-give-form-wrap .give-card__body {
       padding: 24px 16px; }

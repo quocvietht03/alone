@@ -42,7 +42,7 @@ $excerpt_length   = 25;
 		// Maybe display the form excerpt.
 		if ( has_excerpt( $post_id ) ) {
 			// Get excerpt from the form post's excerpt field.
-			$raw_content      = get_the_excerpt( $form_id );
+			$raw_content      = get_the_excerpt( $post_id );
 			$stripped_content = wp_strip_all_tags(
 				strip_shortcodes( $raw_content )
 			);
@@ -63,7 +63,7 @@ $excerpt_length   = 25;
 		} else {
 			$excerpt = $stripped_content;
 		}
-
+		
 		printf( '<p class="give-card__text">%s</p>', $excerpt );
 
 		if( !Template::getActiveID($form_id) ) {

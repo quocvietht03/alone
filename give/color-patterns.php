@@ -165,6 +165,16 @@ function alone_give_custom_colors_css() {
 		.give-main-background-color-hover {
 			background-color: ' . $hover_color . '; /* hover: #005177; */
 		}
+		.root-data-givewp-embed .givewp-donation-form-modal__open,
+		.donations-give-form-wrap .give-card__body .root-data-givewp-embed .givewp-donation-form-modal__open {
+			background-color: ' . $base_color . ' !important; /* base: #0073a8; */
+			color: #fff !important;
+		}
+		.root-data-givewp-embed .givewp-donation-form-modal__open:hover,
+		.donations-give-form-wrap .give-card__body .root-data-givewp-embed .givewp-donation-form-modal__open:hover {
+			background-color: ' . $hover_color . ' !important; /* hover: #005177; */
+			color: #fff !important;
+		}
 
 		.give-main-border-color-hover {
 			border-color: ' . $hover_color . '; /* hover: #005177; */
