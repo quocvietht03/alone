@@ -1515,4 +1515,12 @@
  	return $settings;
  }
 
- $alone_customize = new Alone_Customize( alone_customize_settings() );
+ /**
+	* Fix issue text domain
+	* add action init to fix issue text domain
+  */
+ add_action( 'init', function() {
+ 	$alone_customize = new Alone_Customize( alone_customize_settings() );
+ } );
+
+ 

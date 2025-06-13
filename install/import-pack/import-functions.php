@@ -596,3 +596,34 @@ if( ! function_exists( 'alone_import_pack_download_package_step_push' ) ) {
         }
     }
 }
+
+if( ! function_exists( 'alone_debug_log' ) ) {
+    /**
+     * Debug log function for Alone theme
+     * 
+     * @param mixed $message Message to log
+     * @param string $type Type of log (info, error, warning)
+     * @return void
+     */
+    function alone_debug_log($message, $type = 'info') {
+        
+        // Get WordPress upload directory
+        $upload_dir = wp_upload_dir();
+        $log_file = $upload_dir['basedir'] . '/alone-theme-debug.log';
+        
+        // Format the message
+        $timestamp = current_time('Y-m-d H:i:s');
+        $formatted_message = sprintf("[%s] [%s] %s\n", 
+            $timestamp,
+            strtoupper($type),
+            is_array($message) || is_object($message) ? print_r($message, true) : $message
+        );
+        
+        // Write to log file using file_put_contents
+        file_put_contents($log_file, $formatted_message, FILE_APPEND);
+    }
+}
+
+// add_action( 'init', function() {
+// 	alone_debug_log( 'test' );
+// } );

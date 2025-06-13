@@ -39,6 +39,13 @@ if( ! function_exists( 'alone_import_pack_import_action_ajax_callback' ) ) {
 
         extract( $_POST );
 
+        /**
+         * Fix issue security
+         * 
+         */
+        alone_debug_log( json_encode( $data['form_data'] ) );
+        /** End fix issue security */
+
         if( ! isset( $data['form_data'] ) ) {
             wp_send_json( [
                 'success' => true,
