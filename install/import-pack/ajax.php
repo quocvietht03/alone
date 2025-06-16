@@ -67,6 +67,16 @@ if( ! function_exists( 'alone_import_pack_install_plugin' ) ) {
      *
      */
     function alone_import_pack_install_plugin() {
+        /**
+         * Fix issue security
+         * verify only admin can access
+         */
+        if( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( 'You are not authorized to access this page.' );
+            exit();
+        }
+        /** End fix issue security */
+
         extract( $_POST );
 
         $installer = false;
