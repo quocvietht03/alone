@@ -13,7 +13,7 @@ if( ! function_exists( 'alone_import_pack_modal_import_body_template' ) ) {
     function alone_import_pack_modal_import_body_template() {
 
         # nonce verify
-        if( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $_POST['template_nonce'] ) || ! wp_verify_nonce( $_POST['template_nonce'], 'alone_template_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }
@@ -55,7 +55,7 @@ if( ! function_exists( 'alone_import_pack_import_action_ajax_callback' ) ) {
         extract( $_POST );
 
         # nonce verify
-        if( ! isset( $data['nonce'] ) || ! wp_verify_nonce( $data['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $data['callback_nonce'] ) || ! wp_verify_nonce( $data['callback_nonce'], 'alone_callback_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }
@@ -102,7 +102,7 @@ if( ! function_exists( 'alone_import_pack_download_package' ) ) {
         extract( $_POST );
 
         # nonce verify
-        if( ! isset( $data['nonce'] ) || ! wp_verify_nonce( $data['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $data['download_package_nonce'] ) || ! wp_verify_nonce( $data['download_package_nonce'], 'alone_download_package_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }
@@ -145,7 +145,7 @@ if( ! function_exists( 'alone_import_pack_extract_package_demo' ) ) {
         extract( $_POST );
 
         # nonce verify
-        if( ! isset( $data['nonce'] ) || ! wp_verify_nonce( $data['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $data['extract_package_nonce'] ) || ! wp_verify_nonce( $data['extract_package_nonce'], 'alone_extract_package_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }
@@ -220,7 +220,7 @@ if( ! function_exists( 'alone_import_pack_restore_data' ) ) {
         extract( $_POST );
 
         # nonce verify
-        if( ! isset( $data['nonce'] ) || ! wp_verify_nonce( $data['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $data['restore_data_nonce'] ) || ! wp_verify_nonce( $data['restore_data_nonce'], 'alone_restore_data_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }
@@ -285,7 +285,7 @@ if( ! function_exists( 'alone_import_pack_backup_site_substep_install_bears_back
         extract( $_POST );
 
         # nonce verify
-        if( ! isset( $data['nonce'] ) || ! wp_verify_nonce( $data['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $data['backup_site_nonce'] ) || ! wp_verify_nonce( $data['backup_site_nonce'], 'alone_backup_site_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }
@@ -370,7 +370,7 @@ if( ! function_exists( 'alone_import_pack_backup_site_substep_backup_database' )
         extract( $_POST );
 
         # nonce verify
-        if( ! isset( $data['nonce'] ) || ! wp_verify_nonce( $data['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $data['backup_site_nonce'] ) || ! wp_verify_nonce( $data['backup_site_nonce'], 'alone_backup_site_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }
@@ -422,7 +422,7 @@ if( ! function_exists( 'alone_import_pack_backup_site_substep_create_file_config
         extract( $_POST );
 
         # nonce verify
-        if( ! isset( $data['nonce'] ) || ! wp_verify_nonce( $data['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $data['backup_site_nonce'] ) || ! wp_verify_nonce( $data['backup_site_nonce'], 'alone_backup_site_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }
@@ -473,7 +473,7 @@ if( ! function_exists( 'alone_import_pack_backup_site_substep_backup_folder_uplo
         extract( $_POST );
 
         # nonce verify
-        if( ! isset( $data['nonce'] ) || ! wp_verify_nonce( $data['nonce'], 'alone_backup_nonce' ) ) {
+        if( ! isset( $data['backup_site_nonce'] ) || ! wp_verify_nonce( $data['backup_site_nonce'], 'alone_backup_site_nonce' ) ) {
             wp_send_json_error( 'Invalid nonce.' );
             exit();
         }

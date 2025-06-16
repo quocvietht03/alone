@@ -87,7 +87,7 @@
                 data: {
                     action: 'alone_import_pack_modal_import_body_template',
                     package_id: package_id,
-                    nonce: import_pack_php_data.nonce,
+                    template_nonce: import_pack_php_data.template_nonce,
                 },
             } )
 
@@ -139,7 +139,7 @@
                     package_id: package_id,
                     action_type: action_type,
                     form_data: form_data,
-                    nonce: import_pack_php_data.nonce,
+                    callback_nonce: import_pack_php_data.callback_nonce,
                 } },
                 success ( response ) {
                     
@@ -209,7 +209,8 @@
         var send_data = {
             package_name: package_name,
             position: position || 0,
-            package: _package || ''
+            package: _package || '',
+            download_package_nonce: import_pack_php_data.download_package_nonce,
         };
 
         try {
@@ -219,7 +220,6 @@
                 data: {
                     action: 'alone_import_pack_download_package',
                     data: send_data,
-                    nonce: import_pack_php_data.nonce,
                 }
             } );
         } catch ( error ) {
@@ -251,7 +251,7 @@
                     data: {
                         package_name: package_name,
                         package: _package,
-                        nonce: import_pack_php_data.nonce,
+                        extract_package_nonce: import_pack_php_data.extract_package_nonce,
                     },
                 }
             } )
@@ -275,7 +275,7 @@
                     action: 'alone_import_pack_restore_data',
                     data: {
                         package_path: package_path,
-                        nonce: import_pack_php_data.nonce,
+                        restore_data_nonce: import_pack_php_data.restore_data_nonce,
                     }
                 }
             } )
@@ -369,7 +369,7 @@
                         action: `alone_import_pack_backup_site_substep_${step_name}`,
                         data: {
                             next_step_data: next_step_data,
-                            nonce: import_pack_php_data.nonce,
+                            backup_site_nonce: import_pack_php_data.backup_site_nonce,
                         },
                     }
                 } );
@@ -395,7 +395,7 @@
                               action: `alone_import_pack_backup_site_substep_${step_name}`,
                               data: {
                                     next_step_data: next_step_data,
-                                    nonce: import_pack_php_data.nonce,
+                                    backup_site_nonce: import_pack_php_data.backup_site_nonce,
                               },
                           }
                       } );

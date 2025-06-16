@@ -21,10 +21,16 @@ if( ! function_exists( 'alone_import_pack_scripts' ) ) {
              * nonce for ajax
              * security
              */
-            'nonce'    => wp_create_nonce( 'alone_backup_nonce' ),
+            'template_nonce'    => wp_create_nonce( 'alone_template_nonce' ),
+            'callback_nonce'    => wp_create_nonce( 'alone_callback_nonce' ),
+            'download_package_nonce'  => wp_create_nonce( 'alone_download_package_nonce' ),
+            'extract_package_nonce'  => wp_create_nonce( 'alone_extract_package_nonce' ),
+            'restore_data_nonce'  => wp_create_nonce( 'alone_restore_data_nonce' ),
+            'backup_site_nonce'  => wp_create_nonce( 'alone_backup_site_nonce' ),
+
             // language
             'language' => array( )
-        ] );
+        ] ); 
     }
 
     add_action( 'admin_enqueue_scripts', 'alone_import_pack_scripts' );
