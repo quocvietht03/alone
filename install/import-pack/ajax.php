@@ -242,15 +242,12 @@ if( ! function_exists( 'alone_import_pack_restore_data' ) ) {
         $upload_dir = wp_upload_dir();
         $bears_backup_dir = trailingslashit($upload_dir['basedir']) . 'bears-backup' . DIRECTORY_SEPARATOR;
 
-        // Normalize paths for comparison
-        $real_package_path = realpath($package_path);
-        $real_bears_backup_dir = realpath($bears_backup_dir);
 
         // Verify package_path is inside /uploads/bears-backup
         if (
-            ! $real_package_path ||
-            ! $real_bears_backup_dir ||
-            strpos($real_package_path, $real_bears_backup_dir) !== 0
+            ! $package_path ||
+            ! $bears_backup_dir ||
+            strpos($package_path, $bears_backup_dir) !== 0
         ) {
             wp_send_json_error('Invalid package path.');
             exit();
