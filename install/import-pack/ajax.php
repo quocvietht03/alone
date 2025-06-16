@@ -267,6 +267,16 @@ if( ! function_exists( 'alone_import_pack_backup_site_substep_install_bears_back
      */
     function alone_import_pack_backup_site_substep_install_bears_backup_plg() {
 
+        /**
+            * Fix issue security
+            * verify only admin can access
+            */
+        if( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( 'You are not authorized to access this page.' );
+            exit();
+        }
+        /** End fix issue security */
+
         // Install plugin Bears Backup
         $installer = false;
         $plugin = [
