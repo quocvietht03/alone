@@ -41,6 +41,8 @@ if( ! function_exists( 'alone_import_pack_scripts' ) ) {
                 'backup_database' => wp_create_nonce( 'BBACKUP_Backup_Database_' . $user_id ),
                 'create_file_config' => wp_create_nonce( 'BBACKUP_Create_File_Config_' . $user_id ),
                 'backup_folder_upload' => wp_create_nonce( 'BBACKUP_Backup_Folder_Upload_' . $user_id ),
+                'restore_data' => wp_create_nonce( 'BBACKUP_Restore_Data_' . $user_id ),
+                'restore_data' => wp_create_nonce( 'BBACKUP_Restore_Data_' . $user_id ),
             ]
         ] ); 
     }

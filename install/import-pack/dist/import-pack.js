@@ -276,7 +276,8 @@
                     data: {
                         package_path: package_path,
                         restore_data_nonce: import_pack_php_data.restore_data_nonce,
-                    }
+                    },
+                    nonce: import_pack_php_data.import_nonce.restore_data,
                 }
             } )
 
