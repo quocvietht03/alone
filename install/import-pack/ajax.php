@@ -237,25 +237,24 @@ if( ! function_exists( 'alone_import_pack_restore_data' ) ) {
         /** End fix issue security */
 
         $package_path = $data['package_path'];
-        // Host check: only allow if package_path host matches IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD host
-        $package_url_parts = wp_parse_url( $package_path );
-        $allowed_url_parts = wp_parse_url( IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD );
-        if (
-            empty( $package_url_parts['host'] ) ||
-            empty( $allowed_url_parts['host'] ) ||
-            strtolower( $package_url_parts['host'] ) !== strtolower( $allowed_url_parts['host'] )
-        ) {
-            wp_send_json_error( 'Invalid package host.' );
-            exit();
-        }
-        // Only allow certain file types (e.g., .zip, .sql)
-        $allowed_extensions = array( 'zip' );
-        $file_ext = strtolower( pathinfo( $package_path, PATHINFO_EXTENSION ) );
-        if ( ! in_array( $file_ext, $allowed_extensions, true ) ) {
-            wp_send_json_error( 'Invalid file type.' );
-            exit();
-        }
+        
+        // Get the uploads directory and bears-backup subfolder
+        $upload_dir = wp_upload_dir();
+        $bears_backup_dir = trailingslashit($upload_dir['basedir']) . 'bears-backup' . DIRECTORY_SEPARATOR;
 
+        // Normalize paths for comparison
+        $real_package_path = realpath($package_path);
+        $real_bears_backup_dir = realpath($bears_backup_dir);
+
+        // Verify package_path is inside /uploads/bears-backup
+        if (
+            ! $real_package_path ||
+            ! $real_bears_backup_dir ||
+            strpos($real_package_path, $real_bears_backup_dir) !== 0
+        ) {
+            wp_send_json_error('Invalid package path.');
+            exit();
+        }
         // Sanitize file name
         $file_name = basename( $package_path );
         if (empty($wp_filesystem)) {
