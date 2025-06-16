@@ -87,6 +87,7 @@
                 data: {
                     action: 'alone_import_pack_modal_import_body_template',
                     package_id: package_id,
+                    nonce: import_pack_php_data.nonce,
                 },
             } )
 
@@ -138,6 +139,7 @@
                     package_id: package_id,
                     action_type: action_type,
                     form_data: form_data,
+                    nonce: import_pack_php_data.nonce,
                 } },
                 success ( response ) {
                     
@@ -202,139 +204,8 @@
         } )
     }
 
-    ImportPack.InstallPlugin = async function( plugin ) {
-        var result = await $.ajax( {
-            type: 'POST',
-            url: import_pack_php_data.ajax_url,
-            data: { action: 'alone_import_pack_install_plugin', data: {
-                plugin_slug: plugin.slug,
-                plugin_source: plugin.source
-            } },
-        } )
-
-        return result;
-    }
-
-    ImportPack.InstallPlugins = async function( items, args ) {
-
-        var count = items.length;
-        var plugins_fail = [];
-        for( var i = 0; i <= count - 1; i++ ) {
-            var liItem = items.eq( i );
-            var plugin_slug = liItem.data( 'plugin-slug' );
-            var plugin_source = liItem.data( 'plugin-source' );
-
-            liItem.addClass( '__downloading' );
-
-            var plugin = {
-                slug: plugin_slug,
-                source: plugin_source
-            };
-
-            if( args.plugin_before_install_callback ) {
-                args.plugin_before_install_callback.call( liItem, plugin );
-            }
-
-            var result = await ImportPack.InstallPlugin( plugin );
-
-            if( args.plugin_after_install_callback ) {
-                args.plugin_after_install_callback.call( liItem, result );
-            }
-
-            if( true == result.success ) {
-              liItem.removeClass( '__downloading' ).addClass( '__downloaded' );
-              if(false == result.status) {
-                  plugins_fail.push( liItem );
-              }
-            } else {
-                plugins_fail.push( liItem );
-                liItem.removeClass( '__downloading' ).addClass( '__fail' );
-            }
-        }
-
-        if( plugins_fail.length > 0 ) {
-            for( var i = 0; i <= count - 1; i++ ) {
-                var liItem = items.eq( i );
-                var plugin_slug = liItem.data( 'plugin-slug' );
-                var plugin_source = liItem.data( 'plugin-source' );
-
-                liItem.removeClass( '__downloaded' ).addClass( '__installing' );
-
-                var plugin = {
-                    slug: plugin_slug,
-                    source: plugin_source
-                };
-
-                if( args.plugin_before_install_callback ) {
-                    args.plugin_before_install_callback.call( liItem, plugin );
-                }
-
-                var result = await ImportPack.InstallPlugin( plugin );
-
-                if( args.plugin_after_install_callback ) {
-                    args.plugin_after_install_callback.call( liItem, result );
-                }
-
-                if( true == result.success ) {
-                  liItem.removeClass( '__installing' ).addClass( '__success' );
-                } else {
-                    liItem.removeClass( '__installing' ).addClass( '__fail' );
-                }
-            }
-        }
-
-        if( args.plugin_install_completed_callback ) {
-            args.plugin_install_completed_callback.call();
-        }
-    }
-
-    ImportPack.CustomActionInstallPlugins = function() {
-
-        /**
-         * agree install plugins include
-         *
-         */
-        $( 'body' ).on( 'click', '#Import_Pack_Modal .step-func-install_plugin .btn-action-yes', async function( e ) {
-            e.preventDefault();
-
-            $( this ).hide();
-
-            var step_container = $( '.ip-import-steps-container' );
-            var plugin_list = $( '#Import_Pack_Modal .step-func-install_plugin .ip-plugin-include-checklist li' );
-
-
-
-            if( plugin_list.length <= 0 ) {
-               return;
-            }
-
-            var log = $( `<span class="__message-log"></span>` );
-            step_container.find( '.step-func-install_plugin .actions' ).prepend( log );
-
-            await ImportPack.InstallPlugins( plugin_list, {
-                plugin_before_install_callback( plugin ) {
-                    var plugin_item = $( this );
-                    log.html( 'Installing ' + plugin_item.find( '.plg-name' ).html() + ' ...' );
-                },
-                plugin_after_install_callback( result ) {
-                    var plugin_item = $( this );
-
-                    if( true == result.success && true == result.status ) {
-                        log.html( plugin_item.find( '.plg-name' ).html() + ' successful installation!' );
-                    } else {
-                        log.html( plugin_item.find( '.plg-name' ).html() + ' installation failed!' );
-                    }
-                },
-                plugin_install_completed_callback() {
-                    log.html( 'Plugins installation completed!' );
-                    step_container.trigger( '__next_step.import' );
-                }
-            } );
-        } )
-    }
-
     ImportPack.DownloadPackage = async function( package_name, position, _package, args ) {
-
+        
         var send_data = {
             package_name: package_name,
             position: position || 0,
@@ -347,7 +218,8 @@
                 url: import_pack_php_data.ajax_url,
                 data: {
                     action: 'alone_import_pack_download_package',
-                    data: send_data
+                    data: send_data,
+                    nonce: import_pack_php_data.nonce,
                 }
             } );
         } catch ( error ) {
@@ -379,6 +251,7 @@
                     data: {
                         package_name: package_name,
                         package: _package,
+                        nonce: import_pack_php_data.nonce,
                     },
                 }
             } )
@@ -401,7 +274,8 @@
                 data: {
                     action: 'alone_import_pack_restore_data',
                     data: {
-                        package_path: package_path
+                        package_path: package_path,
+                        nonce: import_pack_php_data.nonce,
                     }
                 }
             } )
@@ -495,6 +369,7 @@
                         action: `alone_import_pack_backup_site_substep_${step_name}`,
                         data: {
                             next_step_data: next_step_data,
+                            nonce: import_pack_php_data.nonce,
                         },
                     }
                 } );
@@ -519,7 +394,8 @@
                           data: {
                               action: `alone_import_pack_backup_site_substep_${step_name}`,
                               data: {
-                                  next_step_data: next_step_data,
+                                    next_step_data: next_step_data,
+                                    nonce: import_pack_php_data.nonce,
                               },
                           }
                       } );
@@ -587,7 +463,6 @@
         Modal = new ImportPack.Modal();
         ImportPack.ExplainedUi();
         ImportPack.CustomActionBackupSite();
-        ImportPack.CustomActionInstallPlugins();
         ImportPack.CustomActionInstallPackage();
         ImportPack.CustomActionInstallPackageSuccessful();
 

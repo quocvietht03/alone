@@ -163,13 +163,6 @@ if( ! function_exists( 'alone_import_pack_import_steps' ) ) {
                     ],
                 ]
             ],
-            // [
-            //     'name' => 'install_plugin',
-            //     'title' => __( 'Install Plugins', 'alone' ),
-            //     'description' => __( 'This package include __count_plugin__ plugin(s) please install and activate they before import content. click \'Explained\' to view all plugins.', 'alone' ),
-            //     'template_callback' => 'alone_import_pack_step_install_plugins',
-            //     'actions' => ['__yes__'],
-            // ],
             [
                 'name' => 'download_import_package',
                 'title' => __( 'Download & Import Package', 'alone' ),
@@ -291,47 +284,6 @@ if( ! function_exists( 'alone_import_pack_step_backup_site' ) ) {
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="actions">
-                <?php echo isset( $step['actions'] ) ? alone_import_pack_render_actions_button( $step['actions'] ) : ''; ?>
-                <?php echo isset( $step['actions_callback'] ) ? alone_import_pack_render_actions_callback_form( $step['actions_callback'] ) : ''; ?>
-            </div>
-        </div>
-        <?php
-    }
-}
-
-if( ! function_exists( 'alone_import_pack_step_install_plugins' ) ) {
-    /**
-     * Step install plugins
-     *
-     */
-    function alone_import_pack_step_install_plugins( $package, $step, $index ) {
-        $int_step = $index + 1;
-        ?>
-        <div class="item inner-step">
-            <div class="heading-image">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/install/import-pack/images/install-plugins.jpg' ) ?>" alt="<?php echo esc_attr( $package['title'] ); ?>">
-            </div>
-            <div class="entry">
-                <h4 class="title"><?php echo "{$int_step}. ", "{$step['title']}"; ?></h4>
-                <div class="desc"><?php echo "{$step['description']}" ?></div>
-
-                <?php if( isset( $package['plugins'] ) && count( $package['plugins'] ) > 0 ) : ?>
-                <div class="ip-explained-container">
-                    <a href="javascript:" class="__toggle-explained"><?php _e( 'Explained', 'alone' ); ?></a>
-                    <div class="ip-explained-content">
-                        <ul class="ip-plugin-include-checklist">
-                            <?php foreach( $package['plugins'] as $index => $plugin ) : ?>
-                            <li data-plugin-slug="<?php echo esc_attr( $plugin['slug'] ); ?>" data-plugin-source="<?php echo isset( $plugin['source'] ) ? esc_attr( $plugin['source'] ) : ''; ?>">
-                                <?php echo '<span class="plg-name">' . $plugin['name'] . '</span>'; ?>
-                                <span class="status-ui"></span>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
-                <?php endif; ?>
             </div>
             <div class="actions">
                 <?php echo isset( $step['actions'] ) ? alone_import_pack_render_actions_button( $step['actions'] ) : ''; ?>

@@ -343,14 +343,14 @@ require get_template_directory() . '/classes/class-alone-svg-icons.php';
 /**
  * Verify purchase code
  */
-// require get_template_directory() . '/install/VerifyTheme.php';
+require get_template_directory() . '/install/VerifyTheme.php';
 
-// if(class_exists('VerifyTheme')){
-// 	function verifytheme_init(){
-// 		$VerifyTheme = new VerifyTheme();
-// 	}
-// 	add_action( 'after_setup_theme', 'verifytheme_init' );
-// }
+if(class_exists('VerifyTheme')){
+	function verifytheme_init(){
+		$VerifyTheme = new VerifyTheme();
+	}
+	add_action( 'after_setup_theme', 'verifytheme_init' );
+}
 
 /**
  * Theme install

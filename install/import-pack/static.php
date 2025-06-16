@@ -17,6 +17,13 @@ if( ! function_exists( 'alone_import_pack_scripts' ) ) {
 
         wp_localize_script( 'import-pack-js', 'import_pack_php_data', [
             'ajax_url' => admin_url( 'admin-ajax.php' ),
+            /**
+             * nonce for ajax
+             * security
+             */
+            'nonce'    => wp_create_nonce( 'alone_backup_nonce' ),
+            // language
+            'language' => array( )
         ] );
     }
 
