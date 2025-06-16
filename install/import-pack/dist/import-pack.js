@@ -362,6 +362,7 @@
 
                 step_item.addClass( '__loading' );
 
+
                 var result = await $.ajax( {
                     type: 'POST',
                     url: import_pack_php_data.ajax_url,
@@ -371,6 +372,7 @@
                             next_step_data: next_step_data,
                             backup_site_nonce: import_pack_php_data.backup_site_nonce,
                         },
+                        nonce: import_pack_php_data.import_nonce[step_name],
                     }
                 } );
 
