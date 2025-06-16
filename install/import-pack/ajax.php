@@ -237,7 +237,27 @@ if( ! function_exists( 'alone_import_pack_restore_data' ) ) {
         /** End fix issue security */
 
         $package_path = $data['package_path'];
+        // Host check: only allow if package_path host matches IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD host
+        $package_url_parts = wp_parse_url( $package_path );
+        $allowed_url_parts = wp_parse_url( IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD );
+        if (
+            empty( $package_url_parts['host'] ) ||
+            empty( $allowed_url_parts['host'] ) ||
+            strtolower( $package_url_parts['host'] ) !== strtolower( $allowed_url_parts['host'] )
+        ) {
+            wp_send_json_error( 'Invalid package host.' );
+            exit();
+        }
+        // Only allow certain file types (e.g., .zip, .sql)
+        $allowed_extensions = array( 'zip' );
+        $file_ext = strtolower( pathinfo( $package_path, PATHINFO_EXTENSION ) );
+        if ( ! in_array( $file_ext, $allowed_extensions, true ) ) {
+            wp_send_json_error( 'Invalid file type.' );
+            exit();
+        }
 
+        // Sanitize file name
+        $file_name = basename( $package_path );
         if (empty($wp_filesystem)) {
             require_once (ABSPATH . '/wp-admin/includes/file.php');
             WP_Filesystem();
@@ -246,7 +266,7 @@ if( ! function_exists( 'alone_import_pack_restore_data' ) ) {
         do_action( 'beplus/import_pack/before_restore_package', $package_path );
 
         $result = BBACKUP_Restore_Data( array(
-            'name' => basename( $package_path ),
+            'name' => $file_name,
             'backup_path_file' => $package_path,
         ), '' );
 
