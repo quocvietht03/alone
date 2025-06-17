@@ -94,7 +94,6 @@
             return result;
 
         } catch( error ) {
-            console.log( error );
             alert( 'Error 1: Internal error, Please try again or open ticket!' );
         }
     }
@@ -223,7 +222,6 @@
                 }
             } );
         } catch ( error ) {
-            console.log( error );
             return ImportPack.DownloadPackage( package_name, position, _package, args );
         }
 
@@ -258,8 +256,6 @@
 
             return result;
         } catch( error ) {
-
-            console.log( error );
             alert( `Error: Extract package error!` );
             return;
         }
@@ -283,8 +279,6 @@
 
             return result;
         } catch( error ) {
-
-            console.log( error );
             alert( `Error: Restore package error!` );
             return;
         }
@@ -328,7 +322,6 @@
             log.html( `Restore package...` );
             var restore_package_result = await ImportPack.ResorePackage( extract_package_result.result.extract_to );
 
-            // console.log( restore_package_result );
             if( true == restore_package_result.success && true == restore_package_result.result.restore ) {
                 log.html( `Restore package successful!` );
                 step_container.trigger( '__next_step.import' );
