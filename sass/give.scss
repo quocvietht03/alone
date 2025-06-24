@@ -3,7 +3,7 @@
 .give-goal-progress {
 	.income, .goal-text {
 		font-size: 16px;
-		font-weight: 700;
+		font-weight: 600;
 		line-height: 1.2;
 		letter-spacing: 0;
 		color: $main_color;
@@ -151,7 +151,7 @@
 
 .give-btn {
 	font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
 	line-height: 58px;
 	color: #ffffff;
 	background: $main-color;
@@ -207,7 +207,7 @@
 	font-size: 14px;
 	line-height: 24px;
 	strong {
-		font-weight: 700;
+		font-weight: 600;
 	}
 }
 
@@ -215,7 +215,7 @@ form[id*=give-form],
 div[id*=give-form] {
 	.give-form-title {
 		font-size: 32px;
-		font-weight: 700;
+		font-weight: 600;
 		margin-bottom: 16px;
 	}
 	.give-custom-amount-text {
@@ -229,7 +229,7 @@ div[id*=give-form] {
 		.give-currency-symbol,
 		#give-amount-text {
 			font-size: 20px;
-			font-weight: 700;
+			font-weight: 600;
 			height: 50px;
 			line-height: 50px;
 			color: #000000;
@@ -261,7 +261,7 @@ div[id*=give-form] {
 		.give-donation-total-label,
 		.give-final-total-amount {
 			font-size: 20px;
-			font-weight: 700;
+			font-weight: 600;
 			height: 50px;
 			line-height: 48px;
 			color: $main-color;
@@ -281,7 +281,7 @@ div[id*=give-form] {
 		.give-donation-total-label {
 			display: block;
 			font-size: 14px;
-			font-weight: 700;
+			font-weight: 400;
 			white-space: nowrap;
 			color: #ffffff;
 			background: $main-color;
@@ -313,7 +313,7 @@ div[id*=give-form] {
 			display: inline-block;
       width: 100%;
 			font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
 			line-height: 24px;
 			text-transform: inherit;
       color: #333333;
@@ -374,7 +374,7 @@ div[id*=give-form] {
 	select.give-select-level {
     width: 100%;
 		font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
 		line-height: 24px;
 		background-color: #FFFFFF;
 		padding: 16px 36px 16px 24px;
@@ -384,7 +384,7 @@ div[id*=give-form] {
 	}
 	legend {
     font-size: 16px;
-		font-weight: 700;
+		font-weight: 600;
 		border-color: rgba(0, 0, 0, 0.1);
 	}
   .form-row label {
@@ -505,7 +505,7 @@ div[id*=give-form] {
 	> .give-btn,
 	.give-submit {
 		font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
 		line-height: 50px;
 		text-transform: uppercase;
 		color: #ffffff;
@@ -610,7 +610,7 @@ div[id*=give-form] {
 			}
 		}
 		.give-card__title {
-      font-weight: 700;
+      font-weight: 600;
       font-size: 20px;
       line-height: 30px;
       margin-bottom: 12px;
@@ -621,7 +621,7 @@ div[id*=give-form] {
 	.give-card__button {
       display: inline-block;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 24px;
       color: #FFFFFF;
       background: $main-color;
@@ -634,7 +634,7 @@ div[id*=give-form] {
 
 	.root-data-givewp-embed .givewp-donation-form-modal__open {
 		font-size: 14px;
-    	font-weight: 700;
+    	font-weight: 600;
 		line-height: 50px;
 		text-transform: uppercase;
 		color: #ffffff !important;
@@ -715,7 +715,7 @@ div[id*=give-form] {
 	.btn-loadmore {
 		display: inline-block;
 		font-size: 13px;
-		font-weight: 700;
+		font-weight: 600;
 		line-height: 20px;
 		text-transform: uppercase;
 		padding: 12px 30px;
@@ -786,14 +786,14 @@ div[id*=give-form] {
         display: inline-block;
         vertical-align: middle;
         font-size: 13px;
-        font-weight: 700;
+        font-weight: 600;
         margin: 0 4px 4px 0;
       }
       a {
         display: inline-block;
         vertical-align: middle;
         font-size: 13px;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 20px;
         color: #FFFFFF;
         background: $main-color;
@@ -828,7 +828,7 @@ div[id*=give-form] {
 			span {
 				display: block;
 				font-size: 20px;
-				font-weight: 700;
+				font-weight: 600;
 			}
 		}
 		form[id*=give-form] {
@@ -978,7 +978,7 @@ div[id*=give-form] {
 			#give-final-total-wrap {
 				.give-donation-total-label {
 					font-size: 0;
-					font-weight: 700;
+					font-weight: 600;
 					letter-spacing: 0;
 					color: $main-color;
 					background: #ffffff;
@@ -1066,7 +1066,7 @@ div[id*=give-form] {
       div.summary {
         .give-form-title {
           font-size: 42px;
-					font-weight: 700;
+					font-weight: 600;
           line-height: 125%;
           margin-bottom: 17px;
           -ms-word-wrap: break-word;
@@ -1115,7 +1115,7 @@ div[id*=give-form] {
 				div.summary {
 					.give-form-title {
 						font-size: 42px;
-						font-weight: 700;
+						font-weight: 600;
 						margin-bottom: 12px;
 					}
 					.give-goal-progress {
@@ -1678,7 +1678,7 @@ div[id*=give-form] {
 					}
 					.give-form-title {
 						font-size: 24px;
-						font-weight: 700;
+						font-weight: 600;
 						margin-bottom: 25px;
 					}
 				}
@@ -1689,7 +1689,7 @@ div[id*=give-form] {
 					.give-card__button {
 						display: inline-block;
 						font-size: 14px;
-					  font-weight: 700;
+					  font-weight: 600;
 						line-height: 48px;
 						color: #ffffff;
 						background: $main-color;
@@ -1751,7 +1751,7 @@ div[id*=give-form] {
 									}
 									&__total {
 										font-size: 20px;
-										font-weight: 700;
+										font-weight: 600;
 										color: $main-color !important;
 									}
 								}
@@ -1761,7 +1761,7 @@ div[id*=give-form] {
 					.give-donor__load_more {
 						display: inline-block;
 						font-size: 14px;
-						font-weight: 700;
+						font-weight: 600;
 						line-height: 40px;
 						color: #ffffff;
 						background: $main-color;
@@ -1815,7 +1815,7 @@ div[id*=give-form] {
 							align-items: center;
 							justify-content: center;
 							font-size: 14px;
-							font-weight: 700;
+							font-weight: 600;
 							line-height: 1;
 							color: #FFFFFF;
 							border-radius: 100px;
@@ -1890,7 +1890,7 @@ div[id*=give-form] {
     }
     .widget .widget-title {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 30px;
       margin-bottom: 25px;
     }
@@ -1933,7 +1933,7 @@ div[id*=give-form] {
 						padding-left: 15px;
 						&__name {
 							font-size: 16px;
-							font-weight: 700;
+							font-weight: 600;
 							line-height: 1.5;
 							color: #002866;
 							margin: 0 !important
@@ -1956,7 +1956,7 @@ div[id*=give-form] {
 					}
 					&__total {
 						font-size: 20px;
-						font-weight: 700;
+						font-weight: 600;
 						line-height: 1.25;
 						color: #002866 !important;
 					}
@@ -1966,7 +1966,7 @@ div[id*=give-form] {
 					font-size: 14px;
 					text-transform: uppercase;
 					padding: 10px 20px;
-					font-weight: 700;
+					font-weight: 600;
 					border-radius: 2px;
 					color: #333;
 					line-height: 20px;
@@ -2006,7 +2006,7 @@ div[id*=give-form] {
 	display: inline-block;
 	font-family: inherit;
 	font-size: 14px;
-	font-weight: 700 !important;
+	font-weight: 600 !important;
 	line-height: 50px;
 	text-transform: uppercase;
 	color: #ffffff;
@@ -2360,14 +2360,14 @@ div[id*=give-form] {
 					display: inline-block;
 					vertical-align: middle;
 					font-size: 13px;
-					font-weight: 700;
+					font-weight: 600;
 					margin: 0 4px 4px 0;
 				  }
 				  a {
 					display: inline-block;
 					vertical-align: middle;
 					font-size: 13px;
-					font-weight: 700;
+					font-weight: 600;
 					line-height: 20px;
 					color: #FFFFFF;
 					background: $main-color;
@@ -2395,7 +2395,7 @@ div[id*=give-form] {
 				}
 				.give-form-title {
 					font-size: 24px;
-					font-weight: 700;
+					font-weight: 600;
 					margin-bottom: 25px;
 				}
 			}
@@ -2406,7 +2406,7 @@ div[id*=give-form] {
 				.give-card__button {
 					display: inline-block;
 					font-size: 14px;
-				  	font-weight: 700;
+				  	font-weight: 600;
 					line-height: 48px;
 					color: #ffffff;
 					background: $main-color;
@@ -2468,7 +2468,7 @@ div[id*=give-form] {
 								}
 								&__total {
 									font-size: 20px;
-									font-weight: 700;
+									font-weight: 600;
 									color: $main-color !important;
 								}
 							}
@@ -2478,7 +2478,7 @@ div[id*=give-form] {
 				.give-donor__load_more {
 					display: inline-block;
 					font-size: 14px;
-					font-weight: 700;
+					font-weight: 600;
 					line-height: 40px;
 					color: #ffffff;
 					background: $main-color;
@@ -2532,7 +2532,7 @@ div[id*=give-form] {
 						align-items: center;
 						justify-content: center;
 						font-size: 14px;
-						font-weight: 700;
+						font-weight: 600;
 						line-height: 1;
 						color: #FFFFFF;
 						border-radius: 100px;
