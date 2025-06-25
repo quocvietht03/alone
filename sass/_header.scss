@@ -1,5 +1,42 @@
-.menu-toggle,
-.ubermenu-responsive-toggle.ubermenu-responsive-toggle-main {
+.elementor-widget-nav-menu {
+  &.bt-mobile-menu {
+    @media(min-width: $break-md) {
+      display: none;
+    }
+    .elementor-menu-toggle {
+      padding: 8px;
+      > span {
+        line-height: 0;
+      }
+    }
+    .menu-item .elementor-item.has-submenu {
+      display: flex;
+      justify-content: space-between;
+      .sub-arrow {
+        i, svg {
+          font-size: 14px;
+          -webkit-transition: all .3s;
+          transition: all .3s;
+        }
+      }
+      &.highlighted {
+        .sub-arrow {
+          i, svg {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+  .has-mini-items & {
+    .elementor-nav-menu {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.menu-toggle {
   position: absolute;
   top: 50%;
   right: 0;
@@ -16,8 +53,7 @@
   @media(max-width: $break-md - 0.02) {
     display: block;
   }
-  &.toggled-on,
-  &.ubermenu-responsive-toggle-open {
+  &.toggled-on {
     &:before, &:after {
       content: "";
       -webkit-transform: rotate(45deg) translate(-9px, 7.5px);

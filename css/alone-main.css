@@ -164,8 +164,27 @@ button {
   button[type="submit"] {
     font-size: 13px;
     padding: 12px 24px; } }
-.menu-toggle,
-.ubermenu-responsive-toggle.ubermenu-responsive-toggle-main {
+@media (min-width: 992px) {
+  .elementor-widget-nav-menu.bt-mobile-menu {
+    display: none; } }
+.elementor-widget-nav-menu.bt-mobile-menu .elementor-menu-toggle {
+  padding: 8px; }
+  .elementor-widget-nav-menu.bt-mobile-menu .elementor-menu-toggle > span {
+    line-height: 0; }
+.elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu {
+  display: flex;
+  justify-content: space-between; }
+  .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu .sub-arrow i, .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu .sub-arrow svg {
+    font-size: 14px;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+  .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu.highlighted .sub-arrow i, .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu.highlighted .sub-arrow svg {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+.has-mini-items .elementor-widget-nav-menu .elementor-nav-menu {
+  padding-bottom: 50px; }
+
+.menu-toggle {
   position: absolute;
   top: 50%;
   right: 0;
@@ -180,25 +199,16 @@ button {
   border-radius: 2px;
   display: none; }
   @media (max-width: 991.98px) {
-    .menu-toggle,
-    .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main {
+    .menu-toggle {
       display: block; } }
-  .menu-toggle.toggled-on:before, .menu-toggle.toggled-on:after, .menu-toggle.ubermenu-responsive-toggle-open:before, .menu-toggle.ubermenu-responsive-toggle-open:after,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main.toggled-on:before,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main.toggled-on:after,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main.ubermenu-responsive-toggle-open:before,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main.ubermenu-responsive-toggle-open:after {
+  .menu-toggle.toggled-on:before, .menu-toggle.toggled-on:after {
     content: "";
     -webkit-transform: rotate(45deg) translate(-9px, 7.5px);
     transform: rotate(45deg) translate(-9px, 7.5px); }
-  .menu-toggle.toggled-on:after, .menu-toggle.ubermenu-responsive-toggle-open:after,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main.toggled-on:after,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main.ubermenu-responsive-toggle-open:after {
+  .menu-toggle.toggled-on:after {
     -webkit-transform: rotate(-45deg) translate(-7.5px, -9px);
     transform: rotate(-45deg) translate(-7.5px, -9px); }
-  .menu-toggle:before, .menu-toggle:after,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main:before,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main:after {
+  .menu-toggle:before, .menu-toggle:after {
     content: "";
     position: absolute;
     top: 50%;
@@ -211,13 +221,10 @@ button {
     transform: translate(-11px, -6px);
     -webkit-transition: all .3s;
     transition: all .3s; }
-  .menu-toggle:after,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main:after {
+  .menu-toggle:after {
     -webkit-transform: translate(-11px, 4px);
     transform: translate(-11px, 4px); }
-  .menu-toggle:hover, .menu-toggle:focus,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main:hover,
-  .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main:focus {
+  .menu-toggle:hover, .menu-toggle:focus {
     outline: none; }
 
 .sub-menu-toggle {
