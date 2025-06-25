@@ -9,7 +9,7 @@
         line-height: 0;
       }
     }
-    .menu-item .elementor-item.has-submenu {
+    .menu-item-has-children > a {
       display: flex;
       justify-content: space-between;
       .sub-arrow {

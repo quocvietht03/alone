@@ -171,14 +171,14 @@ button {
   padding: 8px; }
   .elementor-widget-nav-menu.bt-mobile-menu .elementor-menu-toggle > span {
     line-height: 0; }
-.elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu {
+.elementor-widget-nav-menu.bt-mobile-menu .menu-item-has-children > a {
   display: flex;
   justify-content: space-between; }
-  .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu .sub-arrow i, .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu .sub-arrow svg {
+  .elementor-widget-nav-menu.bt-mobile-menu .menu-item-has-children > a .sub-arrow i, .elementor-widget-nav-menu.bt-mobile-menu .menu-item-has-children > a .sub-arrow svg {
     font-size: 14px;
     -webkit-transition: all .3s;
     transition: all .3s; }
-  .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu.highlighted .sub-arrow i, .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu.highlighted .sub-arrow svg {
+  .elementor-widget-nav-menu.bt-mobile-menu .menu-item-has-children > a.highlighted .sub-arrow i, .elementor-widget-nav-menu.bt-mobile-menu .menu-item-has-children > a.highlighted .sub-arrow svg {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
 .elementor-widget-nav-menu.bt-mobile-menu .elementor-nav-menu {
