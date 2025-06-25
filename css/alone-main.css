@@ -181,8 +181,11 @@ button {
   .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu.highlighted .sub-arrow i, .elementor-widget-nav-menu.bt-mobile-menu .menu-item .elementor-item.has-submenu.highlighted .sub-arrow svg {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
-.has-mini-items .elementor-widget-nav-menu .elementor-nav-menu {
-  padding-bottom: 50px; }
+.elementor-widget-nav-menu.bt-mobile-menu .elementor-nav-menu {
+  min-height: var(--menu-height); }
+@media (max-width: 575.98px) {
+  .has-mini-items .elementor-widget-nav-menu.bt-mobile-menu .elementor-nav-menu {
+    padding-bottom: 50px; } }
 
 .menu-toggle {
   position: absolute;

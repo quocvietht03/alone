@@ -28,10 +28,15 @@
         }
       }
     }
-  }
-  .has-mini-items & {
     .elementor-nav-menu {
-      padding-bottom: 50px;
+      min-height: var(--menu-height);
+    }
+    @media(max-width: $break-xs - 0.02) {
+      .has-mini-items & {
+        .elementor-nav-menu {
+          padding-bottom: 50px;
+        }
+      }
     }
   }
 }
