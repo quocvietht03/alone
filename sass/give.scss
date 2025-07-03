@@ -487,6 +487,7 @@ div[id*=give-form] {
     line-height: 24px;
 		min-height: 50px;
 		padding: 12px 20px;
+		color: inherit !important;
 		border-color: rgba(0, 0, 0, 0.1);
 		border-radius: 2px;
 	}
@@ -505,7 +506,7 @@ div[id*=give-form] {
 	> .give-btn,
 	.give-submit {
 		font-size: 14px;
-    font-weight: 600;
+    	font-weight: 600;
 		line-height: 50px;
 		text-transform: uppercase;
 		color: #ffffff;
@@ -514,9 +515,9 @@ div[id*=give-form] {
 		outline: none;
 		border: none;
 		border-radius: 2px;
-    &.give-btn-modal {
-      margin-bottom: 0;
-    }
+		&.give-btn-modal {
+		margin-bottom: 0;
+		}
 		&:hover {
       background-color: darken($main-color, 10);
 		}

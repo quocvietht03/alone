@@ -511,6 +511,7 @@ div[id*=give-form] .form-row textarea {
   line-height: 24px;
   min-height: 50px;
   padding: 12px 20px;
+  color: inherit !important;
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 2px; }
 form[id*=give-form] .give-submit-button-wrap,

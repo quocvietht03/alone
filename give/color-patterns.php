@@ -61,13 +61,13 @@ function alone_give_custom_colors_css() {
 	}
 
 	$theme_css = '
-
 		/*
 		 * Set Color
 		 */
 		.give-goal-progress .income,
 		.give-goal-progress .goal-text,
 		form[id*=give-form] .give-total-wrap #give-amount,
+		form[id*=give-form] #give-donation-level-button-wrap .give-btn,
 		form[id*=give-form] #give-donation-level-button-wrap .give-btn:hover,
 		form[id*=give-form] #give-donation-level-radio-list li label:hover,
 		form[id*=give-form] #give-donation-level-radio-list li input.give-default-level + label,
