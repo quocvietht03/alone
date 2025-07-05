@@ -424,7 +424,7 @@ div[id*=give-form] #give_offline_payment_info {
   div[id*=give-form] #give_terms > *,
   div[id*=give-form] #give_offline_payment_info > * {
     line-height: unset;
-    margin: 12px 0; }
+    margin: 8px 0; }
     form[id*=give-form] #give_terms > *:first-child,
     form[id*=give-form] #give_offline_payment_info > *:first-child,
     div[id*=give-form] #give_terms > *:first-child,
