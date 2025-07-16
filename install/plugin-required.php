@@ -64,12 +64,6 @@ function alone_register_required_plugins() {
       'required'     => true,
     ),
     array(
-      'name'          => 'Elementor Pro',
-      'slug'          => 'elementor-pro',
-      'source'        => $pathfile . 'elementor-pro.zip',
-      'required'      => false,
-    ),
-    array(
       'name'          => 'Bearsthemes Addons',
       'slug'          => 'bearsthemes-addons',
       'source'        => $pathfile . 'bearsthemes-addons.zip',

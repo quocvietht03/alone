@@ -118,10 +118,10 @@ if( ! function_exists( 'alone_import_pack_download_package' ) ) {
         }
         /** End fix issue security */
 
-        $package_name = $data['package_name'];
+        $package_name = isset($data['package_name']) ? $data['package_name'] : '';
         $position = isset( $data['position'] ) ? $data['position'] : 0;
         $package = isset( $data['package'] ) ? $data['package'] : '';
-
+        
         $result = alone_import_pack_download_package_step( $package_name, $position, $package );
 
         wp_send_json( array(
@@ -161,12 +161,21 @@ if( ! function_exists( 'alone_import_pack_extract_package_demo' ) ) {
         }
         /** End fix issue security */
 
-        $package_name = $data['package_name'];
-        $package = $data['package'];
+        $package_name = isset($data['package_name']) ? $data['package_name'] : '';
+        $package_file = isset($data['package']) ? $data['package'] : '';
+        
+        // Validate package_path is not empty
+        if (empty($package_name) || empty($package_file)) {
+            wp_send_json_error('Package name or file is empty.');
+            exit();
+        }
 
         $upload_dir = wp_upload_dir();
-        $path = $upload_dir['basedir'];
-        $path_file_package = $path . '/' . $package;
+        $upload_path = $upload_dir['basedir'];
+        $file_package_path = $upload_path . '/' . $package_file;
+
+        // Use realpath to resolve actual paths
+        $real_file_package_path = realpath($file_package_path);
 
         $backup_path = $Bears_Backup->upload_path();
         $extract_to = $backup_path . '/' . sprintf( 'package-install__%s', $package_name );
@@ -181,7 +190,7 @@ if( ! function_exists( 'alone_import_pack_extract_package_demo' ) ) {
         }
 
         WP_Filesystem();
-        $unzipfile = unzip_file( $path_file_package, $extract_to);
+        $unzipfile = unzip_file( $real_file_package_path, $extract_to);
 
          if ( $unzipfile ) {
            wp_send_json( array(
@@ -201,7 +210,7 @@ if( ! function_exists( 'alone_import_pack_extract_package_demo' ) ) {
          }
 
          // remove zip file
-         wp_delete_file( $path_file_package );
+         wp_delete_file( $real_file_package_path );
 
         exit();
     }
@@ -236,40 +245,46 @@ if( ! function_exists( 'alone_import_pack_restore_data' ) ) {
         }
         /** End fix issue security */
 
-        $package_path = $data['package_path'];
+        $package_path = isset($data['package_path']) ? $data['package_path'] : '';
+
+        // Validate package_path is not empty
+        if (empty($package_path)) {
+            wp_send_json_error('Package path is empty.');
+            exit();
+        }
         
         // Get the uploads directory and bears-backup subfolder
         $upload_dir = wp_upload_dir();
         $bears_backup_dir = trailingslashit($upload_dir['basedir']) . 'bears-backup' . DIRECTORY_SEPARATOR;
 
+        // Use realpath to resolve actual paths
+        $real_package_path = realpath($package_path);
+        $real_bears_backup_dir = realpath($bears_backup_dir);
 
         // Verify package_path is inside /uploads/bears-backup
-        if (
-            ! $package_path ||
-            ! $bears_backup_dir ||
-            strpos($package_path, $bears_backup_dir) !== 0
-        ) {
+        if ( ! $real_package_path || ! $real_bears_backup_dir || strpos($real_package_path, $real_bears_backup_dir) !== 0 ) {
             wp_send_json_error('Invalid package path.');
             exit();
         }
+
         // Sanitize file name
-        $file_name = basename( $package_path );
+        $file_name = basename( $real_package_path );
         if (empty($wp_filesystem)) {
             require_once (ABSPATH . '/wp-admin/includes/file.php');
             WP_Filesystem();
         }
 
-        do_action( 'beplus/import_pack/before_restore_package', $package_path );
+        do_action( 'beplus/import_pack/before_restore_package', $real_package_path );
 
         $result = BBACKUP_Restore_Data( array(
             'name' => $file_name,
-            'backup_path_file' => $package_path,
+            'backup_path_file' => $real_package_path,
         ), '' );
 
-        do_action( 'beplus/import_pack/after_restore_package', $package_path, $result );
+        do_action( 'beplus/import_pack/after_restore_package', $real_package_path, $result );
 
         // delete package folder
-        $wp_filesystem->delete( $package_path , true );
+        $wp_filesystem->delete( $real_package_path , true );
 
         if( isset( $result['success'] ) && true == $result['success'] ) {
 

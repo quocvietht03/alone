@@ -11,11 +11,6 @@ $plugin_includes = array(
     'slug'     => 'elementor',
   ),
   array(
-    'name'     => __('Elementor Pro', 'alone'),
-    'slug'     => 'elementor-pro',
-    'source'   => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'elementor-pro.zip',
-  ),
-  array(
     'name'     => __('Bearsthemes Addons', 'alone'),
     'slug'     => 'bearsthemes-addons',
     'source'   => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'bearsthemes-addons.zip',
