@@ -73,7 +73,7 @@ add_action( 'load-customize.php', 'alone_customize' );
 function alone_preview() {
 	if ( isset( $_GET['preview'] ) ) {
 		/* translators: %s: WordPress version. */
-		wp_die( sprintf( __( 'Alone requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'alone' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( __( 'Alone requires at least WordPress version 5.5. You are running version %s. Please upgrade and try again.', 'alone' ), $GLOBALS['wp_version'] ) );
 	}
 }
 add_action( 'template_redirect', 'alone_preview' );

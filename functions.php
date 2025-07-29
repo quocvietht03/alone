@@ -10,9 +10,9 @@
  */
 
 /**
- * Alone only works in WordPress 4.7 or later.
+ * Alone only works in WordPress 5.5 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '5.5', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 	return;
 }
