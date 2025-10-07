@@ -44,6 +44,9 @@ function alone_donations_cron_exec()
     $donor_query = $donor_query->get_donors();
     $payment_arr = array();
     $specific_date = '2025-01-01 00:00:00';
+    if(is_rtl()) {
+        $specific_date = '2025-10-01 00:00:00';
+    }
     if ($donor_query) {
         foreach ($donor_query as $donor) {
             if ($donor->date_created > $specific_date) {
