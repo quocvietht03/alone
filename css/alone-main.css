@@ -2143,6 +2143,10 @@ body .__btn-back-list {
 
 .error-page-template {
   text-align: center; }
+  .error-page-template .error-icon img {
+    max-width: 100%;
+    width: 460px;
+    margin: -6% 0; }
   .error-page-template .page-title {
     font-size: 42px;
     margin-bottom: 16px; }
@@ -2186,6 +2190,32 @@ body .__btn-back-list {
           background-size: 16px;
           background-repeat: no-repeat;
           background-position: center; } }
+  .error-page-template .page-divider {
+    margin: 32px 0;
+    font-size: 18px; }
+    .error-page-template .page-divider:before, .error-page-template .page-divider:after {
+      content: "";
+      display: inline-block;
+      width: 100px;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.3);
+      vertical-align: middle;
+      margin: 0 16px; }
+  .error-page-template .back-home-btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 35px;
+    color: #002866;
+    border: 2px solid #002866;
+    border-radius: 2px;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .error-page-template .back-home-btn:hover {
+      background-color: #002866;
+      color: #fff;
+      text-decoration: none; }
   @media (max-width: 991.98px) {
     .error-page-template .page-title {
       font-size: 42px; } }

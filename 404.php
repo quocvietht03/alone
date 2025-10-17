@@ -17,11 +17,23 @@ get_header();
 			<main id="main" class="site-main">
 
 				<div class="error-404 not-found">
+					<div class="error-icon">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/404.svg" alt="404 Error">
+					</div>
+
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'alone' ); ?></h1>
 
 					<div class="page-desc"><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'alone' ); ?></div>
 
 					<?php get_search_form(); ?>
+
+					<div class="page-divider">
+						<?php _e( 'OR', 'alone' ); ?>
+					</div>
+
+					<a href="https://utenzo.beplusthemes.com" class="back-home-btn">
+						<?php _e( 'Back to Home', 'alone' ); ?>
+					</a>
 
 				</div><!-- .error-404 -->
 
