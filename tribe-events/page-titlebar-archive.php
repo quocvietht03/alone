@@ -17,7 +17,7 @@ if( ! alone_get_option( 'site_titlebar' ) ) {
 	<div class="page-titlebar">
 			<div class="container responsive">
 				<div class="page-titlebar-content"> 
-					<?php
+					<?php 
 					    if (function_exists('icl_object_id')) {
 							$current_language = apply_filters('wpml_current_language', null);
 
@@ -32,8 +32,12 @@ if( ! alone_get_option( 'site_titlebar' ) ) {
 									yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">','</div>' );
 								}
 							}
+						} else {
+							the_archive_title( '<h1 class="page-title">', '</h1>' );
+							if ( function_exists('yoast_breadcrumb') ) {
+								yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">','</div>' );
+							}
 						}
-						
 					?>
 				</div>
 			</div>
