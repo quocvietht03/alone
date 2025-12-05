@@ -1588,8 +1588,11 @@ div[id*=give-form].give-display-reveal .give-btn {
       padding: 10px 20px;
       font-weight: 600;
       border-radius: 2px;
-      color: #333;
+      color: #fff;
+      background-color: #0073a8;
       line-height: 20px; }
+      .give-sidebar .widget .give-wrap .give-donor__load_more:hover {
+        background-color: #005075; }
 @media (max-width: 767.98px) {
   .give-sidebar.give-single-form-sidebar-left .widget {
     margin-top: 30px;

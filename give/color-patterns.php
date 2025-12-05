@@ -122,8 +122,11 @@ function alone_give_custom_colors_css() {
 		.give-form-wrap .give-form-box-wrap,
 		.give-form-wrap .give-form-content-footer .give-tag-links a,
 		.give-form-wrap .give-form-content-footer .give-social-share a,
+		.give-sidebar .widget .give-wrap .give-donor__load_more,
 		.single-give-forms-template.style-5 .give-content-wrap .give-form-col .give-goal-wrap .give-card__button,
 		.single-give-forms-template.style-5 .give-content-wrap .give-form-col .give-donor-wall-recent .give-donor__load_more,
+		.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-top .give-donor__load_more, 
+		.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-recent .give-donor__load_more,
 		.single-give_posts .give-content-wrap .give-content-col .give-content-inner > ul li:before,
 		.single-give_posts .give-content-wrap .give-content-col .give-form-content-footer .give-tag-links a,
 		.give-main-background-color {
@@ -159,8 +162,11 @@ function alone_give_custom_colors_css() {
 		form[id*=give-form] .give-submit:hover,
 		.give-form-wrap .give-form-content-footer .give-tag-links a:hover,
 		.give-form-wrap .give-form-content-footer .give-social-share a:hover,
+		.give-sidebar .widget .give-wrap .give-donor__load_more:hover,
 		.single-give-forms-template.style-5 .give-content-wrap .give-form-col .give-goal-wrap .give-card__button:hover,
 		.single-give-forms-template.style-5 .give-content-wrap .give-form-col .give-donor-wall-recent .give-donor__load_more:hover,
+		.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-top .give-donor__load_more:hover, 
+		.single-give_posts .give-content-wrap .give-form-col .give-donor-wall-recent .give-donor__load_more:hover,
 		.single-give_posts .give-content-wrap .give-content-col .give-form-content-footer .give-tag-links a:hover,
 		.give-main-background-color-hover {
 			background-color: ' . $hover_color . '; /* hover: #005177; */
