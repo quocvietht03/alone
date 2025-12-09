@@ -1,7 +1,22 @@
-.verifytheme_wrap p.submit,.verifytheme_wrap .change_license_wrap{
+.verifytheme_wrap p.submit,
+.verifytheme_wrap .change_license_wrap{
   display: inline-block;
   vertical-align: middle;
   margin-top: 20px;
   padding-bottom: 1.5em;
   margin-bottom: 5px;
+}
+.verifytheme_wrap .form-table th {
+  width: 120px;
+}
+.verifytheme_wrap .button {
+  min-height: 36px;
+}
+.verifytheme_wrap #purchase_code {
+  width: 100%;
+  max-width: 300px;
+  line-height: 34px;
+}
+.verifytheme_wrap[data-status="active"] .form-table {
+  display: none;
 }

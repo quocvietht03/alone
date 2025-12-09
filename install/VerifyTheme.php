@@ -253,7 +253,7 @@ class VerifyTheme {
       wp_enqueue_style( 'verifytheme' );
 	  if(!$this->isInstallationLegit){
         $setting_page = admin_url('options-general.php?page=verifytheme_settings');
-        $message = esc_html__( "Important notice: In order to receive all benefits of our theme, you need to activate your copy of the theme. \nBy activating the theme license you will unlock premium options - import demo data, install, update plugins and official support. Please visit Envato Settings page to activate your copy of the theme", 'alone' );
+        $message = esc_html__( "Please activate the Theme License to unlock Demo Import, Plugin updates, and Official Support.", 'alone' );
         wp_register_script( 'verifytheme', get_template_directory_uri() . '/install/verifytheme.js', false );
         wp_localize_script(
   				'verifytheme',
@@ -305,7 +305,7 @@ class VerifyTheme {
 					$license_already_in_use = true;
 				}
         $other_attributes = '';
-        $register_button_text = __( 'Register your theme', 'alone' );
+        $register_button_text = __( 'Register Your Theme', 'alone' );
         if ( $toolkitData && $installationLegit ){
           $other_attributes = 'disabled';
           $register_button_text = __( 'Activated on this domain', 'alone' );
@@ -315,8 +315,14 @@ class VerifyTheme {
         $name = 'submit';
         $wrap = true;
         $verify_options = get_option( '_verifytheme_settings' );
+
+        $status = 'deactive';
+        if ( $toolkitData && ! $is_deregistering_license && ! $license_already_in_use ) {
+          $status = 'active';
+        }
+
         ?>
-        <div class="wrap verifytheme_wrap">
+        <div class="wrap verifytheme_wrap" data-status="<?php echo esc_attr($status); ?>">
             <form class="verifytheme_settings_form" method="post" action="options.php">
               <?php
                   // This prints out all hidden setting fields
@@ -335,7 +341,7 @@ class VerifyTheme {
               <?php endif; ?>
             </form>
             <form style="display: none" id="change_license_form" method="POST">
-              <button id="change_license_btn" type="submit" class="button button-primary" name="change_license"><?php echo esc_html__( 'Deregister your product', 'alone' ); ?></button>
+              <button id="change_license_btn" type="submit" class="button button-primary" name="change_license"><?php echo esc_html__( 'Deregister Your Theme', 'alone' ); ?></button>
             </form>
         </div>
         <?php
@@ -439,8 +445,8 @@ class VerifyTheme {
     public function print_section_info()
     {
         printf(
-            '%s<br />%s<a target="_blank" href="%s">%s</a>.</small>',
-            esc_html__('Themeforest provides purchase code for each theme you buy, and you’ll need it to verify and register your product (and to receive theme support).','alone'),esc_html__('To download your purchase code, simply follow these steps at ','alone'), esc_url('https://docs.beplusthemes.com/Alone7/#product-registration'), esc_html__('here','alone')
+            '<p>%s<br/>%s<a target="_blank" href="%s">%s</a>.</p>',
+            esc_html__('Themeforest provides purchase code for each theme you buy, and you’ll need it to verify and register your product (and to receive theme support).','alone'),esc_html__('To download your purchase code, simply follow these steps at ','alone'), esc_url('https://docs.beplusthemes.com/ProductRegistration/'), esc_html__('here','alone')
         );
     }
     /**
@@ -450,7 +456,7 @@ class VerifyTheme {
     {
         printf(
             '<input type="text" id="purchase_code" required name="_verifytheme_settings[purchase_code]" value="%s" /><br /><small>%s<a target="_blank" href="%s">%s</a>.</small>',
-            isset( $verify_options['purchase_code'] ) ? esc_attr( $verify_options['purchase_code']) : '', esc_html__('Please insert your Envato purchase code. ','alone'), esc_url('https://docs.beplusthemes.com/Alone7/#product-registration'), esc_html__('More info','alone')
+            isset( $verify_options['purchase_code'] ) ? esc_attr( $verify_options['purchase_code']) : '', esc_html__('Please insert your Envato purchase code. ','alone'), esc_url('https://docs.beplusthemes.com/ProductRegistration/'), esc_html__('More info','alone')
         );
     }
 }
