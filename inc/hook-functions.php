@@ -313,10 +313,10 @@ function alone_footer_info_copyright() {
           <a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
         <?php endif; ?>
 
-        <a href="<?php echo esc_url( __( 'https://bearsthemes.com/', 'alone' ) ); ?>" class="imprint">
+        <a href="<?php echo esc_url( __( 'https://beplusthemes.com/', 'alone' ) ); ?>" class="imprint">
           <?php
-          /* translators: %s: Bearsthemes. */
-          printf( __( 'Proudly powered by %s.', 'alone' ), 'Bearsthemes' );
+          /* translators: %s: Beplusthemes. */
+          printf( __( 'Proudly powered by %s.', 'alone' ), 'Beplusthemes' );
           ?>
         </a>
 

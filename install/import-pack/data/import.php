@@ -3,7 +3,7 @@
  * Import pack data package demo
  *
  * @package Import Pack
- * @author Bearsthemes
+ * @author Beplusthemes
  */
 $plugin_includes = array(
   array(
@@ -11,9 +11,9 @@ $plugin_includes = array(
     'slug'     => 'elementor',
   ),
   array(
-    'name'     => __('Bearsthemes Addons', 'alone'),
-    'slug'     => 'bearsthemes-addons',
-    'source'   => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'bearsthemes-addons.zip',
+    'name'     => __('Alone Addons', 'alone'),
+    'slug'     => 'alone-addons',
+    'source'   => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'alone-addons.zip',
   ),
   array(
     'name'     => __('UberMenu 3 - The Ultimate WordPress Mega Menu', 'alone'),
@@ -65,9 +65,9 @@ $plugin_includes_multiplelanguages = array(
     'source'   => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'elementor-pro.zip',
   ),
   array(
-    'name'     => __('Bearsthemes Addons', 'alone'),
-    'slug'     => 'bearsthemes-addons',
-    'source'   => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'bearsthemes-addons.zip',
+    'name'     => __('Alone Addons', 'alone'),
+    'slug'     => 'alone-addons',
+    'source'   => IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD . 'alone-addons.zip',
   ),
   array(
     'name'     => __('Kirki Customizer Framework', 'alone'),

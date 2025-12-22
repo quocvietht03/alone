@@ -460,7 +460,7 @@ msgid "Copyright text"
 msgstr "نص حقوق الطبع والنشر"
 
 #: inc/customizer.php:416
-msgid "Proudly powered by Bearsthemes"
+msgid "Proudly powered by Beplusthemes"
 msgstr "بفخر بواسطة Innoshop"
 
 #: inc/customizer.php:430
@@ -884,10 +884,10 @@ msgid "Login"
 msgstr "تسجيل الدخول"
 
 #: inc/hook-functions.php:319
-msgid "https://bearsthemes.com/"
-msgstr "https://bearsthemes.com/"
+msgid "https://beplusthemes.com/"
+msgstr "https://beplusthemes.com/"
 
-#. translators: %s: Bearsthemes.
+#. translators: %s: Beplusthemes.
 #: inc/hook-functions.php:322
 #, php-format
 msgid "Proudly powered by %s."
@@ -2123,12 +2123,12 @@ msgstr ""
 "الحملة ..."
 
 #. Author of the plugin/theme
-msgid "Bearsthemes"
-msgstr "Bearsthemes"
+msgid "Beplusthemes"
+msgstr "Beplusthemes"
 
 #. Author URI of the plugin/theme
-msgid "https://themeforest.net/user/bearsthemes/"
-msgstr "https://themeforest.net/user/bearsthemes/"
+msgid "https://beplusthemes.com/"
+msgstr "https://beplusthemes.com/"
 
 #. Template Name of the plugin/theme
 msgid "Full Width Page"

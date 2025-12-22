@@ -413,7 +413,7 @@
       'type'            => 'textarea',
       'label'           => esc_html__( 'Copyright text', 'alone' ),
       'section'         => 'copyright',
-      'default'         => esc_html__( 'Proudly powered by Bearsthemes', 'alone' ),
+      'default'         => esc_html__( 'Proudly powered by Beplusthemes', 'alone' ),
       'priority'        => 20,
       'active_callback' => array(
         array(

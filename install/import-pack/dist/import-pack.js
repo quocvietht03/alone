@@ -2,7 +2,7 @@
  * Import pack javascript
  *
  * @package Import Pack
- * @author Bearsthemes
+ * @author Beplusthemes
  */
 
 /**

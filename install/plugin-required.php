@@ -64,9 +64,9 @@ function alone_register_required_plugins() {
       'required'     => true,
     ),
     array(
-      'name'          => 'Bearsthemes Addons',
-      'slug'          => 'bearsthemes-addons',
-      'source'        => $pathfile . 'bearsthemes-addons.zip',
+      'name'          => 'Alone Addons',
+      'slug'          => 'alone-addons',
+      'source'        => $pathfile . 'alone-addons.zip',
       'required'      => true,
     ),
     array(

@@ -3,7 +3,7 @@
  * Import pack demo install package template
  *
  * @package Import Pack
- * @author Bearsthemes
+ * @author Beplusthemes
  */
 
 // echo '<pre>'; print_r( $package_demos ); echo '</pre>';

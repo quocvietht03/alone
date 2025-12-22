@@ -3,7 +3,7 @@
  * Import pack page panel template
  *
  * @package Import Pack
- * @author Bearsthemes
+ * @author Beplusthemes
  */
 
 if( count( $tabs ) <= 0 ) return;

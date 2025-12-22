@@ -7,8 +7,8 @@
  */
 define("ITEM_ID","15019939");
 define('API_SECRET_KEY', 'a7b8c9d0e1f2g3h4i5j6k7l8m9n0o1p2');
-if (!class_exists('BearsthemesCommunicator')):
-  class BearsthemesCommunicator{
+if (!class_exists('BeplusthemesCommunicator')):
+  class BeplusthemesCommunicator{
     var $baseUrl;
     var $message;
     function __construct($baseUrl='https://apialonev2.kinsta.cloud') {
@@ -134,7 +134,7 @@ if (!class_exists('BearsthemesCommunicator')):
     }
   }
 endif;
-// End BearsthemesCommunicator Class
+// End BeplusthemesCommunicator Class
 
 // Helper
 function isLocalhost($server_name){
@@ -147,7 +147,7 @@ function isLocalhost($server_name){
 }
 
 function isInstallationLegit( $data = false ) {
-  $communicator = new BearsthemesCommunicator();
+  $communicator = new BeplusthemesCommunicator();
   $data = !$data ? get_option('_verifytheme_settings') : $data;
   if(!$data) return false;
   $__verify = get_option('__verify');
@@ -204,7 +204,7 @@ function verifythemeGetDomain( $url ) {
  */
 function licenseNeedsDeactivation( $toolkitData ) {
 	if ( $toolkitData && isset( $toolkitData[ 'purchase_code' ] ) ) {
-		$communicator = new BearsthemesCommunicator();
+		$communicator = new BeplusthemesCommunicator();
 		$connected_domain = $communicator->getConnectedDomains( $toolkitData[ 'purchase_code' ] );
 
 		if ( ! $connected_domain ) {
@@ -285,9 +285,9 @@ class VerifyTheme {
      * Options page callback
      */
     public function verifytheme_settings_page(){
-        $communicator = new BearsthemesCommunicator();
+        $communicator = new BeplusthemesCommunicator();
         $toolkitData = get_option('_verifytheme_settings');
-        if ( isset( $_POST[ 'change_license' ] ) && class_exists( 'BearsthemesCommunicator' ) ) {
+        if ( isset( $_POST[ 'change_license' ] ) && class_exists( 'BeplusthemesCommunicator' ) ) {
           $is_deregistering_license = true;
 					$communicator->unRegisterDomains( $toolkitData[ 'purchase_code' ] );
 					delete_option( '_verifytheme_settings' );
@@ -386,7 +386,7 @@ class VerifyTheme {
         $message = '';
         $type = 'error';
         $data = array();
-        $communicator = new BearsthemesCommunicator();
+        $communicator = new BeplusthemesCommunicator();
         $ok_purchase_code = $communicator->isPurchaseCodeLegit($new_input['purchase_code']);
         if ($ok_purchase_code) {
             $data = array(
@@ -424,7 +424,7 @@ class VerifyTheme {
             endif;
           else:
             $message .= sprintf(wp_kses( __( 'This product is in use on another domain: <span>%s</span><br />', 'alone' ), array( 'span' => array(), 'br' => array() ) ), $connected_domain );
-            $message .= sprintf(esc_html__('Are you using this theme for a new site? Please purchase a %s ', 'alone' ), '<a tabindex="-1" href="' . esc_url( 'http://themeforest.net/cart/add_items?ref=bearsthemes&item_ids=' ) .ITEM_ID.'" target="_blank">'.esc_html__('new license','alone').'</a>');
+            $message .= sprintf(esc_html__('Are you using this theme for a new site? Please purchase a %s ', 'alone' ), '<a tabindex="-1" href="' . esc_url( 'http://themeforest.net/cart/add_items?ref=beplusthemes&item_ids=' ) .ITEM_ID.'" target="_blank">'.esc_html__('new license','alone').'</a>');
             if(!$register_error):
               add_settings_error(
                   '_verifytheme_settings',

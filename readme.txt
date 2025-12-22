@@ -16,4 +16,4 @@ For more information about Alone please go to http://docs.beplusthemes.com/Alone
 
 == Copyright ==
 
-Alone WordPress Theme, Copyright 2016 - 2024 by Bearsthemes
+Alone WordPress Theme, Copyright 2016 - 2026 by Beplusthemes

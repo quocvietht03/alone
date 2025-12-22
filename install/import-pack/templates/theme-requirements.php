@@ -3,7 +3,7 @@
  * Import pack theme requirements
  *
  * @package Import Pack
- * @author Bearsthemes
+ * @author Beplusthemes
  */
 
 function let_to_num( $size ) {

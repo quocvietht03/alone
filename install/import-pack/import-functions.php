@@ -3,7 +3,7 @@
  * Import main functions
  *
  * @package Import Pack WP theme
- * @author Bearsthemes
+ * @author Beplusthemes
  * @version 1.0.10
  */
 
