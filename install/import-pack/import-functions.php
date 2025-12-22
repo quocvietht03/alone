@@ -16,7 +16,7 @@
 
         define( 'IMPORT_REMOTE_SERVER', 'https://package.beplusthemes.com/alone/' );
         define( 'IMPORT_REMOTE_SERVER_PLUGIN_DOWNLOAD', 'https://download.beplusthemes.com/' );
-        define( 'IMPORT_URL_OPEN_TICKET', 'https://bearsthemes.ticksy.com' );
+        define( 'IMPORT_URL_OPEN_TICKET', 'https://beplusthemes.com/our-support/' );
     }
 }
 
