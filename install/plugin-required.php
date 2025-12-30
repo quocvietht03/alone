@@ -108,6 +108,11 @@ function alone_register_required_plugins() {
       'required'      => true,
     ),
     array(
+      'name'          => 'AccessYes Accessibility Widget for ADA, EAA & WCAG Readiness',
+      'slug'          => 'accessibility-widget',
+      'required'      => false,
+    ),
+    array(
       'name'          => 'WooCommerce',
       'slug'          => 'woocommerce',
       'required'      => false,

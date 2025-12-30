@@ -91,6 +91,10 @@ $plugin_includes_multiplelanguages = array(
     'slug'     => 'wordpress-seo',
   ),
   array(
+    'name'     => __('AccessYes Accessibility Widget for ADA, EAA & WCAG Readiness', 'alone'),
+    'slug'     => 'accessibility-widget',
+  ),
+  array(
     'name'     => __('WooCommerce', 'alone'),
     'slug'     => 'woocommerce',
   ),
