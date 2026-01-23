@@ -76,6 +76,15 @@
     });
 
 
+	// Close mfp on click overlay on donations page
+	if( $('.post-type-archive-give_forms').length > 0 ) {
+		$(document).on('click', '.mfp-wrap', function (e) {
+			if (!$(e.target).closest('.mfp-content').length) {
+				$.magnificPopup.close();
+			}
+		});
+	}
+
 	});
 
 })
