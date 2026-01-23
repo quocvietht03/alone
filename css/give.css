@@ -108,11 +108,14 @@ div[id*=give-form] #give-gateway-radio-list > li label {
     .mfp-wrap .mfp-content .mfp-close:hover {
       color: #ffffff;
       background-color: #000000; }
+  .mfp-wrap .mfp-content > .give_notices {
+    padding: 30px 30px 1px;
+    background: #fff; }
   .mfp-wrap .mfp-content div.give-form,
   .mfp-wrap .mfp-content form.give-form {
     background: #FFFFFF;
     padding: 30px;
-    border-radius: 2px;
+    border-radius: 0;
     max-width: 100%;
     height: auto;
     overflow: unset; }
@@ -517,6 +520,9 @@ div[id*=give-form] .form-row textarea {
 form[id*=give-form] .form-row .give-stripe-cc-field,
 div[id*=give-form] .form-row .give-stripe-cc-field {
   padding: 14px 20px; }
+form[id*=give-form] #give_secure_site_wrapper,
+div[id*=give-form] #give_secure_site_wrapper {
+  font-size: 14px; }
 form[id*=give-form] #give-paypal-commerce-smart-buttons-wrap > .paypal-buttons:not(:first-child),
 div[id*=give-form] #give-paypal-commerce-smart-buttons-wrap > .paypal-buttons:not(:first-child) {
   display: none !important; }
@@ -2095,5 +2101,15 @@ div[id*=give-form].give-display-reveal .give-btn {
     .single-give_posts .give-content-wrap .give-form-col {
       width: 100%;
       margin-top: 60px; } }
+
+.give-page table.give-table {
+  border: none; }
+  .give-page table.give-table th {
+    font-weight: 600;
+    border: none; }
+  .give-page table.give-table tbody tr td {
+    border: none; }
+.give-page .give-receipt-thead-text {
+  text-align: left !important; }
 
 /*# sourceMappingURL=give.css.map */

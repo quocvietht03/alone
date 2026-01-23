@@ -122,11 +122,15 @@
 			  background-color: #000000;
 			}
 		}
+		> .give_notices {
+			padding: 30px 30px 1px;
+    		background: #fff;
+		}
 		div.give-form,
 		form.give-form {
 			background: #FFFFFF;
 			padding: 30px;
-			border-radius: 2px;
+			border-radius: 0;
 			max-width: 100%;
 			height: auto;
 			overflow: unset;
@@ -493,6 +497,9 @@ div[id*=give-form] {
 	}
 	.form-row .give-stripe-cc-field {
 		padding: 14px 20px;
+	}
+	#give_secure_site_wrapper {
+		font-size: 14px;
 	}
 	#give-paypal-commerce-smart-buttons-wrap > .paypal-buttons:not(:first-child) {
 		display: none !important;
@@ -2592,5 +2599,21 @@ div[id*=give-form] {
 				margin-top: 60px;
 			}
 		}
+	}
+}
+
+.give-page {
+	table.give-table {
+		border: none;
+		th {
+			font-weight: 600;
+			border: none;
+		}
+		tbody tr td {
+			border: none;
+		}
+	}
+	.give-receipt-thead-text {
+		text-align: left !important;
 	}
 }
