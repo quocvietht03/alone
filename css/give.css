@@ -85,7 +85,7 @@ div[id*=give-form] #give-gateway-radio-list > li label {
 .mfp-wrap .mfp-content {
   width: 100%;
   background: transparent;
-  max-width: 830px;
+  max-width: 810px;
   margin-top: 40px;
   padding: 0;
   -webkit-transition: all .3s;
@@ -514,6 +514,12 @@ div[id*=give-form] .form-row textarea {
   color: inherit !important;
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 2px; }
+form[id*=give-form] .form-row .give-stripe-cc-field,
+div[id*=give-form] .form-row .give-stripe-cc-field {
+  padding: 14px 20px; }
+form[id*=give-form] #give-paypal-commerce-smart-buttons-wrap > .paypal-buttons:not(:first-child),
+div[id*=give-form] #give-paypal-commerce-smart-buttons-wrap > .paypal-buttons:not(:first-child) {
+  display: none !important; }
 form[id*=give-form] .give-submit-button-wrap,
 div[id*=give-form] .give-submit-button-wrap {
   position: relative; }
