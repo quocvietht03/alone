@@ -131,16 +131,16 @@ return apply_filters( 'beplus/import_pack/package_demo', [
         'package_name' => 'alone-main',
         'preview' => get_template_directory_uri() . '/install/import-pack/images/alone-main-preview.png', // image size 680x475
         'url_demo' => 'https://alonethemes.com/',
-        'title' => __( 'Alone Main', 'alone' ),
-        'description' => __( 'Alone main demo, include 39+ home demos & full inner page (Contact, About, Company, blog, etc.).', 'alone' ),
+        'title'        => __( 'Alone Main – 40+ Ready-to-Import Homepages', 'alone' ),
+        'description'  => __( 'The primary Alone demo featuring 40+ professionally designed homepage layouts and a complete set of inner pages, including About, Contact, Company, Blog, and more.', 'alone' ),
         'plugins' => $plugin_includes,
     ],
     [
       'package_name' => 'alone-rtl',
       'preview' => get_template_directory_uri() . '/install/import-pack/images/alone-rtl-preview.png', // image size 680x475
       'url_demo' => 'https://rtl.alonethemes.com/',
-      'title' => __( 'Alone RTL', 'alone' ),
-      'description' => __( 'Alone RTL demo, include home demos & full inner page (Contact, About, Company, blog, etc.).', 'alone' ),
+      'title'        => __( 'Alone RTL – Right-to-Left Demo', 'alone' ),
+      'description'  => __( 'A fully optimized RTL version of the Alone theme, including homepage demos and a complete collection of inner pages such as About, Contact, Company, Blog, and more.', 'alone' ),
       'plugins' => $plugin_includes_multiplelanguages,
-  ],
+    ],
 ] );
