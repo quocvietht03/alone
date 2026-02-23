@@ -131,21 +131,21 @@ return apply_filters( 'beplus/import_pack/package_demo', [
       'package_name' => 'alone-main',
       'preview'      => get_template_directory_uri() . '/install/import-pack/images/alone-main-preview.png', // image size 680x475
       'url_demo'     => 'https://alonethemes.com/',
-      'title'        => __( 'Alone Main – 40+ Ready-to-Import Homepages', 'alone' ),
+      'title'        => __( 'Alone Main – 40+ Ready-to-Import Homepages.', 'alone' ),
       'plugins'      => $plugin_includes,
     ],
     [
       'package_name' => 'alone-placeholder',
       'preview'      => get_template_directory_uri() . '/install/import-pack/images/alone-placeholder-preview.png', // image size 680x475
       'url_demo'     => 'https://alonethemes.com/',
-      'title'        => __( 'Alone Placeholder – Quick setup, development, or content replacement', 'alone' ),
+      'title'        => __( 'Alone Placeholder – Demo with placeholder images for faster setup and easy content replacement.', 'alone' ),
       'plugins'      => $plugin_includes,
     ],
     [
       'package_name' => 'alone-rtl',
       'preview'      => get_template_directory_uri() . '/install/import-pack/images/alone-rtl-preview.png', // image size 680x475
       'url_demo'     => 'https://rtl.alonethemes.com/',
-      'title'        => __( 'Alone RTL – Fully Optimized Right-to-Left Demo', 'alone' ),
+      'title'        => __( 'Alone RTL – Fully Optimized Right-to-Left Demo.', 'alone' ),
       'plugins'      => $plugin_includes_multiplelanguages,
     ],
 ] );
