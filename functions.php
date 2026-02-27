@@ -421,7 +421,7 @@ if ( defined('SERMONE_VER') ) {
  */
 require get_template_directory() . '/affiliate/affiliate.php';
 
-if ( is_plugin_active( 'wp-crontrol/wp-crontrol.php' ) && (defined('ALONE_DISABLE_CRON') && !ALONE_DISABLE_CRON) ) {
+if ( is_plugin_active( 'wp-crontrol/wp-crontrol.php' ) && (defined('ALONE_DISABLE_CRON') && ALONE_DISABLE_CRON === false) ) {
 	/**
 	 * Cron job
 	 */
