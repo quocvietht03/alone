@@ -421,11 +421,12 @@ if ( defined('SERMONE_VER') ) {
  */
 require get_template_directory() . '/affiliate/affiliate.php';
 
-/**
- * Cron job
- */
-require get_template_directory() . '/cron/cron-helper.php';
-
+if ( is_plugin_active( 'wp-crontrol/wp-crontrol.php' ) && (defined('ALONE_DISABLE_CRON') && ALONE_DISABLE_CRON) ) {
+	/**
+	 * Cron job
+	 */
+	require get_template_directory() . '/cron/cron-helper.php';
+}
 
 function alone_load_textdomain() {
 	if ( function_exists( 'icl_object_id' ) ) {

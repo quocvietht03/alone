@@ -1,6 +1,7 @@
 <?php
 function alone_events_cron_exec()
 {
+    die('testing...');
     $args_cron = [
         'posts_per_page' => -1,
     ];
