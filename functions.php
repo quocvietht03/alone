@@ -330,7 +330,6 @@ add_action( 'wp_print_footer_scripts', 'alone_skip_link_focus_fix' );
  * Enqueue supplemental block editor styles.
  */
 function alone_editor_customizer_styles() {
-
 	wp_enqueue_style( 'alone-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.1', 'all' );
 }
 add_action( 'enqueue_block_editor_assets', 'alone_editor_customizer_styles' );
@@ -341,22 +340,9 @@ add_action( 'enqueue_block_editor_assets', 'alone_editor_customizer_styles' );
 require get_template_directory() . '/classes/class-alone-svg-icons.php';
 
 /**
- * Verify purchase code
+ * Plugin Requred
  */
-require get_template_directory() . '/install/VerifyTheme.php';
-
-if(class_exists('VerifyTheme')){
-	function verifytheme_init(){
-		$VerifyTheme = new VerifyTheme();
-	}
-	add_action( 'after_setup_theme', 'verifytheme_init' );
-}
-
-/**
- * Theme install
- */
-require get_template_directory() . '/install/plugin-required.php';
-require  get_template_directory() . '/install/import-pack/import-functions.php';
+require_once get_template_directory() . '/plugin-install/plugin-required.php';
 
 /**
  * Common theme helper functions.
