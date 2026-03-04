@@ -31,7 +31,7 @@ get_header();
 						<?php _e( 'OR', 'alone' ); ?>
 					</div>
 
-					<a href="https://utenzo.beplusthemes.com" class="back-home-btn">
+					<a href="<?php echo home_url(); ?>" class="back-home-btn">
 						<?php _e( 'Back to Home', 'alone' ); ?>
 					</a>
 
