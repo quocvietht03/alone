@@ -518,7 +518,13 @@ if ( ! class_exists( 'VerifyTheme_Admin' ) ) {
                 <?php if ( $is_activated ) : ?>
                     <div class="verifytheme-success">
                         <?php printf( esc_html__( 'License activated successfully on: %s ', 'alone' ), esc_html( $domain ) ); ?><br/>
-                        <a href="<?php echo esc_url('themes.php?page=dummy-pack-center'); ?>"><?php esc_html_e('Import Demo Content', 'alone'); ?></a>
+                        <?php 
+                            if ( is_plugin_active( 'worry-proof-backup/worry-proof-backup.php' ) ) {
+                                echo '<a href="' . esc_url('themes.php?page=dummy-pack-center') . '">' . esc_html__('Import Demo Content', 'alone') . '</a>';
+                            } else {
+                                echo '<a href="' . esc_url('themes.php?page=tgmpa-install-plugins') . '">' . esc_html__('Install "Worry Proof Backup" plugin', 'alone') . '</a>' . ' ' . esc_html__('to unlock Demo Import.', 'alone');
+                            }
+                        ?>
                     </div>
                 <?php endif; ?>
 
