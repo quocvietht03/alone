@@ -25,7 +25,7 @@ if ( empty( $items ) ) {
 				class="tribe-events-c-subscribe-dropdown__button-text tribe-common-c-btn--clear"
 				aria-expanded="false"
 				aria-controls="tribe-events-subscribe-dropdown-content"
-				aria-label="<?php esc_attr__( 'View links to add events to your calendar', 'alone' ); ?>"
+				aria-label="<?php esc_attr_e( 'View links to add events to your calendar', 'alone' ); ?>"
 			>
 				<?php
 				if ( function_exists( 'icl_object_id' ) ) {
